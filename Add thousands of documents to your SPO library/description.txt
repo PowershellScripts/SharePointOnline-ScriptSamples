@@ -1,0 +1,28 @@
+The application is mainly for SharePoint Online test environments. 
+
+It creates mock data for a library of your choice so that you can test synchronization and SharePoint Online performance.
+
+It creates:
+
+-Word Documents with random content from Latin texts
+
+-Excel Spreadsheets with random number of Sheets but no content
+
+-PowerPoint presentations
+
+-files that will be corrupt (as said above, for testing purposes)
+
+ 
+
+You can create unlimited* number of items. Of course the more items you choose, the longer it will run. Depending on your environment, it creates 100 documents per 20seconds. 
+
+ 
+
+Works for OneDrive for Business as well.
+
+
+
+
+ 
+
+ 
