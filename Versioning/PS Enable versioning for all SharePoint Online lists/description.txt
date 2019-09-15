@@ -19,3 +19,34 @@ At the end, a csv file is generated with the lists' urls and the status whether 
 As the script runs you will see green lists' titles for which the enabling succeeded and red for those which failed (not all lists support versioning).
 
 Versioning will always fail for public site.
+
+
+You can customize the script by using the commented out tips:
+
+ 
+
+PowerShell
+# Paths to SDK. Please verify location on your computer. 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
+ 
+# Versioning will be enabled. If you prefer to disable it for the whole tenant, change to $false 
+$versioning = $true 
+ 
+# You can also enter credentials directly: $siteUrl="https://tenant-admin.sharepoint.com" 
+$siteUrl = Read-Host -Prompt "Enter https://tenant-admin.sharepoint.com” 
+$username = Read-Host -Prompt "Enter admin's login, e.g. admin@domain.onmicrosoft.com" 
+$password = Read-Host -Prompt "Enter password" -AsSecureString 
+$credy= New-Object System.Management.Automation.PSCredential($username,$password)  
+Connect-SPOService -Credential $credy -Url $siteUrl  
+ 
+$sitecollections=get-SPOSite 
+$Global:csv=@() 
+ 
+foreach($sitecoll in $sitecollections) 
+{ 
+    getall($sitecoll.Url) 
+} 
+ 
+# Specify the path where the log file will be published 
+$Global:csv | Export-Csv -Path C:\Users\Public\Versioning.csv
