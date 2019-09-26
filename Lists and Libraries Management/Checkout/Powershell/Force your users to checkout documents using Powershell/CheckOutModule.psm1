@@ -1,4 +1,8 @@
-﻿function Set-Checkout
+<#
+This is a Powershell module with a single function. Not very useful, it would make more sense as a function, 2019-me may say to 2014-me, but it was one of the first steps to create SPOMod and I keep it out of sentiment.
+>#
+
+function Set-Checkout
 {
   param (
   [Parameter(Mandatory=$true,Position=1)]
@@ -22,19 +26,28 @@
   $ctx.ExecuteQuery()
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
+  
   foreach( $ll in $ctx.Web.Lists)
   {
     $ll.ForceCheckout = $ForceCheckout
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
+        
+	if($ctx.Url.EndsWith("/")) 
+	{
+		$listurl= $ctx.Url+$ll.Title
+	}
+        else 
+	{
+		$listurl=$ctx.Url+"/"+$ll.Title
+	}
+        
+	try
         {
-        #$ErrorActionPreference="Stop"
-        $ctx.ExecuteQuery() 
-        Write-Host $listurl -ForegroundColor DarkGreen             
+		#$ErrorActionPreference="Stop"
+		$ctx.ExecuteQuery() 
+		Write-Host $listurl -ForegroundColor DarkGreen             
         }
 
         catch
@@ -43,7 +56,8 @@
             Write-Host $listurl -ForegroundColor Red
         }
         finally
-        {#$ErrorActionPreference="Continue"
+        {
+		#$ErrorActionPreference="Continue"
         }
         
 
