@@ -8,6 +8,7 @@
   $ctx.ExecuteQuery()
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
+  
   foreach( $ll in $ctx.Web.Lists)
   {
     $ll.ForceCheckout = $checkout
@@ -18,6 +19,7 @@
         else {$listurl=$ctx.Url+"/"+$ll.Title}
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
+        
         try
         {
         $ErrorActionPreference="Stop"
