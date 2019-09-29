@@ -59,7 +59,7 @@ Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/si
 Get a count of lists and libraries across a site collection and its subsites
 Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection -AdminPassword Pass -IncludeSubsites $true
 
- 
+ <img src="../GetSPOListCount cmdlet/GetListCount.PNG" width="850">
 
 
 
@@ -71,7 +71,7 @@ Get a count of lists and libraries across a site collection and its subsites and
 Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection -AdminPassword Pass -IncludeSubsites $true | export-CSV C:\listcount.csv
 
  
-
+ <img src="../GetSPOListCount cmdlet/GetListCountCSV.PNG" width="850">
 
 
  
@@ -81,7 +81,7 @@ $colls=Get-SPOSite
 
 for($i=0;$i -lt $colls.Count ;$i++) {Get-SPOListCount -Username user@domain.com -Url $colls[$i].Url -AdminPassword Pass -IncludeSubsites $true }
 
- 
+  <img src="../GetSPOListCount cmdlet/GetListCounttenant.PNG" width="850">
 
 
 
