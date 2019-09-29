@@ -10,7 +10,7 @@ There is no equivalent in Graphic User Interface (GUI) of this cmdlet
 
  
 
-Parameters
+<h3>Parameters</h3>
 
  
 
@@ -54,7 +54,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 
  
 
-Examples
+<h2>Examples</h2>
 
  
 
