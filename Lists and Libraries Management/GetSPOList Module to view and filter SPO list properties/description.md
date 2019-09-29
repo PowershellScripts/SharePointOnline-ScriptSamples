@@ -86,7 +86,7 @@ Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/s
 Get a list of all lists and libraries with all their properties
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true
 
- <img src="../GetSPOList Module to view and filter SPO list properties/GETSPOALLLists.PNG" width="850">
+ <img src="../GetSPOList Module to view and filter SPO list properties/GetSPOALLLists.PNG" width="850">
 
 
 
@@ -98,7 +98,7 @@ Get a specific list
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true | where {$_.Title -eq "ccc"}
 
  
-<img src="../GetSPOList Module to view and filter SPO list properties/GETSPOListOne.PNG" width="850">
+<img src="../GetSPOList Module to view and filter SPO list properties/GetSPOListOne.PNG" width="850">
 
 
  
@@ -109,7 +109,7 @@ Get lists based on criteria
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true | where {$_.Hidden -eq $true} | select Title, Created
 
  
-
+<img src="../GetSPOList Module to view and filter SPO list properties/GetSPOALLListsHidden.PNG" width="850">
 
 
  
@@ -132,7 +132,7 @@ Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminP
 
  
 
- 
+ <img src="../GetSPOList Module to view and filter SPO list properties/GetListTemplates.PNG" width="850">
 
 
 
@@ -150,7 +150,7 @@ How not to use the cmdlet:
 
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass | where {$_.Hidden -eq $false} 
 
-
+<img src="../GetSPOList Module to view and filter SPO list properties/NOTTO.PNG" width="850">
 
 If you don't load the properties, you cannot search by them!
 
