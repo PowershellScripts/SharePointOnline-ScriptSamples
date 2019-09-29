@@ -67,7 +67,7 @@ Examples
 Get a list of all lists and libraries in a site
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection/subsite -AdminPassword Pass
 
-<img alt="Edit control" src="../images/design-authoring-edit-01.png" width="850">
+<img src="../GetSPOList Module to view and filter SPO list properties/GETSPOALLListsNoProperties.PNG" width="850">
 
 <br/>
 
@@ -86,7 +86,7 @@ Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/s
 Get a list of all lists and libraries with all their properties
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true
 
- 
+ <img src="../GetSPOList Module to view and filter SPO list properties/GETSPOALLLists.PNG" width="850">
 
 
 
@@ -98,7 +98,7 @@ Get a specific list
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true | where {$_.Title -eq "ccc"}
 
  
-
+<img src="../GetSPOList Module to view and filter SPO list properties/GETSPOListOne.PNG" width="850">
 
 
  
