@@ -39,23 +39,17 @@ Specifies whether you should view all the available properties or just the Title
 
  
 
-Requirements
-
- 
+<h3>Requirements</h3>
 
 The following libraries (SharePoint Online SDK) are required. If those libraries are in different location on your computer, please edit the .psm1 file!
-
  
 
- 
-
- 
-
-PowerShell
+```powershell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
- 
+```
+
  
 
  
