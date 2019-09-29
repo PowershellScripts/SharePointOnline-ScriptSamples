@@ -59,27 +59,29 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
  
 
 Get a list of all lists and libraries in a site
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection/subsite -AdminPassword Pass
-
+```
 <img src="../GetSPOList Module to view and filter SPO list properties/GETSPOALLListsNoProperties.PNG" width="850">
 
 <br/>
 
 Get a list of all lists and libraries in a site collection and its subsites
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection/subsite -AdminPassword Pass -IncludeSubsites $true
-
+```
  
 
 Export to CSV a list of all lists and libraries in a site collection and its subsites
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection/subsite -AdminPassword Pass -IncludeSubsites $true | export-CSV -path c:\csv.csv
-
- 
-
+```
  
 
 Get a list of all lists and libraries with all their properties
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true
-
+```
  <img src="../GetSPOList Module to view and filter SPO list properties/GetSPOALLLists.PNG" width="850">
 
 
@@ -89,8 +91,9 @@ Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminP
  
 
 Get a specific list
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true | where {$_.Title -eq "ccc"}
-
+```
  
 <img src="../GetSPOList Module to view and filter SPO list properties/GetSPOListOne.PNG" width="850">
 
@@ -100,8 +103,9 @@ Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminP
  
 
 Get lists based on criteria
+```powershell
 Get-SPOList -Username user@domain.com -Url https://domain.sharepoint.com -AdminPassword Pass -IncludeAllProperties $true | where {$_.Hidden -eq $true} | select Title, Created
-
+```
  
 <img src="../GetSPOList Module to view and filter SPO list properties/GetSPOALLListsHidden.PNG" width="850">
 
