@@ -8,7 +8,7 @@ There is no equivalent in Graphic User Interface (GUI) of this cmdlet
 
  
 
-Parameters
+<h2>Parameters</h2>
 
  
 
@@ -30,35 +30,33 @@ Specifies whether the cmdlet should check for lists in the subsites as well, by 
 
  
 
-Requirements
+<h2>Requirements</h2>
 
  
 
 The following libraries (SharePoint Online SDK) are required. If those libraries are in different location on your computer, please edit the .psm1 file!
 
- 
-
- 
-
-PowerShell
+```powershell
 # Paths to SDK. Please verify location on your computer.  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
- 
+``` 
  
 
-Examples
+<h2>Examples</h2>
 
  
 
 Get a count of lists and libraries in a site
+```powershell
 Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection/subsite -AdminPassword Pass
-
+```
  
 
 Get a count of lists and libraries across a site collection and its subsites
+```powershell
 Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection -AdminPassword Pass -IncludeSubsites $true
-
+```
  <img src="../GetSPOListCount cmdlet/GetListCount.PNG" width="850">
 
 
@@ -68,8 +66,9 @@ Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/si
  
 
 Get a count of lists and libraries across a site collection and its subsites and export it to CSV file
+```powershell
 Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/sites/sitecollection -AdminPassword Pass -IncludeSubsites $true | export-CSV C:\listcount.csv
-
+```
  
  <img src="../GetSPOListCount cmdlet/GetListCountCSV.PNG" width="850">
 
@@ -77,10 +76,11 @@ Get-SPOListCount -Username user@domain.com -Url https://domain.sharepoint.com/si
  
 
 Get a count of lists and libraries across whole tenant
+```powershell
 $colls=Get-SPOSite
 
 for($i=0;$i -lt $colls.Count ;$i++) {Get-SPOListCount -Username user@domain.com -Url $colls[$i].Url -AdminPassword Pass -IncludeSubsites $true }
-
+```
   <img src="../GetSPOListCount cmdlet/GetListCounttenant.PNG" width="850">
 
 
