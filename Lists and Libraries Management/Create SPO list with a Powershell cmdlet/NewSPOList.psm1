@@ -58,10 +58,6 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
         Write-Host $_.Exception.ToString()
      }
 
-     
-
-
-
 }
 
 
