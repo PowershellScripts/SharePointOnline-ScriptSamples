@@ -6,10 +6,6 @@ There is no equivalent in Graphic User Interface (GUI) of this cmdlet
 
  
 
- 
-
- 
-
 <h3>Parameters</h3>
 
  
@@ -30,10 +26,6 @@ Specifies whether the cmdlet should check for lists in the subsites as well, by 
 
 [bool]$IncludeAllProperties=$false
 Specifies whether you should view all the available properties or just the Title, Url and Created Date. By the default it is set to $false.
-
- 
-
- 
 
  
 
