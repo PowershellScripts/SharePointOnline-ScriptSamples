@@ -4,7 +4,7 @@
    param (
         [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$AdminPassword,
@@ -12,9 +12,7 @@
 		[bool]$IncludeSubsites=$false
 		)
   
-  
-  
-   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web.Lists)
@@ -25,10 +23,7 @@
 
   foreach( $ll in $ctx.Web.Lists)
   {
-            
         $i++
-
-        
         }
   
         $obj = New-Object PSObject
@@ -44,11 +39,9 @@
     {
         Get-SPOListCount -Url ($ctx.Web.Webs[$i].Url) -Username $Username -AdminPassword $AdminPassword -IncludeSubsites $IncludeSubsites
     }
-
   }
   
-  
-  }
+}
 
 
 # Paths to SDK. Please verify location on your computer.
