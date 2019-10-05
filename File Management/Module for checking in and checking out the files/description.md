@@ -93,7 +93,7 @@ Specifies the checin type. You can tab through 3 of the values:
 
  
 
-*Check-out a file
+* Check-out a file
 ```powershell
 Set-SpoFileCheckout -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt" -Verbose
 ```
@@ -109,7 +109,7 @@ perm.txt  has been checked out
 
  
 
-*Check-in a file
+* Check-in a file
 ```powershell
 Set-SpoFileCheckin -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt" -CheckInType MinorCheckIn
 ```
@@ -117,7 +117,7 @@ perm.txt  has been checked in
 
  
 
-*Approve a file
+* Approve a file
 ```powershell
 Approve-SpoFile -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt"
 ```
@@ -125,7 +125,7 @@ perm.txt  has been approved
 
  
 
-*Approve all files in a folder using Get-SPOFolderFiles cmdlet
+* Approve all files in a folder using Get-SPOFolderFiles cmdlet
  
 ```powershell
  $serverurls=(Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff").ServerRelativeUrl
