@@ -32,28 +32,28 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
 
   if($Description -ne "")
   {
-  $ctx.Web.Description = $Description
-  $ctx.Web.Update()
-  $ctx.ExecuteQuery()
-  Write-Host "Description set to " $Description -ForegroundColor Green
+	  $ctx.Web.Description = $Description
+	  $ctx.Web.Update()
+	  $ctx.ExecuteQuery()
+	  Write-Host "Description set to " $Description -ForegroundColor Green
   }
 
 
      if($EnableMinimalDownload -ne "")
   {
-  $ctx.Web.EnableMinimalDownload = $EnableMinimalDownload
-  $ctx.Web.Update()
-  $ctx.ExecuteQuery()
-  Write-Host "Minimal Download set to " $EnableMinimalDownload -ForegroundColor Green
+	  $ctx.Web.EnableMinimalDownload = $EnableMinimalDownload
+	  $ctx.Web.Update()
+	  $ctx.ExecuteQuery()
+	  Write-Host "Minimal Download set to " $EnableMinimalDownload -ForegroundColor Green
   }
 
     if($QuickLaunchEnabled -ne "")
   {
 
-  $ctx.Web.QuickLaunchEnabled = $QuickLaunchEnabled
-  $ctx.Web.Update()
-  $ctx.ExecuteQuery()
-  Write-Host "Quick launch set to " $QuickLaunchEnabled -ForegroundColor Green
+	  $ctx.Web.QuickLaunchEnabled = $QuickLaunchEnabled
+	  $ctx.Web.Update()
+	  $ctx.ExecuteQuery()
+	  Write-Host "Quick launch set to " $QuickLaunchEnabled -ForegroundColor Green
   }
 
  
@@ -61,18 +61,18 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
 
     if($Title -ne "")
   {
-  $ctx.Web.Title = $Title
-  $ctx.Web.Update()
-  $ctx.ExecuteQuery()
-  Write-Host "Title set to " $Title -ForegroundColor Green
+	  $ctx.Web.Title = $Title
+	  $ctx.Web.Update()
+	  $ctx.ExecuteQuery()
+	  Write-Host "Title set to " $Title -ForegroundColor Green
   }
 
    if($TreeViewEnabled -ne "")
   {
-  $ctx.Web.TreeViewEnabled = $TreeViewEnabled
-  $ctx.Web.Update()
-  $ctx.ExecuteQuery()
-  Write-Host "Treeview set to " $TreeViewEnabled -ForegroundColor Green
+	  $ctx.Web.TreeViewEnabled = $TreeViewEnabled
+	  $ctx.Web.Update()
+	  $ctx.ExecuteQuery()
+	  Write-Host "Treeview set to " $TreeViewEnabled -ForegroundColor Green
   }
 
 
