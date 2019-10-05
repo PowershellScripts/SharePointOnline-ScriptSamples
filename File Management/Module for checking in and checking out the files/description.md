@@ -94,11 +94,12 @@ Specifies the checin type. You can tab through 3 of the values:
  
 
 Check-out a file
-Set-SpoFileCheckout -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/ch
-c1/perm.txt" -Verbose
+```powershell
+Set-SpoFileCheckout -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt" -Verbose
+```
 perm.txt  has been checked out
 
- 
+ <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
 
 
 
@@ -109,71 +110,48 @@ perm.txt  has been checked out
  
 
 Check-in a file
-Set-SpoFileCheckin -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc
-1/perm.txt" -CheckInType MinorCheckIn
+```powershell
+Set-SpoFileCheckin -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt" -CheckInType MinorCheckIn
+```
 perm.txt  has been checked in
 
  
 
 Approve a file
-Approve-SpoFile -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/p
-erm.txt"
+```powershell
+Approve-SpoFile -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt"
+```
 perm.txt  has been approved
 
  
 
 Approve all files in a folder using Get-SPOFolderFiles cmdlet
  
-
- $serverurls=(Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRela
-tiveUrl "/chc1/fff").ServerRelativeUrl
-14
-
+```powershell
+ $serverurls=(Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff").ServerRelativeUrl
 
 foreach( $url in $serverurls) {Approve-SPOFile -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl $url -ApprovalComment "comm"}
-
-
-
- 
+```
+ <img src="../Module for checking in and checking out the files/Filefile11.PNG" width="850">
 
  
-
  
 
- 
-
-Requirements
-
- 
+<h1>Requirements</h1>
 
 The following libraries (SharePoint Online SDK) are required. If those libraries are in different location on your computer, please edit the .psm1 file!
 
  
-
-PowerShell
+```powershell
 # Paths to SDK. Please verify location on your computer.     
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"      
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
- 
- 
-
- 
-
- 
-
+```
  
 
  
 
 Let me know about your experience in the Q&A section!
-
- 
-
- 
-
- 
-
- 
 
  
 
