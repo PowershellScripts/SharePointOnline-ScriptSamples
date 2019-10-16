@@ -1,4 +1,4 @@
-﻿function New-SPOListColumnWithProperties
+function New-SPOListColumnWithProperties
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
@@ -53,11 +53,6 @@ $List.Update()
      { 
         Write-Host $_.Exception.ToString()-ForegroundColor Red
      }
-
-     
-
-
-
 }
 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
