@@ -43,5 +43,6 @@ Verify if the SharePoint Online SDK is installed in the same location on your co
 Related scripts:
 
 Create a new column using Powershell cmdlet
-
+https://gallery.technet.microsoft.com/scriptcenter/Create-a-new-column-for-a-501108c6
 Create a new choice column and define choices using Powershell cmdlet
+https://gallery.technet.microsoft.com/scriptcenter/Create-a-new-choice-column-34d957d8
