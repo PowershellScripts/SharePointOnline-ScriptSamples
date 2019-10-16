@@ -1,4 +1,4 @@
-﻿function New-SPOListChoiceColumn
+function New-SPOListChoiceColumn
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
