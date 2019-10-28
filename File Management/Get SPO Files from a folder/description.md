@@ -2,13 +2,13 @@ Powershell Module with a new cmdlet:
 
  
 
-Get-SPOFolderFiles
+<h1>Get-SPOFolderFiles</h1>
 
 Retrieves all files from a folder.  Not recursive.
 
  
 
-Parameters
+<h3>Parameters</h3>
 
 The cmdlet is using the following parameters:
 
@@ -28,7 +28,7 @@ Specifies the relative url of the folder, eg. "/Library/FolderName"
 
  
 
-Examples
+<h3>Examples</h3>
 
  
 
@@ -37,7 +37,7 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
 
 
 
- 
+  <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
 
  
 
@@ -79,7 +79,7 @@ If you want to get all files from all the folders, you can use Get-SPOFolder cmd
 
  
 
-Requirements
+<h3>Requirements</h3>
 
  
 
@@ -87,11 +87,10 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 
  
 
-PowerShell
+```powershell
 # Paths to SDK. Please verify location on your computer.    
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
- 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
 Under Windows Server 2012 R2 you may need to use:
 
 <C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI>
