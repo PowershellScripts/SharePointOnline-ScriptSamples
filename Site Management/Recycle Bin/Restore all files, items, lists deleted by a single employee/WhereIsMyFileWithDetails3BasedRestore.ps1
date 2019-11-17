@@ -16,7 +16,7 @@ param (
 
 try
 {
-$ctx.ExecuteQuery()
+	$ctx.ExecuteQuery()
 } catch [Net.WebException] 
         {
             
