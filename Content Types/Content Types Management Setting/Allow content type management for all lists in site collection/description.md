@@ -49,7 +49,7 @@ Please share your thoughts in the Q&A section!
 Wiki article with detailed code description:
  
 
-SharePoint Online: Turn on support for multiple content types in a list or library using Powershell
+[SharePoint Online: Turn on support for multiple content types in a list or library using Powershell](http://social.technet.microsoft.com/wiki/contents/articles/30038.sharepoint-online-turn-on-support-for-multiple-content-types-in-a-list-or-library-using-powershell.aspx)
 
  
 
