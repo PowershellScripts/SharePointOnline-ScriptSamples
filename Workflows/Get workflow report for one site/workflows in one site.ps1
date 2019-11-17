@@ -47,11 +47,8 @@ foreach ( $ll in $Lists)
                      $workfloek | export-csv -Path $CSVPath -Append
                      
                     }
-                
-
+ 
 }
-
-
 
 }
 
@@ -59,8 +56,8 @@ foreach ( $ll in $Lists)
 
 
 # Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 
 # Insert the credentials and the name of the site and the path where the report should be saved.
 $Username="2190@tenant.onmicrosoft.com"
