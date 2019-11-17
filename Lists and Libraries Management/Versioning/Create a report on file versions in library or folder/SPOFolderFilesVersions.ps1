@@ -31,31 +31,27 @@ param (
         
         foreach ($file in $fileCollection)
         {
+		$ctx.Load($file.Versions)
+		$ctx.ExecuteQuery()
+		if ($file.Versions.Count -eq 0)
+		{
+		  $obj=New-Object PSObject
+		  $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
+		  $obj | Add-Member NoteProperty Versions("No Verions Available")
+		  $obj | export-csv -Path $CSVPath2 -Append
+		}
 
-        $ctx.Load($file.Versions)
-        $ctx.ExecuteQuery()
-        if ($file.Versions.Count -eq 0)
-        {
-          $obj=New-Object PSObject
-          $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
-          $obj | Add-Member NoteProperty Versions("No Verions Available")
 
-          $obj | export-csv -Path $CSVPath2 -Append
+		Foreach ($versi in $file.Versions){
+
+			$user=$versi.CreatedBy
+			$ctx.Load($versi)
+			$ctx.Load($user)
+			$ctx.ExecuteQuery()
+			$versi | Add-Member NoteProperty CreatedByUser($user.LoginName)
+			 $versi |export-csv -Path $CSVPath -Append
+		    }
         }
-        
-        
-        Foreach ($versi in $file.Versions){
-
-        $user=$versi.CreatedBy
-        $ctx.Load($versi)
-        $ctx.Load($user)
-        $ctx.ExecuteQuery()
-        $versi | Add-Member NoteProperty CreatedByUser($user.LoginName)
-         $versi |export-csv -Path $CSVPath -Append
-                    }
-
-        }
-
 
 
 }
