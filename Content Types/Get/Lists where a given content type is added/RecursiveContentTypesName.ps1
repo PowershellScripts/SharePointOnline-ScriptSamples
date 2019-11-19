@@ -1,5 +1,3 @@
-﻿
-
 function Get-SPOContentType
 {
   
@@ -54,11 +52,7 @@ function Get-SPOContentType
      }
      } 
 
-        
-        
 
-        
-        
      }
 
 
@@ -75,11 +69,7 @@ function Get-SPOContentType
         
         }
   
-        
 
-  
-  
-  
 
 
   # Paths to SDK. Please verify location on your computer.
