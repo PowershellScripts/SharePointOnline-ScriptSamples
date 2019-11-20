@@ -30,9 +30,6 @@ for($i=0;$i -lt $rb.Count ;$i++)
 $ctx.ExecuteQuery()
 
 
-
-
-
 }
 
 
