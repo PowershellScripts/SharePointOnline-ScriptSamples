@@ -3,18 +3,12 @@ A short script to find all content types added to all of your lists in a given s
  
 
 Very useful if you receive an error message:
-
- 
-
-
+ <img src="../Find content types added to your lists/Error (1).PNG" width="850">
 
 when trying to remove a content type.
 
  
 
- 
-
- 
 
 ### How to use?
 
@@ -30,7 +24,7 @@ when trying to remove a content type.
 
  
 
-PowerShell
+```PowerShell
  # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -39,6 +33,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="admin@tenant.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries" 
+```
  
 a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
 b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
@@ -49,7 +44,7 @@ c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter 
 
 6. The result should show the list names in green and connected content types below them
 
- 
+  <img src="../Find content types added to your lists/result.PNG" width="850">
 
 
 
