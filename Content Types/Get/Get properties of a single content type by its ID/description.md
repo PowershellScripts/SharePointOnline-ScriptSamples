@@ -55,8 +55,7 @@ d) Fill in the ID of the content type ($CTID)
  
 
 5. Run the script in Powershell (any module). 
-
-![example](./Get properties of a single content type by its ID/GetPropertiesWITHOUTExt.PNG)
+<img src="../Get properties of a single content type by its ID/GetPropertiesWITHOUTExt.PNG" width="850">
 
 6. Results can be viewed either in Powershell window or exported to csv as a report:
 
