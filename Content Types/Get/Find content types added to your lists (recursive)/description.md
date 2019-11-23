@@ -3,7 +3,7 @@ A short script to find all content types added to all of your lists in a given s
  
 
 Very useful if you receive an error message:
- <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
+ <img src="../Find content types added to your lists (recursive)/Error (2).PNG" width="850">
  
 
 
@@ -51,21 +51,14 @@ c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter 
 5. Run the script in Powershell (any module). 
 
 6. The result should show the table of names and associated lists and websites where those lists are located
- <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
- 
-
-
-
+<img src="../Find content types added to your lists (recursive)/recursiveResult.PNG" width="850">
  
 
  
 
 You can also export it to CSV:
 
-  <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
-
-
-
+<img src="../Find content types added to your lists (recursive)/recursiveResult2.PNG" width="850">
  
 
  
