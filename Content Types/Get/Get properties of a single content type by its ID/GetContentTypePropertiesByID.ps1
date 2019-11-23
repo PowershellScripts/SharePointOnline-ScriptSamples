@@ -1,5 +1,3 @@
-﻿
-
 function Get-SPOContentType
 {
   
@@ -45,13 +43,6 @@ function Get-SPOContentType
      }
      Write-Output $cc
      
-
-        
-       
-     
-      
-        
-        
   }
         
 
