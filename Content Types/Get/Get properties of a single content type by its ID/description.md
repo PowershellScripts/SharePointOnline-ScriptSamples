@@ -56,7 +56,7 @@ d) Fill in the ID of the content type ($CTID)
 
 5. Run the script in Powershell (any module). 
 
-![SharePoint Patterns and Practices logo](https://developer.microsoft.com/en-us/sharepoint/blogs/wp-content/uploads/2019/03/SharePoint_PnP_mark_fullcolor.png)
+![example](./Get properties of a single content type by its ID/GetPropertiesWITHOUTExt.PNG)
 
 6. Results can be viewed either in Powershell window or exported to csv as a report:
 
