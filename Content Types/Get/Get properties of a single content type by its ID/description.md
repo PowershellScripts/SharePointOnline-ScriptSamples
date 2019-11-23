@@ -16,7 +16,7 @@ The script is similar to Get all properties of all content types in a SharePoint
 
 + It retrieves a single content type,not all.
 
- 
+ <br/>
 
 <h3>How to use?</h3>
 
@@ -55,15 +55,13 @@ d) Fill in the ID of the content type ($CTID)
  
 
 5. Run the script in Powershell (any module). 
-<img src="../Get properties of a single content type by its ID/GetPropertiesWITHOUTExt.PNG" width="850">
+
 
 6. Results can be viewed either in Powershell window or exported to csv as a report:
-
-
-
+<img src="../Get properties of a single content type by its ID/GetPropertiesWITHOUTExt.PNG" width="850">
 
 
  
 
-Please share your feedback in the Q&A section!
+<b>Please share your feedback in the Q&A section!<\b>
 
