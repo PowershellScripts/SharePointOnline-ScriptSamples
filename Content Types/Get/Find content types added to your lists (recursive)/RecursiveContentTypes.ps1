@@ -1,8 +1,5 @@
-﻿
-
 function Get-SPOContentType
 {
-  
    param (
    [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -26,36 +23,26 @@ function Get-SPOContentType
             
         $ctx.Load($ll.ContentTypes)
 
-        try
-        {
-        $ctx.ExecuteQuery()
+        try{
+        	$ctx.ExecuteQuery()
         }
-        catch
-        {
+        	catch{
+		#do nothing
         }
 
 
-       
-
-
-       
         foreach($cc in $ll.ContentTypes)
      {
-     $obj = New-Object PSObject
-     $obj | Add-Member NoteProperty Title($cc.Name)
-     $obj | Add-Member NoteProperty  List($ll.Title)
-     $obj | Add-Member NoteProperty Web($url)
+	     $obj = New-Object PSObject
+	     $obj | Add-Member NoteProperty Title($cc.Name)
+	     $obj | Add-Member NoteProperty  List($ll.Title)
+	     $obj | Add-Member NoteProperty Web($url)
 
-     Write-Output $obj
+	     Write-Output $obj
      } 
 
-        
-        
 
-        
-        
-     }
-
+   }
 
 
      if($ctx.Web.Webs.Count -gt 0)
@@ -65,21 +52,14 @@ function Get-SPOContentType
         Get-SPOContentType -Username $Username -Url $web.Url -AdminPassword $AdminPassword
        }
       }
-     
       
-        
-        }
+}
   
         
-
-  
-  
-  
-
 
   # Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 
 # Insert the credentials and the name of the admin site
 $Username="admin@tenant.onmicrosoft.com"
