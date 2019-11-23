@@ -18,7 +18,7 @@ The script is similar to Get all properties of all content types in a SharePoint
 
  
 
-How to use?
+<h3>How to use?</h3>
 
 
 
@@ -34,7 +34,7 @@ How to use?
 
  
 
-PowerShell
+```PowerShell
    # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -44,6 +44,7 @@ $Username="admin@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries" 
 $CTID="0x00A7470EADF4194E2E9ED1031B61DA0884"
+ ```
  
 a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
 b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
@@ -60,10 +61,6 @@ d) Fill in the ID of the content type ($CTID)
 
 
 
-
- 
-
- 
 
  
 
