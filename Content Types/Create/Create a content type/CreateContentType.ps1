@@ -11,11 +11,9 @@ param(
   
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-
   $ctx.ExecuteQuery()
 
-  
-
+ 
   $lci =New-Object Microsoft.SharePoint.Client.ContentTypeCreationInformation
   $lci.Description="Description"
   $lci.Name="Powershell Content Type222Task Based"
@@ -35,8 +33,6 @@ param(
      { 
         Write-Host $_.Exception.ToString()
      }
-
-     
 
 }
 
