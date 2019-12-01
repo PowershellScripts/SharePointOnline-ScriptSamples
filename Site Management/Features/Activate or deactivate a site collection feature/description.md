@@ -32,6 +32,6 @@ During its execution the script will inform you, when the feature has been chang
 
 ##### Related scripts
 
-Activate or deactivate a SPO feature for direct subsites in site collection
+Activate or deactivate a SPO feature for direct subsites in site collection [GitHub]( [Technet Gallery]
 
-Activate or deactivate a SPO feature for a single site
+Activate or deactivate a SPO feature for a single site [GitHub](https://github.com/PowershellScripts/AllGalleryScriptsSamples/tree/master/Site%20Management/Features/Activate%20or%20deactivate%20a%20SPO%20feature%20for%20a%20single%20site) [TechnetGallery](https://gallery.technet.microsoft.com/office/Activate-or-deactivate-a-da769f9d)
