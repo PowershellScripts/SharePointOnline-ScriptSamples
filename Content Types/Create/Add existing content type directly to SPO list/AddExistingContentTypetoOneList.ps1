@@ -3,15 +3,14 @@
 param(
 [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle,
-[Parameter(Mandatory=$true,Position=7)]
+	[Parameter(Mandatory=$true,Position=7)]
 		[string]$ContentTypeID
-
 		)
   
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -29,6 +28,7 @@ param(
   $ll.ContentTypesEnabled=$true
  $AddedContentType=$ll.ContentTypes.AddExistingContentType($contentType)
  $ll.Update()
+  
   try
      {
        
