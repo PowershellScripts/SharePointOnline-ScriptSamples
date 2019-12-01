@@ -1,5 +1,3 @@
-﻿
-
 function Set-SPOTheme
 {
   
@@ -30,17 +28,9 @@ function Set-SPOTheme
         Write-Host $ctx.Web.ThemeInfo.ThemeBackgroundImageUri
 $ctx.Web.ApplyTheme($palette,$font,$mynu, $true)
 $ctx.ExecuteQuery()
-
-        
+    
      }
      
-     
-        
-        
-  
-        
-
-  
   
   
 
