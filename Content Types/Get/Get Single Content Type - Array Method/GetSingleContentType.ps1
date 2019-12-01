@@ -1,5 +1,3 @@
-﻿
-
 function Get-SPOContentType
 {
   
@@ -20,22 +18,10 @@ function Get-SPOContentType
 
   $ctx.Load($ctx.Web.ContentTypes)
   $ctx.ExecuteQuery()
- Write-Host $ctx.Web.ContentTypes[0].Name
+  Write-Host $ctx.Web.ContentTypes[0].Name
 
-     
-
-        
-       
-     
-      
-        
-        
   }
         
-
-  
-  
-  
 
 
   # Paths to SDK. Please verify location on your computer.
