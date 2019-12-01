@@ -2,14 +2,8 @@ The script below is described in the article SharePoint Online content types in 
 
  
 
-It retrieves the content types that are hidden. If you want to retrieve the content types that are NOT hidden, modify this line, changing the $true setting to $false:
+It retrieves the content types that belong to a specific group of your choice. In the example given it retrieves the content types belonging to Business Intelligence group.
 
-```PowerShell
-if($cc.Hidden -eq $true)
-```
- 
-
- 
 
 Before running the script, you need to open the file and edit the following lines, entering the Admin username and the site where you want to retrieve the content types. Do not enter the password - you will be prompted for it during the script execution. 
 
