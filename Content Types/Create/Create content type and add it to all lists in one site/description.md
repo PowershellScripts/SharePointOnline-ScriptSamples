@@ -8,15 +8,7 @@ http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-onli
 
  
 
- 
-
- 
-
- 
-
- 
-
-How to use?
+### How to use?
 
 
 
@@ -29,10 +21,7 @@ How to use?
 4. Insert your data in these lines:
 
  
-
- 
-
-PowerShell
+```PowerShell
    # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -45,13 +34,12 @@ $Description="desc"
 $Name="Name of the Content Type2" 
 $ParentContentTypeID="0x01" 
 $Group="List Content Types"
- 
+```
+
 a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
 b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
 c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types
 d) Fill in the properties of the content type.
- 
-
  
 
 5. Run the script in Powershell (any module). 
@@ -59,11 +47,6 @@ d) Fill in the properties of the content type.
 6. When the script has executed, Powershell will show a message Content Type  Name of the Content Type2  has been added to Title of the List.
 
  
+ <br/>
 
- 
-
- 
-
- 
-
-Please share your feedback
+<b>Please share your feedback!</b>
