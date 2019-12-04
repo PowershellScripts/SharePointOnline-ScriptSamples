@@ -42,7 +42,7 @@ Add Content Type to Task Lists
 Add Content Type to Lists with Workflows 
 Add existing content type directly to SPO list using Powershell 
 
-####Getting
+#### Getting
 Get all properties of all content types in a SharePoint site 
 
 Get All Properties of All Content Types (Detailed) 
@@ -67,7 +67,7 @@ Custom Powershell cmdlet Set-SPOList -ContentTypesEnabled
 
 
 
-####Related Scripts
+#### Related Scripts
 SharePoint Online: Check content types added to your lists
 SharePoint Online: Check content types added to your lists (recursive)
 Get a report on lists where a given content type is added
