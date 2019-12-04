@@ -15,7 +15,7 @@ Sealed 	Gets or sets whether the content type can be modified.
 
 Before running the script, you need to open the file and edit the following lines, entering the Admin username, the site where you want to retrieve the content types, and the id of the content type. Do not enter the password - you will be prompted for it during the script execution. 
 
-PowerShell
+```PowerShell
   # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -24,7 +24,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="admin@tenant.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/powie1"
- 
+``` 
  
 
  
