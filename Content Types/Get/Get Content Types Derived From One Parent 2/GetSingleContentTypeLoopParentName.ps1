@@ -1,10 +1,5 @@
-﻿
-
-
-
 function Get-SPOContentType
 {
-  
    param (
    [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -36,20 +31,11 @@ function Get-SPOContentType
         {
           Write-Host $cc.Name
         }
-     }
-
-        
-       
-     
-      
-        
+     } 
         
   }
         
 
-  
-  
-  
 
 
   # Paths to SDK. Please verify location on your computer.
