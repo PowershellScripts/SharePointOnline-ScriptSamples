@@ -1,16 +1,13 @@
-﻿
-
 function Set-SPOContentType
 {
-  
    param (
-   [Parameter(Mandatory=$true,Position=1)]
+   	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-[Parameter(Mandatory=$true,Position=4)]
+	[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle
 		)
   
@@ -19,31 +16,21 @@ function Set-SPOContentType
   $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
   $ctx.Load($ll)
   $ctx.Load($ll.ContentTypes)
-   $ctx.ExecuteQuery()
+  $ctx.ExecuteQuery()
 
 
   foreach($cc in $ll.ContentTypes)
-  {
-          
+  {     
      Write-Host $cc.DisplayFormTemplateName
-          $cc.DisplayFormTemplateName="DocumentLibraryForm"
-           $cc.Update($false)
-            $ctx.ExecuteQuery()
-      
-     
-}
-        
-      
-     
-      $ctx.Dispose()
-        
-        
+     $cc.DisplayFormTemplateName="DocumentLibraryForm"
+     $cc.Update($false)
+     $ctx.ExecuteQuery()  
   }
         
-
-  
-  
-  
+      $ctx.Dispose()
+   
+}
+        
 
 
   # Paths to SDK. Please verify location on your computer.
@@ -56,8 +43,6 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $AdminUrl="https://tenant.sharepoint.com/sites/powie1"
 $ListTitle="notf--ked"
         
-
-
 
 Set-SPOContentType -Username $Username -AdminPassword $AdminPassword -Url $AdminUrl -ListTitle $ListTitle
 
