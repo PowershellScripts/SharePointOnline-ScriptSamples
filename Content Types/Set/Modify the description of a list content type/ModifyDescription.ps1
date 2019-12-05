@@ -33,8 +33,6 @@ function Set-SPOContentType
 
      foreach($cc in $ll.ContentTypes)
      {
-         
-        
         if($cc.Name -eq $ContentTypeName)
         {
           Write-Host $cc.Name
@@ -45,10 +43,6 @@ function Set-SPOContentType
         
      }
      
-        
-       
-     
-      
         
         
   }
