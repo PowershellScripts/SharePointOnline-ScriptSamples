@@ -374,7 +374,7 @@ The following properties are retrieved:
 
  
 
-C#
+```C#
 static void Main(string[] args) 
         { 
             Console.Title = "Check User Profiles"; 
@@ -394,5 +394,5 @@ static void Main(string[] args)
             Console.WriteLine("\n\nDone. Press key to exit."); 
             Console.ReadKey(); 
         }
- 
+``` 
 It would not exist without Geetanjali's inspiring article: http://social.technet.microsoft.com/wiki/contents/articles/24627.sharepoint-online-export-user-profile-properties-using-csom.aspx
