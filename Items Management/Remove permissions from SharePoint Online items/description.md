@@ -28,14 +28,13 @@ Before you run it, you have to modify the last line of the script!
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
  
- 
- 
- 
+
 Remove-SPOListAllItemsInheritance -Username "trial@trialtrial123.onmicrosoft.com" -Url "https://trialtrial123.sharepoint.com" -AdminPassword "Pass" -ListTitle "chc1" 
+```
 Enter your credentials and the site where you want to modify the inheritance. 
 Verify if the SharePoint Online SDK is installed in the same location on your computer
