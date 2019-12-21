@@ -21,10 +21,10 @@ The script requires SharePoint Online SDK. Open the file and refer the appropria
 
  
 
-PowerShell
+```PowerShell
   #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Taxonomy.dll"   
- 
+``` 
 The script can be adapted to create multiple terms for test purposes.
