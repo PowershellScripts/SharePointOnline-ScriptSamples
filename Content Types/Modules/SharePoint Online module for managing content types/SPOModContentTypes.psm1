@@ -1,4 +1,4 @@
-﻿function New-SPOListContentType
+function New-SPOListContentType
 {
 param(
 [Parameter(Mandatory=$false,Position=4)]
