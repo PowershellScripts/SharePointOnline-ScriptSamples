@@ -1,8 +1,5 @@
-﻿
-
 function Set-SPOContentType
-{
-  
+{  
    param (
    [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -24,6 +21,7 @@ function Set-SPOContentType
   $ctx.Load($ll.ContentTypes)
   $ctx.ExecuteQuery()
   $field=$ctx.Web.Fields.GetByInternalNameOrTitle($SiteColumn)
+  
   foreach($cc in $ll.ContentTypes)
   {
     
@@ -35,17 +33,11 @@ function Set-SPOContentType
    }
      
 
-
-        
-
-     
       $ctx.Dispose()
-      } 
+ } 
 
   
   
-  
-
 
   # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
