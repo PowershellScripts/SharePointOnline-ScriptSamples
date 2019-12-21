@@ -91,6 +91,8 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 # Paths to SDK. Please verify location on your computer.    
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
+```
+
 Under Windows Server 2012 R2 you may need to use:
 
 <C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI>
