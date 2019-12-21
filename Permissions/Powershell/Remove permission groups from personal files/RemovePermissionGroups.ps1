@@ -1,5 +1,3 @@
-﻿
-
 function Remove-SPOPermissionGroup
 {
   
