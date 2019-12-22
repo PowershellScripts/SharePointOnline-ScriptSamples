@@ -49,6 +49,6 @@ into:
  4. If you need to assign administrator's permissions to ODB, you can use the following script:
      http://sharepoint.stackexchange.com/questions/138562/add-personal-site-collection-administrator-programmatically
 
-
+ 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>
