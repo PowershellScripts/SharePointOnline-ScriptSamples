@@ -1,12 +1,9 @@
-﻿
-
 function Set-SPOUserRegionalSettings
-{
-  
+{  
    param (
-   [Parameter(Mandatory=$true,Position=1)]
+   	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
@@ -21,18 +18,15 @@ function Set-SPOUserRegionalSettings
   $ctx.Load($ctx.Web)
   $ctx.Load($ctx.Web.RegionalSettings.TimeZone)
   $ctx.Load($ctx.Web.RegionalSettings.TimeZones)
-   $ctx.ExecuteQuery()    
+  $ctx.ExecuteQuery()    
 
 
    $ctx.Web.RegionalSettings.TimeZone=$ctx.Web.RegionalSettings.TimeZones.GetbyID($TimeZoneID)
-$ctx.Web.Update()
-$ctx.ExecuteQuery()
+   $ctx.Web.Update()
+   $ctx.ExecuteQuery()
 
-
-     }
+}
      
- 
-
 
   # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.Client\v4.0_16.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.dll"
@@ -48,17 +42,15 @@ $TimeZoneID=63
 
 foreach($user in $users)
 {
+	  if($user.LoginName.Contains('@'))
+	  {
+	    $persweb=$user.LoginName.Replace(".","_").Replace("@","_")
+	    $persweb=$myhost+"/personal/"+$persweb
+	    Write-Host $persweb
 
+	    $AdminUrl=$persweb
 
-  if($user.LoginName.Contains('@'))
-  {
-    $persweb=$user.LoginName.Replace(".","_").Replace("@","_")
-    $persweb=$myhost+"/personal/"+$persweb
-    Write-Host $persweb
-
-    $AdminUrl=$persweb
-
-
-   Set-SPoUserRegionalSettings -Username $Username -AdminPassword $AdminPassword -Url $AdminUrl -TimeZoneID $TimeZoneID
-  }
+	    Set-SPoUserRegionalSettings -Username $Username -AdminPassword $AdminPassword -Url $AdminUrl -TimeZoneID $TimeZoneID
+	  }
 }
+
