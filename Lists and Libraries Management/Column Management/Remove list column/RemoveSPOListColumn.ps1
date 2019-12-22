@@ -6,7 +6,7 @@
 .NOTES  
     Author     : Arleta Wanat @ 2014
 .LINK  
-http://social.technet.microsoft.com/wiki/contents/articles/32403.sharepoint-online-spomod-new-spolistcolumn.aspx
+
 #>
 
 function Remove-SPOListColumn
