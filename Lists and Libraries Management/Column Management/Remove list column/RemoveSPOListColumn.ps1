@@ -1,21 +1,31 @@
-﻿function Remove-SPOListColumn
+<#  
+.SYNOPSIS  
+     Removes a column from a SharePoint Online list or library 
+.DESCRIPTION  
+	A short script to remove a column SharePoint Online library.
+.NOTES  
+    Author     : Arleta Wanat @ 2014
+.LINK  
+http://social.technet.microsoft.com/wiki/contents/articles/32403.sharepoint-online-spomod-new-spolistcolumn.aspx
+#>
+
+function Remove-SPOListColumn
 {
 
 param (
         [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle,
-[Parameter(Mandatory=$false,Position=5)]
+	[Parameter(Mandatory=$false,Position=5)]
 		[string]$FieldTitle
-
 		)
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
@@ -24,9 +34,9 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $List=$ctx.Web.Lists.GetByTitle($ListTitle)
   $ctx.ExecuteQuery()
   $Field=$List.Fields.GetByTitle($FieldTitle)
-   $ctx.ExecuteQuery()
-   $Field.DeleteObject()
-   $ctx.ExecuteQuery()
+  $ctx.ExecuteQuery()
+  $Field.DeleteObject()
+  $ctx.ExecuteQuery()
 
 }
 
