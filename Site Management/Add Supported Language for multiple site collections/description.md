@@ -23,15 +23,20 @@ $adminUrl="https://tenant-admin.sharepoint.com"
 $lcid=1031
 ```
 $lcid refers to Locale ID. A list of Microsoft-assigned locale ids can be found here:https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx 
-The script can be modified.
+
+
+### The script can be modified.
+
 1. If you want to add language only for a few site collections/subsites, enter the urls in the line below instead of Get-SPOSite cmdlet:
 ```PowerShell
 $sites=(get-spoSite).Url
 ``` 
+ 
  2. If you want to add 2 or more languages, enter more AddSupportedUILanguage() methods:
 ```PowerShell
    $ctx.Web.AddSupportedUILanguage($lcid)
 ```   
+ 
  3. If you want to remove a language instead of adding it, modify the following line:
 ```PowerShell
    $ctx.Web.AddSupportedUILanguage($lcid)
@@ -40,7 +45,10 @@ into:
 ```PowerShell
    $ctx.Web.RemoveSupportedUILanguage($lcid)
 ```   
+ 
  4. If you need to assign administrator's permissions to ODB, you can use the following script:
      http://sharepoint.stackexchange.com/questions/138562/add-personal-site-collection-administrator-programmatically
 
-Enjoy and please share feedback!
+
+
+<b>Enjoy and please share feedback!</b>
