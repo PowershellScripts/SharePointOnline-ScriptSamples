@@ -1,4 +1,15 @@
-﻿function New-SPOListColumn
+<#  
+.SYNOPSIS  
+     Adds a column with file extensions to a SharePoint Online library 
+.DESCRIPTION  
+	A short script to add a column with file extensions to a SharePoint Online library.
+.NOTES  
+    Author     : Arleta Wanat @ 2016
+.LINK  
+http://social.technet.microsoft.com/wiki/contents/articles/32403.sharepoint-online-spomod-new-spolistcolumn.aspx
+#>
+
+function New-SPOListColumn
 {
 
 <#
@@ -302,6 +313,7 @@ $listID="1979CC10-3E5D-4D99-9BE6-8BE6229E4E13"
 $newColumnName="Extension"
 
 Connect-SPOCSOM -Username $uss  -AdminPassword $pasworde -Url "https://tenant.sharepoint.com/sites/powie3"
+
 function Work()
 {
 BEGIN{
