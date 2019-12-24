@@ -51,4 +51,5 @@ Get all properties of all content types in a SharePoint site
 
  
 
-<b>Please share your feedback!</b>
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
