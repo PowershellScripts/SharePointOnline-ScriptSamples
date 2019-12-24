@@ -32,5 +32,5 @@ $url="https://tenant.sharepoint.com/sites/invoices"
 <img src="../Get-SPOListTemplates to retrieve list templates on a SharePoint Online site/Get-SPOListTemplate.PNG" width="850">
 
 
-<br/><br/> 
-<b>Please share your feedback!</b>
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
