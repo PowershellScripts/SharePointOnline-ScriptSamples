@@ -1,45 +1,50 @@
-﻿function Get-SPOListTemplate
+<# 
+.SYNOPSIS  
+    A short script to retrieve default list templates from a given SharePoint Online site. 
+    It does NOT retrieve custom list templates. 
+.DESCRIPTION  
+    A short script to retrieve default list templates from a given SharePoint Online site. 
+    It does NOT retrieve custom list templates. 
+.NOTES  
+    Author     : Arleta Wanat @ 2015 
+    Requires   : SharePoint Online SDK  
+.LINK  
+
+#>
+
+function Get-SPOListTemplate
 {
+	 $ctx.Load($ctx.Web.ListTemplates)
+	 $ctx.ExecuteQuery()
 
- $ctx.Load($ctx.Web.ListTemplates)
- $ctx.ExecuteQuery()
-
- foreach($lt in $ctx.Web.ListTemplates){
- Write-Output $lt
- }
+	 foreach($lt in $ctx.Web.ListTemplates){
+	 	Write-Output $lt
+ 	  }
 }
 
 
 function Connect-SPOCSOM
 {
-
-<#
-	.link
+<#	.link
 	http://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-cmdlets-resources.aspx
-
   #>
 
  param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-
-
-)
+	)
 
   $password = Read-Host "Password" -AsSecureString
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.ExecuteQuery()  
-$global:ctx=$ctx
+  $global:ctx=$ctx
 }
 
 
 $global:ctx
-
-
-
 
 
 
