@@ -26,10 +26,10 @@ $url="https://tenant.sharepoint.com/sites/invoices"
 
  
 
-Expected results
+### Expected results
 
  
-
+<img src="../Get-SPOListTemplates to retrieve list templates on a SharePoint Online site/Get-SPOListTemplate.PNG" width="850">
 
 
  
