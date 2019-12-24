@@ -12,16 +12,16 @@ Retrieves all files from a folder.  Not recursive.
 
 The cmdlet is using the following parameters:
 
- [string]$Username
+```powershell [string]$Username```
 The string specifies admin of the site
 
-[string]$Url
+```powershell[string]$Url```
 Specifies the url of the parent site
 
-[string]$AdminPassword,       
+```powershell[string]$AdminPassword```       
 Admin's password
 
-[string]$ServerRelativeUrl
+```powershell[string]$ServerRelativeUrl```
 Specifies the relative url of the folder, eg. "/Library/FolderName"
 
  
@@ -33,15 +33,13 @@ Specifies the relative url of the folder, eg. "/Library/FolderName"
  
 
 Get all files from a folder and their properties
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" 
-
-
+```
 
   <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
 
- 
 
- 
 
  
 Get all files from a folder and list their names and dates of creation
@@ -106,4 +104,5 @@ Under Windows Server 2012 R2 you may need to use:
 
  
 
-Let me know about your experience in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
