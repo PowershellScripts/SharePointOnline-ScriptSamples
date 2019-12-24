@@ -7,7 +7,7 @@ Powershell Module with a new cmdlet:
 Retrieves all files from a folder.  Not recursive.
 
  
-
+<br/>
 <h3>Parameters</h3>
 
 The cmdlet is using the following parameters:
@@ -33,7 +33,7 @@ Admin's password
 Specifies the relative url of the folder, eg. "/Library/FolderName"
 
 
-
+<br/><br/>
 <h3>Examples</h3>
 
 Get all files from a folder and their properties
@@ -45,7 +45,7 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
 
 
 
- 
+--- 
 Get all files from a folder and list their names and dates of creation
 ```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated
@@ -57,7 +57,7 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
  
-
+---
 Get all files from a folder and export their names and dates of creation to a CSV file
 ```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated | export-csv c:\filename.csv
@@ -73,7 +73,7 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
  
-
+---
 If you want to get all files from all the folders, you can use Get-SPOFolder cmdlet to retrieve the folders and then for each folder retrieve the files.
 
  
@@ -81,7 +81,7 @@ If you want to get all files from all the folders, you can use Get-SPOFolder cmd
  
 
  
-
+<br/>
 <h3>Requirements</h3>
 
  
