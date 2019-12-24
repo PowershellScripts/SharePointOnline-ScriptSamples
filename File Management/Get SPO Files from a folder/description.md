@@ -12,25 +12,29 @@ Retrieves all files from a folder.  Not recursive.
 
 The cmdlet is using the following parameters:
 
-```powershell [string]$Username```
+```powershell 
+[string]$Username
+```
 The string specifies admin of the site
 
-```powershell[string]$Url```
+```powershell
+[string]$Url
+```
 Specifies the url of the parent site
 
-```powershell[string]$AdminPassword```       
+```powershell
+[string]$AdminPassword
+```       
 Admin's password
 
-```powershell[string]$ServerRelativeUrl```
+```powershell
+[string]$ServerRelativeUrl
+```
 Specifies the relative url of the folder, eg. "/Library/FolderName"
 
- 
 
- 
 
 <h3>Examples</h3>
-
- 
 
 Get all files from a folder and their properties
 ```powershell
@@ -43,8 +47,9 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
 
  
 Get all files from a folder and list their names and dates of creation
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated
-
+```
 
 
  
@@ -54,8 +59,9 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
 Get all files from a folder and export their names and dates of creation to a CSV file
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated | export-csv c:\filename.csv
-
+```
  
 
 
@@ -86,19 +92,10 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 
 ```powershell
 # Paths to SDK. Please verify location on your computer.    
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"     
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
 ```
 
-Under Windows Server 2012 R2 you may need to use:
-
-<C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI>
-
- 
-
- 
-
- 
 
  
 
