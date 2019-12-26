@@ -1,0 +1,11 @@
+A short console application that enables versioning for all the libraries and lists in the whole tenant.
+
+ 
+
+It uses recurrence to find all sites in all site collections and then goes through all the lists.
+
+For some lists, enabling version may not be possible and you will receive a notification of that.
+
+At the end, the application generates a report, which you view in Excel.
+
+ 
