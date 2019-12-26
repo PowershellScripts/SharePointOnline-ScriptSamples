@@ -1,4 +1,4 @@
-This is script is less optimal than this one, using slightly different methods, but allows for more modifications if you feel like playing with it.
+This is script is less optimal than [this one](https://github.com/PowershellScripts/AllGalleryScriptsSamples/tree/master/Lists%20and%20Libraries%20Management/Copy%20folder%20structure%20from%20one%20library%20to%20another), using slightly different methods, but allows for more modifications if you feel like playing with it.
 
 If your site and folder structure is small, you won't feel the difference between the 2.
 
