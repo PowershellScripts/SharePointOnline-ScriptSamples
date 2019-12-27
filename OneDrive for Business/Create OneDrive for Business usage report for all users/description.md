@@ -38,5 +38,5 @@ $mysiteHost="https://tenant-my.sharepoint.com"
 
  
  <br/><br/>
-Acknowledgement:
+### Acknowledgement:
 The script is using Invoke-LoadMethod published here, without which it could not proceed. The method was created and belongs to a brilliant SharePointer and Guru, Vadim Gremyachev.
