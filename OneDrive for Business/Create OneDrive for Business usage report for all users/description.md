@@ -13,7 +13,6 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 ``` 
  
 
- 
 
 ### How to use?
 1. Download the script and open it in ISE or NotePad.
@@ -38,6 +37,6 @@ $mysiteHost="https://tenant-my.sharepoint.com"
  
 
  
-
+ <br/><br/>
 Acknowledgement:
 The script is using Invoke-LoadMethod published here, without which it could not proceed. The method was created and belongs to a brilliant SharePointer and Guru, Vadim Gremyachev.
