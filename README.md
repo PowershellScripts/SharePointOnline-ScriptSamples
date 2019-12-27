@@ -6,7 +6,7 @@ Over 200 SharePoint Online scripts
 * extra settings not available via UI
 * bulk updates
 
-The scripts use Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019 - the transfer is in progress.
+The scripts use Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019 - the transfer is in progress and the documentation/description is still taking shape.
 
 Most of them were tested and verified by hundreds and thousands of users of Technet Gallery. 
 
