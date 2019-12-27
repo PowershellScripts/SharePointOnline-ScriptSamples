@@ -1,10 +1,10 @@
 # AllGalleryScriptsSamples
 
 Over 200 SharePoint Online scripts 
-*fixing issues
-*providing reports 
-*extra settings not available via UI
-*bulk updates
+* fixing issues
+* providing reports 
+* extra settings not available via UI
+* bulk updates
 
 The scripts use Powershell, C#, CSOM and REST.  
 
