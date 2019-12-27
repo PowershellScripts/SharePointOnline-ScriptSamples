@@ -8,6 +8,7 @@
   $ctx.ExecuteQuery()
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
+  
   foreach( $ll in $ctx.Web.Lists)
   {
     $ctx.Load($ll.RootFolder)
