@@ -4,18 +4,13 @@ The script is still in testing phase. Please beware of the side effects
 
  
 
-Requirements
+### Requirements
  
-
-The following script requires:
-
-SharePoint Online SDK
+The following script requires SharePoint Online SDK.
 
  
 
- 
-
-How to use?
+### How to use?
 1. Open the following location:
 
 "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\"
@@ -32,12 +27,10 @@ Skip the next step and go to Step 3.
 
 2. If the dlls are not in this location, find them, open the file with the script and correct the following paths to the locations on your computer:
 
- 
-
-PowerShell
+```PowerShell
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
- 
+``` 
  
 3. Run the script. You will be asked for credentials and the group name during the script execution.
 
