@@ -38,7 +38,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 
 5. For the personal sites where the permission group does not exist you will receive an error:
 
-
+<img src="../Remove permission groups from personal files/SolutionForPropic.PNG" width="850">
 
  
 
