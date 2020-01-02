@@ -2,7 +2,7 @@ A script to copy folder structure from a library in one site collection/subsite 
 
  
 
-How to use?
+### How to use?
 
 1. Download the script and open the file (you can use Powershell ISE or e.g. NotePad).
 

@@ -1,6 +1,6 @@
 An awesome, amazing, long-awaited console application for changing default language.
 
- 
+ <br/><br/>
 
 Have you ever created your tenant in the wrong language? Need to change it for the users?
 
@@ -10,11 +10,11 @@ Newsfeed>About me>Edit my profile> ... (three dots)>Language and region>Add the 
 
 OneDrive>Gear icon>Site settings>Language settings>Mark alternate language
 
- 
+  <br/><br/>
 
 It's cool and awesome and flexible. But what if you have a thousand users? Are you going to perform those steps for all of them? There is no out-of-the-box solution. Neither via User Interface or Powershell.
 
- 
+  <br/><br/>
 
 Here it is:
 
@@ -31,7 +31,7 @@ At the end the report will contain all users who did not get their language chan
 List of language ids
 
  
-
+ <br/><br/>
  
 
 Instructions
@@ -48,7 +48,7 @@ Instructions
 
  
 
- 
+  <br/><br/>
 
 Acknowledgements:
 

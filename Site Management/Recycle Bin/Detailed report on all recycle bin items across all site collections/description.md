@@ -1,6 +1,6 @@
 The script loops through all site collections, their subsites and retrieves all items from the recycle bin. The items can be seen in the console window or you can create an Excel report
 
-* doesn't apply to group site collections or personal sites
+*doesn't apply to group site collections or personal sites
 
  
 
@@ -52,7 +52,7 @@ Before running the script enter correct paths to the SDK and your tenant data:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -61,7 +61,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="user@domain.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://domain-admin.sharepoint.com"
+``` 
  
- 
-
-Let me know about your experience in the Q&A section!
+<br/><br/>
+<b>Let me know about your experience in the Q&A section!</b>
