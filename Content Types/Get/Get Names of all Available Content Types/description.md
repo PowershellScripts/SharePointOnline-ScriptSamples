@@ -74,6 +74,6 @@ Get All Properties of All Content Types in All Lists (Detailed) across one site
 Get properties of a single content type by its ID  
 
 
-
 <br/><br/>
 <b>Enjoy and please share feedback!</b>
+
