@@ -20,7 +20,7 @@ How to use?
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -29,7 +29,7 @@ $pass=Read-Host "Enter Password: " -AsSecureString
 $site="https://trial890.sharepoint.com/sites/teamsitewithlibraries" 
 $fileURL="/sites/TeamsiteWithLibraries/tescik2/Presentation.pptx" 
 $libraryTitle="tescik2" 
- 
+``` 
  
 
 6. Save and run the script. During execution it will ask you for a password.
@@ -58,10 +58,10 @@ Of course you can modify or expand the script. E.g. adding more values to these 
 
  
 
-PowerShell
+```PowerShell
 $reports=@("Reports","Balance Sheets","Investments") 
   $report=@("Report","Balance Sheet","Investment") 
- 
+``` 
 Feel free also to adjust the naming to fit your scenario, e.g. $reports=@("Beaches","Tropical Islands","Seas","Yachts")  :) 
 
  
