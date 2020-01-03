@@ -1,5 +1,11 @@
 ﻿# The following script permanently removes all items from a site collection recycle bins.
 # The items cannot be retrieved afterwards with Powershell, user interface or any programmatic way.
+<# 
+.DESCRIPTION
+The script removes permanently and irrevocably items from the specified site recycle bin and
+its corresponding site collection recycle bin. The data cannot be retrieved afterwards. 
+Test the script before using on production environment. 
+#>
 
 function Remove-DeletedItems
 {
