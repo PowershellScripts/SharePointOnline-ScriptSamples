@@ -12,7 +12,7 @@ http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-onli
 
  
 
-How to use?
+### How to use?
 
 
 
@@ -28,7 +28,7 @@ How to use?
 
  
 
-PowerShell
+```PowerShell
    # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -37,7 +37,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="admin@tenant.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries"
- 
+``` 
 a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
 b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
 c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types
@@ -56,8 +56,5 @@ d) Fill in the properties of the content type.
 
  
 
-
-
- 
-
-Please share your feedback in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

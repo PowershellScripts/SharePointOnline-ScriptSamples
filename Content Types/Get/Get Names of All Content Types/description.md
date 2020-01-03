@@ -13,7 +13,7 @@ Before running, don't forget to open the file and enter your data:
 
  
 
-PowerShell
+```PowerShell
   # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -22,7 +22,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="admin@tenant.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries" 
- 
+``` 
  
 
 The results can be displayed in the Powershell console:
@@ -72,3 +72,8 @@ Get all properties of all content types in a SharePoint site
 Get All Properties of All Content Types (Detailed)  
 Get All Properties of All Content Types in All Lists (Detailed) across one site  
 Get properties of a single content type by its ID  
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

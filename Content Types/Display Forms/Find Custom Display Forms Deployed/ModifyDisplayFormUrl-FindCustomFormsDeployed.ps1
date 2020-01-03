@@ -1,6 +1,4 @@
-﻿
-
-function Set-SPOContentType
+﻿function Set-SPOContentType
 {
   
    param (
