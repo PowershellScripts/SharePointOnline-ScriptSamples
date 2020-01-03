@@ -30,3 +30,5 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries/subsite"
  
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

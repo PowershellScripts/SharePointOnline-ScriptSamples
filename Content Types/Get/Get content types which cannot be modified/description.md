@@ -73,3 +73,8 @@ SharePoint Online: Check content types added to your lists (recursive)
 Get a report on lists where a given content type is added
 SharePoint Online: Remove a content type from all lists in a site collection
 Compare Web.AvailableContentTypes vs Web.ContentTypes
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

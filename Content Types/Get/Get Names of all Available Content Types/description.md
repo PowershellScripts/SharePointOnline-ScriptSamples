@@ -76,3 +76,4 @@ Get properties of a single content type by its ID
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>
+

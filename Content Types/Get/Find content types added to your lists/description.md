@@ -49,3 +49,5 @@ c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter 
 
 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

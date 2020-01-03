@@ -28,3 +28,7 @@ $Username="admin@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/powie1"
 ``` 
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

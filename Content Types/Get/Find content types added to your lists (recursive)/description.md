@@ -28,10 +28,6 @@ when trying to remove a content type.
 
 4. Insert your data in these lines:
 
- 
-
- 
-
 ```PowerShell
  # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
@@ -62,3 +58,5 @@ You can also export it to CSV:
  
 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
