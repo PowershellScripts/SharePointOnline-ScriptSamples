@@ -4,14 +4,7 @@ Please test the script in test environment before using it in production.
 
  
 
- 
-
- 
-
  The script requires SharePoint Online SDK.  Make sure that the paths below point to locations on your computer:
-
- 
-
 ```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
