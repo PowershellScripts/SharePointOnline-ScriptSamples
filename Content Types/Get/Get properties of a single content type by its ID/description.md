@@ -63,5 +63,5 @@ d) Fill in the ID of the content type ($CTID)
 
  
 
-<b>Please share your feedback in the Q&A section!<\b>
+<b>Please share your feedback in the Q&A section! 
 
