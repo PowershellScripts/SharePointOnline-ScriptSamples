@@ -29,3 +29,8 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $AdminUrl="https://tenant.sharepoint.com/sites/contenttypehub"
 ``` 
 You can export the results to the CSV or .txt file.
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
