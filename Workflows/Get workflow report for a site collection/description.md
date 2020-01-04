@@ -24,7 +24,7 @@ As the script runs you will see how many workflows each list has:
  
 
 
-<img src="../Get workflow report for a site collection/wf1.PNG" width="850">
+<img src="../Get workflow report for a site collection/wf1.png" width="850">
  
 
  
