@@ -43,8 +43,6 @@ $AdminUrl="https://tenant.sharepoint.com/sites/powie2"
 
  
 
-Please share your feedback!
-
- 
-
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
  

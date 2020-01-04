@@ -1,10 +1,7 @@
 Powershell script that removes a content type by its id.
 
-Powershell script that removes a content type by its id.
 
- 
-
-How to find the content type id?
+## How to find the content type id?
 
 1. Navigate to Site>Site settings>Content types>Click on the content type you want to remove.
 
@@ -30,7 +27,7 @@ If you are struggling with removing particularly stubborn content type, the scri
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -43,13 +40,14 @@ $ContentTypeID="0x00A7470EADF4194E2E9ED1031B61DA0884030065B86AF41E46E8408DF47ED4
  
  
 Remove-Contenttype -Username $Username -AdminPassword $AdminPassword -Url $AdminUrl -ContentTypeID $ContentTypeID
- 
- 
-
+``` 
  
 
  
 
-Let me know about your experience in the Q&A section!
+ 
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
 
  

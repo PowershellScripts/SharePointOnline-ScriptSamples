@@ -44,4 +44,5 @@ For an installation guide on how to download prerequisites, install and use the 
 
  
 
-If you have any questions, do not hesitate to
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

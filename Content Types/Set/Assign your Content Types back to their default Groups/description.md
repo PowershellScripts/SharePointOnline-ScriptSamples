@@ -39,4 +39,5 @@ $AdminUrl="https://trial345.sharepoint.com/sites/contenttypehub"
 
  
 
-Please share your feedback!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
