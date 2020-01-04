@@ -37,3 +37,5 @@ $ContentTypeName="From Powershell directly to list"
 ```        
  
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
