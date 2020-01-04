@@ -1,30 +1,28 @@
 ﻿function Get-Workflows
 {
 param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=4)]
 		[string]$CSVPath
 )
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
   $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
- $ctx.Load($ctx.Web)
+  $Lists=$ctx.Web.Lists
+  $ctx.Load($ctx.Web)
   $ctx.Load($ctx.Web.Webs)
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+  $ctx.Load($Lists)
+  $ctx.ExecuteQuery()
 
-foreach ( $ll in $Lists)
+  foreach ( $ll in $Lists)
             {
-
-                
                 $workflo = $ll.WorkflowAssociations;
                 $ctx.Load($workflo);
                 try
