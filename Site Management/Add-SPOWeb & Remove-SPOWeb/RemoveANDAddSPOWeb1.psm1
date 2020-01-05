@@ -1,12 +1,9 @@
-﻿
-
-
 function Remove-SPOWeb
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$AdminPassword,
