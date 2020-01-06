@@ -53,4 +53,5 @@ d) Fill in the properties of the content type.
 
  
 
-<b>Please share your feedback!<b>
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

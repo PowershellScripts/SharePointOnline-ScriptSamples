@@ -1,4 +1,4 @@
-﻿
+# Powershell script sets the .Crawl property of a list to $false or $true
 #
 # Created by Arleta Wanat, 2015 
 #
@@ -12,7 +12,7 @@ param (
 		[bool]$NoCrawl  
 		)
 
-$ll=$ctx.Web.Lists.GetByTitle($ListName)
+    $ll=$ctx.Web.Lists.GetByTitle($ListName)
     $ll.NoCrawl = $NoCrawl
     $ll.Update()
 
@@ -33,7 +33,6 @@ $ll=$ctx.Web.Lists.GetByTitle($ListName)
 
 
 
-
 function Connect-SPOCSOM
 {
  param (
@@ -46,11 +45,11 @@ function Connect-SPOCSOM
 )
 
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.ExecuteQuery()  
-$global:ctx=$ctx
+  $global:ctx=$ctx
 }
 
 

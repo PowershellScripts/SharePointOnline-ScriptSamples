@@ -15,15 +15,13 @@ param (
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
   $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
- $ctx.Load($ctx.Web)
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+  $Lists=$ctx.Web.Lists
+  $ctx.Load($ctx.Web)
+  $ctx.Load($Lists)
+  $ctx.ExecuteQuery()
 
 foreach ( $ll in $Lists)
             {
-
-                
                 $workflo = $ll.WorkflowAssociations;
                 $ctx.Load($workflo);
                 try

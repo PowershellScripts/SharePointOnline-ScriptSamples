@@ -7,47 +7,49 @@ Powershell Module with a new cmdlet:
 Retrieves all files from a folder.  Not recursive.
 
  
-
+<br/>
 <h3>Parameters</h3>
 
 The cmdlet is using the following parameters:
 
- [string]$Username
+```powershell 
+[string]$Username
+```
 The string specifies admin of the site
 
+```powershell
 [string]$Url
+```
 Specifies the url of the parent site
 
-[string]$AdminPassword,       
+```powershell
+[string]$AdminPassword
+```       
 Admin's password
 
+```powershell
 [string]$ServerRelativeUrl
+```
 Specifies the relative url of the folder, eg. "/Library/FolderName"
 
- 
 
- 
-
+<br/><br/>
 <h3>Examples</h3>
 
- 
-
 Get all files from a folder and their properties
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" 
-
-
+```
 
   <img src="../Module for checking in and checking out the files/Filefile1.PNG" width="850">
 
- 
 
- 
 
- 
-
+--- 
 Get all files from a folder and list their names and dates of creation
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated
-
+```
 
 
  
@@ -55,10 +57,11 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
  
-
+---
 Get all files from a folder and export their names and dates of creation to a CSV file
+```powershell
 Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/fff" | select name, timecreated | export-csv c:\filename.csv
-
+```
  
 
 
@@ -70,7 +73,7 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
  
-
+---
 If you want to get all files from all the folders, you can use Get-SPOFolder cmdlet to retrieve the folders and then for each folder retrieve the files.
 
  
@@ -78,7 +81,7 @@ If you want to get all files from all the folders, you can use Get-SPOFolder cmd
  
 
  
-
+<br/>
 <h3>Requirements</h3>
 
  
@@ -89,20 +92,14 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 
 ```powershell
 # Paths to SDK. Please verify location on your computer.    
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
-Under Windows Server 2012 R2 you may need to use:
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"     
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  ```
+```
 
-<C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI>
-
- 
 
  
 
  
 
- 
-
- 
-
-Let me know about your experience in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

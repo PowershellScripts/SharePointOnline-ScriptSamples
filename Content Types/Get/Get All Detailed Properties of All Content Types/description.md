@@ -58,6 +58,5 @@ d) Fill in the properties of the content type.
 
 
 
- 
-
-Please share your feedback in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

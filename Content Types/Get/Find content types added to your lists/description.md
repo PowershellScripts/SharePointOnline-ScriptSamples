@@ -3,7 +3,7 @@ A short script to find all content types added to all of your lists in a given s
  
 
 Very useful if you receive an error message:
- <img src="../Find content types added to your lists/Error (1).PNG" width="850">
+ <img src="../Find content types added to your lists/Error.PNG" width="850">
 
 when trying to remove a content type.
 
@@ -49,3 +49,5 @@ c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter 
 
 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

@@ -63,3 +63,6 @@ Disable or enable attachments to list items using Powershell
 Change search setting for all lists in a site using CSOM and Powershell
 
  
+ 
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
