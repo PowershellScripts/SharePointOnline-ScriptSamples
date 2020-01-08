@@ -12,7 +12,7 @@ Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.On
 Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.Online.SharePoint.PowerShell\Microsoft.SharePoint.Client.Runtime.dll" 
 ``` 
  
-
+<br/>
 You need to enter your credentials and the page relative url:
 
  
