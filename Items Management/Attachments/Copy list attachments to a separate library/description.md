@@ -36,14 +36,20 @@ How to use?
 
 2. Enter correct paths to the SDK:
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+``` 
 3. Enter credentials and list data and save the file:
  
-PowerShell
+```PowerShell
 Connect-SPOCSOM -Username "user@tenant.onmicrosoft.com" -Url "https://tenant.sharepoint.com/sites/powie4"  
  
   Get-SPOListItems -ListTitle withatt -IncludeAllProperties $true -Recursive -DestinationLibrary "/sites/powie4/Destiny2/" -Overwrite $true
+```  
  4. Run it in Powershell.
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
