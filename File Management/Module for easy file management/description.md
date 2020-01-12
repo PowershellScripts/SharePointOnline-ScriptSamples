@@ -526,8 +526,5 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 
  
 
-Let me know about your experience in the Q&A section!
-
- 
-
- 
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

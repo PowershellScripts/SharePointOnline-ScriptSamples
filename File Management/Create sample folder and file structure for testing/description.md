@@ -73,3 +73,9 @@ Feel free also to adjust the naming to fit your scenario, e.g. $reports=@("Beach
 Technicalities - how did it work?
 
  I simply took the file and copied it under different names. All the file properties (managed metadata, lookup values, etc.) are copied as well.
+
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
