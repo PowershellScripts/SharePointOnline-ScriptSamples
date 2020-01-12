@@ -396,3 +396,7 @@ static void Main(string[] args)
         }
 ``` 
 It would not exist without Geetanjali's inspiring article: http://social.technet.microsoft.com/wiki/contents/articles/24627.sharepoint-online-export-user-profile-properties-using-csom.aspx
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
