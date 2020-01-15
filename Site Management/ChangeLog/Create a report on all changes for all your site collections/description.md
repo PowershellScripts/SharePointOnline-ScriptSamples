@@ -14,7 +14,7 @@ For faster script retrieving change logs from only one site collection please co
 Instructions
 1. Install SharePoint Online SDK.
 2. Before running the script, open the file in Powershell or NotePad and edit the lines below:
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -24,7 +24,7 @@ $Username="2190@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant-admin.sharepoint.com" 
 $CSVPath="C:\users\ivo\Desktop\changecollectiontry3.csv"
- 
+``` 
 a) verify where Microsoft.SharePoint.Client.dll and Microsoft.SharePoint.Client.Runtime.dll libraries are located on your computer and enter the correct paths.
 b) instead of 2190@tenant.onmicrosoft.com enter the name of your administrator
 c) instead of https://tenant-admin.sharepoint.com, enter the url for your SharePoint Online admin Center
