@@ -22,7 +22,7 @@ The script has no error handling - feel free to improve it:
 
  
 
-PowerShell
+```PowerShell
 Connect-MsolService 
  
 $disabledPlans= @() 
@@ -47,7 +47,7 @@ Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -AddLicenses $Pla
 Write-Host "Done for user " $user.UserPrincipalName 
   
  } 
- 
+``` 
  
 
  
