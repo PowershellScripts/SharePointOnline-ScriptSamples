@@ -45,3 +45,5 @@ Expected results
  
 
  
+ <br/><br/>
+<b>Enjoy and please share your comments and questions!</b>

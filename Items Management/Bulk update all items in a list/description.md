@@ -58,3 +58,5 @@ Related Scripts
 Powershell Module with Update-SPOListItem cmdlet
 
  
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>
