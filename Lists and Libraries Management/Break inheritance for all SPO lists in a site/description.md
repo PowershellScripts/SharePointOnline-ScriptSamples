@@ -8,7 +8,7 @@ Before you run it, you have to modify the last line of the script!
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -16,7 +16,7 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
  
  
 Set-SPOListBreakRoleInheritance -Username "trial@trialtrial123.onmicrosoft.com" -Url "https://trialtrial123.sharepoint.com" -AdminPassword "Pass" -IncludeSubsites $false 
- 
+ ```
 
 Enter your credentials and the site where you want to modify the inheritance.
 Set -IncludeSubsites $true  if you want to break inheritance also in the subsites 
@@ -34,7 +34,7 @@ Verify if the SharePoint Online SDK is installed in the same location on your co
 
  
 
-Related scripts:
+### Related scripts:
 
 Restore inheritance for all lists
 
@@ -45,3 +45,9 @@ Modify list permissions with Powershell cmdlets (module)
 Delete unique permissions (C# program)
 
 Get lists with unique permissions (C# program)
+
+
+
+
+ <br/><br/>
+<b>Enjoy and please share your comments and questions!</b>
