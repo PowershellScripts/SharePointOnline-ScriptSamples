@@ -52,9 +52,6 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
 ```
 
 
- 
-
- 
 
  
 ---
@@ -65,10 +62,6 @@ Get-SPOFolderFiles -Username trial@trialtrial123.onmicrosoft.com -Url https://tr
  
 
 
-
- 
-
- 
 
  
 
