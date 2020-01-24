@@ -32,7 +32,7 @@ You have to enter the list information before running the script:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -43,7 +43,9 @@ $AdminPassword="Pass"
 $Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists" 
 $ListName="Tasks list" 
 $Attachments =$false
-Related scripts
+```
+
+### Related scripts
 Set direction of the reading order for a single list
 
 Set-SPOList properties (module)
@@ -52,9 +54,10 @@ Set-SPOList properties (module)
 
  
 
-Related article
+### Related article
  
-
 SharePoint Online: Disable or enable attachments to list items using Powershell
 
  
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>

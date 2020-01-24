@@ -513,11 +513,11 @@ Requirements
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer.     
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"      
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
- 
+``` 
  
 
  
