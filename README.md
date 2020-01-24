@@ -48,6 +48,16 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Create content type and add directly to SPO list
     * Create content type and add it to all lists in one site
   * Get
+    * All Content Types from a Content Type Hub and their DisplayFormTemplate
+    * Compare Web.AvailableContentTypes vs Web.ContentTypes
+    * Find content types added to your lists (recursive)
+    * Find content types added to your lists
+    * Get All Detailed Properties of All Content Types
+    * Get All Hidden Content Types added to the site
+    * Get All Properties of All Content Types in All Lists (Detailed) across one site
+    * Get Content Types Derived From One Parent 2
+    * Get Content Types Derived From One Parent
+    *
   * Set
   * Delete
   * Display Forms
