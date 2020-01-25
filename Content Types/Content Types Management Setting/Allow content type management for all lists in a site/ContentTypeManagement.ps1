@@ -1,4 +1,3 @@
-﻿
 #
 # Created by Arleta Wanat, 2015 
 #
@@ -40,13 +39,6 @@ function Set-SPOListsContentTypesEnabled{
 
 	}
 }
-
-
-
-
-
-
-
 
 
 
