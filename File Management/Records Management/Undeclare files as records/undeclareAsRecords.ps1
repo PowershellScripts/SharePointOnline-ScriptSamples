@@ -1,4 +1,4 @@
-﻿function Declare-Record
+function Declare-Record
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
@@ -21,9 +21,9 @@ param (
   $ctx.Load($ll)
   $ctx.ExecuteQuery()
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
- $spqQuery.ViewXml ="<View Scope='RecursiveAll' /><Where><Eq><FieldRef Name='ServerRelativeUrl'/><Value Type='Text'>/VersionTest/Folder2/FolderWithinFolder</Value></Eq></Where>";
-   $itemki=$ll.GetItems($spqQuery)
-   $ctx.Load($itemki)
+  $spqQuery.ViewXml ="<View Scope='RecursiveAll' /><Where><Eq><FieldRef Name='ServerRelativeUrl'/><Value Type='Text'>/VersionTest/Folder2/FolderWithinFolder</Value></Eq></Where>";
+  $itemki=$ll.GetItems($spqQuery)
+  $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
   foreach($item in $itemki)
@@ -33,6 +33,7 @@ param (
         $ctx.Load($item.File)
         $ctx.ExecuteQuery()
         [Boolean] $bool=[Microsoft.SharePoint.Client.RecordsRepository.Records]::IsRecord($rctx, $item)
+      
       if($bool)
       {
            [Microsoft.SharePoint.Client.RecordsRepository.Records]::UnDeclareItemAsRecord($rctx,$item)
@@ -43,22 +44,11 @@ param (
        {
           Write-Host $item.File.Name " " $item.File.ServerRelativeUrl  " is not a record."  -ForegroundColor Red
        }
-           
-          
+                     
   }
+       
+}
 
-
-
-        
-        
-
-        
-  }
-
-
-
-        
-        
 
 
 
