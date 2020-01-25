@@ -1,46 +1,46 @@
-function GetAllSubsitesAndDelete($urelek) 
+function GetAllSubsitesAndDelete($SiteUrl) 
 { 
-   $ctx2 = New-Object Microsoft.SharePoint.Client.ClientContext($urelek)     
-$ctx2.Credentials= New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)   
-$rootWeb2 = $ctx2.Web   
-$sites2  = $rootWeb2.Webs  
-  
-$ctx2.Load($rootWeb2)  
-$ctx2.Load($sites2)  
-$ctx2.ExecuteQuery() 
-if($sites2.Count -gt 0) 
-  { 
-     for($i=0;$i -lt $sites2.Count ;$i++) 
+   $ctx2 = New-Object Microsoft.SharePoint.Client.ClientContext($SiteUrl)     
+   $ctx2.Credentials= New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)   
+   $rootWeb2 = $ctx2.Web   
+   $sites2  = $rootWeb2.Webs  
+
+   $ctx2.Load($rootWeb2)  
+   $ctx2.Load($sites2)  
+   $ctx2.ExecuteQuery() 
+   
+   if($sites2.Count -gt 0) 
      { 
-        GetAllSubsitesAndDelete($sites2[$i].Url) 
+        for($i=0;$i -lt $sites2.Count ;$i++) 
+        { 
+           GetAllSubsitesAndDelete($sites2[$i].Url) 
+        } 
+        
+        try 
+        { 
+          $rootWeb2.DeleteObject() 
+            $ctx2.ExecuteQuery() 
+            Write-Host "Subsite " $rootWeb2.Url " has been removed" 
+        } 
+        catch [Net.WebException] 
+        {  
+           Write-Host $_.Exception.ToString() 
+        } 
      } 
-     try 
+     else 
      { 
-       $rootWeb2.DeleteObject() 
-         $ctx2.ExecuteQuery() 
-         Write-Host "Subsite " $rootWeb2.Url " has been removed" 
+        try 
+        { 
+            $rootWeb2.DeleteObject() 
+            $ctx2.ExecuteQuery() 
+            Write-Host "Subsite " $rootWeb2.Url " has been removed" 
+        } 
+        catch [Net.WebException] 
+        {  
+           Write-Host $_.Exception.ToString() 
+        } 
      } 
-     catch [Net.WebException] 
-     {  
-        Write-Host $_.Exception.ToString() 
-     } 
-  } 
-  else 
-  { 
-     try 
-     { 
-         $rootWeb2.DeleteObject() 
-         $ctx2.ExecuteQuery() 
-         Write-Host "Subsite " $rootWeb2.Url " has been removed" 
-     } 
-     catch [Net.WebException] 
-     {  
-        Write-Host $_.Exception.ToString() 
-     } 
-  } 
- 
- 
- 
+
 } 
  
 #paths to SDK (copied from Victor's comment) 

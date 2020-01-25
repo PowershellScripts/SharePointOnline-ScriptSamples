@@ -1,5 +1,5 @@
 A short script to create a single term in a specific term set of the default taxonomy store. The script applies to SharePoint Online tenants.
-
+  
  
 
 You need to open the file and specify the following data:
