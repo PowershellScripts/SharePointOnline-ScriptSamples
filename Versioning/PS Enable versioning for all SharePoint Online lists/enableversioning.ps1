@@ -60,7 +60,7 @@ $versioning = $true
  
 # You can also enter credentials directly: $siteUrl="https://tenant-admin.sharepoint.com" 
 $siteUrl = Read-Host -Prompt "Enter https://tenant-admin.sharepoint.com” 
-$username = Read-Host -Prompt "Enter admin's login, e.g. admin@domain.onmicrosoft.com" 
+$username = Read-Host -Prompt "Enter admin login, e.g. admin@domain.onmicrosoft.com" 
 $password = Read-Host -Prompt "Enter password" -AsSecureString 
 $credy= New-Object System.Management.Automation.PSCredential($username,$password)  
 Connect-SPOService -Credential $credy -Url $siteUrl  

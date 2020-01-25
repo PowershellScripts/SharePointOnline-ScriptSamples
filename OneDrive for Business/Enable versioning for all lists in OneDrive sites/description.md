@@ -17,7 +17,7 @@ At the end, a csv file is generated with the lists' urls and the status whether 
  
 
 As the script runs you will see green lists' titles for which the enabling succeeded and red for those which failed (not all lists support versioning).
-
+ <img src="../Enable versioning for all lists in OneDrive sites/Capture204.PNG" width="850">
 
 
 

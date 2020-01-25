@@ -2,8 +2,8 @@
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+    [string]$Username,
+		    [Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		$password,
@@ -20,9 +20,9 @@ param (
   $ctx.Load($ll)
   $ctx.ExecuteQuery()
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
- $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
-   $itemki=$ll.GetItems($spqQuery)
-   $ctx.Load($itemki)
+  $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+  $itemki=$ll.GetItems($spqQuery)
+  $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
   foreach($item in $itemki)
@@ -61,13 +61,14 @@ param (
           }
           if($file.Versions[($file.Versions.Count-1)].IsCurrentVersion)
           { 
-          $vLabel=$file.Versions[($file.Versions.Count-2)].VersionLabel
-          Write-Host "Version to be restored: " $vLabel
+            $vLabel=$file.Versions[($file.Versions.Count-2)].VersionLabel
+            Write-Host "Version to be restored: " $vLabel
           }
-          else{ $vLabel=$file.Versions[($file.Versions.Count-1)].VersionLabel
-          Write-Host "Version to be restored: " $vLabel  }
-          $file.Versions.RestoreByLabel($vLabel)
-          $ctx.ExecuteQuery()
+          else{ 
+            $vLabel=$file.Versions[($file.Versions.Count-1)].VersionLabel
+            Write-Host "Version to be restored: " $vLabel  }
+            $file.Versions.RestoreByLabel($vLabel)
+            $ctx.ExecuteQuery()
           }
 
 else
