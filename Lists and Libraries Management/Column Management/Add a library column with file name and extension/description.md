@@ -30,12 +30,14 @@ The script will not run without editing. Remember to enter the correct data:
 Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.Client\v4.0_16.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.Client.Runtime\v4.0_16.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.Runtime.dll" 
  
-$pasworde = Read-Host -Prompt "Password " -AsSecureString 
+$pasword = Read-Host -Prompt "Password " -AsSecureString 
 $uss="2190@tenant.onmicrosoft.com" 
 $listTitle="ext3" 
 $listID="1979CC10-3E5D-4D99-9BE6-8BE6229E4E13" 
 $newColumnName="Extension" 
  
-Connect-SPOCSOM -Username $uss  -AdminPassword $pasworde -Url "https://tenant.sharepoint.com/sites/powie3"
+Connect-SPOCSOM -Username $uss  -AdminPassword $pasword -Url "https://tenant.sharepoint.com/sites/powie3"
 ``` 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

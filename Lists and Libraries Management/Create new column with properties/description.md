@@ -10,7 +10,7 @@ New-SPOListColumnWithProperties
 
  
 
-Parameters
+## Parameters
 
 The cmdlet is using the following parameters:
 
@@ -59,7 +59,7 @@ Optional.
 
  
 
-Requirements
+## Requirements
 
 The following libraries (SharePoint Online SDK) are required. If those libraries are in different location on your computer, please edit the .psm1 file!
 
@@ -67,10 +67,13 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer.    
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
- 
+```
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
  
 

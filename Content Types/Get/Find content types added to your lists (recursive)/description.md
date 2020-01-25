@@ -3,7 +3,7 @@ A short script to find all content types added to all of your lists in a given s
  
 
 Very useful if you receive an error message:
- <img src="../Find content types added to your lists (recursive)/Error (2).PNG" width="850">
+ <img src="../Find content types added to your lists (recursive)/Error.PNG" width="850">
  
 
 

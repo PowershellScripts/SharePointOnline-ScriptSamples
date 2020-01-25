@@ -32,7 +32,7 @@ Adds a list to an existing site
 
  
 
-Parameters
+## Parameters
 
 The cmdlet is using the following parameters:
 
@@ -69,7 +69,7 @@ Optional. Sets the url of the list. If not specified, the url will be the same a
 
  
 
-Examples 
+## Examples 
 
  
 
@@ -123,7 +123,7 @@ Creating list with a url different from the title & more examples
 
  
 
-Requirements
+## Requirements
 
  
 
@@ -133,13 +133,14 @@ The following libraries (SharePoint Online SDK) are required. If those libraries
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer.    
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"     
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
- 
- 
-
+``` 
  
 
-Let me know about your experience in the Q&A section!
+ 
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

@@ -36,7 +36,7 @@ EXCHANGE_S_ENTERPRISE
 
  
 
-How to use?
+### How to use?
 
 1. Make sure you have installed Azure AD module available here: https://msdn.microsoft.com/en-us/library/azure/jj151815(v=azure.98).aspx
 
@@ -44,7 +44,7 @@ How to use?
 
 3. In the first lines you see:
 
-PowerShell
+```PowerShell
 <#  Possible serviceNames: 
 PROJECTWORKMANAGEMENT 
 SWAY 
@@ -71,15 +71,15 @@ If you think a service name is missing from the list above, you can use the foll
 $PlanToCheck="Exchange_S_ENTERPRISE" 
 $CSVPath=""      #Enter only if you want to export to csv, e.g. E:\technet\UsersWithDisabledEXO.csv  
 $ChecksWhetherThePlanIs="Disabled"  #Disabled, Success or PendingActivation 
- 
+``` 
 In $PlanToCheck="Enter the name of the plan you want to check"
 
 In $CSVPath leave it as it is if you don't want a csv report, or if you do want a report, enter the path in inverted commas like in the example below:
 
-PowerShell
+```PowerShell
 $CSVPath="E:\technet\UsersWithDisabledEXO.csv"
- 
-$ChecksWhetherThePlanIs if set to "Disable" (as it is) will check for all disabled plans. If you want to check successfully provisioned or pending activation, enter "Success" or "PendingActivation".
+ ```
+``` $ChecksWhetherThePlanIs ``` if set to "Disable" (as it is) will check for all disabled plans. If you want to check successfully provisioned or pending activation, enter "Success" or "PendingActivation".
 
 Important!  Disabled are only the services where you assigned the license but not all services are active (e.g. E3 is assigned, but Exchange Online is unmarked). See example below:
 
@@ -88,7 +88,7 @@ Important!  Disabled are only the services where you assigned the license but no
 Here the license is disabled:
 
 
-
+<img src="../Check User Licenses using Service Name/Capture14.png" width="850">
  
 
  
@@ -97,10 +97,15 @@ Here it is NOT:
 
 
 
- 
+ <img src="../Check User Licenses using Service Name/Capture15.png" width="850">
 
  
 
  
 
 4. Save the script and drag&drop it to Powershell. It will ask you for credentials and display a list of users on the screen.
+
+
+
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>
