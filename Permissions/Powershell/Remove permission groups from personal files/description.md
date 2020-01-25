@@ -17,9 +17,9 @@ The following script requires SharePoint Online SDK.
 
 If the location exists and you can see
 
-Microsoft.SharePoint.Client.dll    and
+```Microsoft.SharePoint.Client.dll```    and
 
-Microsoft.SharePoint.Client.Runtime.dll
+```Microsoft.SharePoint.Client.Runtime.dll```
 
 Skip the next step and go to Step 3.
 
