@@ -14,7 +14,7 @@ You have to enter the library data before running the script:
 
  
 
-PowerShell
+```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
@@ -28,7 +28,7 @@ $csvPath="C:\Users\ivo\Desktop\testpath4.csv"
 $csvPath2="C:\Users\ivo\Desktop\FileThatShowNoVersionsAvailable4.csv" 
  
 Get-sPOFolderFiles -Username $username -Url $Url -password $AdminPassword -ListTitle $ListTitle -CSVPath $csvPath -CSVPath2 $csvPath2
- 
+``` 
 $Url specifies the url of the site with the library
 
  
@@ -41,17 +41,14 @@ The report generates 2 files. One - the main file - with all versions available.
 
  
 
-Sample Report:
+### Sample Report
 
-
-
+<img src="../Create a report on all file versions in the library/ReportOnVersions2AllFolders.PNG" width="850">
  
 
  
 
- 
-
-Related scripts:
+### Related scripts
  
 
 Create a report on file versions
@@ -62,4 +59,5 @@ Create a report on file versions
 
  
 
- 
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>

@@ -42,7 +42,7 @@ $Direction="rtl"
 Results:
 
  
-
+<img src="../For All Lists/Direction.PNG" width="850">
 
 
  
