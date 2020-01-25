@@ -8,7 +8,7 @@ A short solution to find event receivers on your SPO lists.
 
 3. Scroll down to these lines
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -20,6 +20,7 @@ $Url="https://tenant.sharepoint.com/sites/teamsitewithlibraries"
  
  
 Get-SPOListEventreceivers -Username $Username -AdminPassword $AdminPassword -Url $Url
+```
 4. Check if the 2 libraries are in the same location on your computer. If yes, proceed on. If no, change the paths in the file. Usually you will be required to change folder name "15" into "16".
 
 5. Instead of admin@tenant.onmicrosoft.com, enter the name of your site collection admin.
