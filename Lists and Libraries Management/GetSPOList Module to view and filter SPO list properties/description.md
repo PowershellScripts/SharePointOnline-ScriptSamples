@@ -155,5 +155,5 @@ If you don't load the properties, you cannot search by them!
  
 
  
-
-Let me know about your experience in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

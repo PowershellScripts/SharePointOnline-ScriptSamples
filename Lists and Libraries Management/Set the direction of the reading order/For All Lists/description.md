@@ -24,7 +24,7 @@ You have to enter the list information before running the script:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -34,7 +34,7 @@ $Username="trial@trialtrial123.onmicrosoft.com"
 $AdminPassword="Pass" 
 $Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists" 
 $Direction="rtl"
- 
+``` 
  
 
  
@@ -46,6 +46,8 @@ Results:
 
 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
 
 Related scripts
 Set direction of the reading order for a single list

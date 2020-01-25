@@ -24,7 +24,7 @@ You have to enter the list information before running the script:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -36,12 +36,14 @@ $Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists"
 $ListName="Generic List" 
 $Direction ="none"
 $Direction paramater specifies the reading order. Enter "ltr", "rtl" or "none"
- 
+``` 
 
  
 
  
 
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
  
 
 Related scripts

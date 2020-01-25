@@ -38,7 +38,7 @@ For all the data please stick to the formats as in the example.
 
  
 
-Technicalities
+## Technicalities
 
 The scripts works with libraries, not lists.
 
@@ -46,8 +46,13 @@ I tested it with several scenarios and it worked. However, testing went only as 
 
  
 
-Error handling
+## Error handling
 
 Upper/lower case shouldn't cause any issues. That means whether you enter "DocLibrary" or "docliBRARY" they should be treated the same. If you notice otherwise, please report.
 
 Folders keep their casing. That means that "Big InvestMent" will remain "Big InvestMent" in the new library.
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
