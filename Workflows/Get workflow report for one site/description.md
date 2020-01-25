@@ -1,4 +1,15 @@
-rogram Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
+Powershell script. Creates a .csv file with a report on all workflows in a site collection.
+
+ 
+
+Before you run the script, open .ps1 file and edit all necessary information:
+
+ 
+
+```PowerShell
+ 
+# Paths to SDK. Please verify location on your computer. 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
  
 # Insert the credentials and the name of the site and the path where the report should be saved. 
@@ -6,38 +17,23 @@ $Username="2190@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $Url="https://tenant.sharepoint.com" 
 $CSVpath="C:\testpath2.csv"
- 
+``` 
 As the script runs you will see how many workflows each list has:
 
  
 
  
-
+<img src="../Get workflow report for one site/wf1.png" width="850">
 
 
  
 
  
-
  
 
  
 
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Sample report
+### Sample report
  
 
 #TYPE Microsoft.SharePoint.Client.Workflow.WorkflowAssociation	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
