@@ -1,4 +1,3 @@
-﻿
 $webUrl="Enter here the url of your site, e.g. https://intra.Company.com"
 $pathToExportReport="c:\MyCSV.csv"
 
