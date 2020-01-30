@@ -1,34 +1,31 @@
-function Set-SPOContentType
-{
-   param (
-   	[Parameter(Mandatory=$true,Position=1)]
+function Set-SPOContentType{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-	[Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-	[Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
-  $ctx.Load($ll)
-  $ctx.Load($ll.ContentTypes)
-  $ctx.ExecuteQuery()
+	)
+
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
+	  $ctx.Load($ll)
+	  $ctx.Load($ll.ContentTypes)
+	  $ctx.ExecuteQuery()
 
 
-  foreach($cc in $ll.ContentTypes)
-  {     
-     Write-Host $cc.DisplayFormTemplateName
-     $cc.DisplayFormTemplateName="DocumentLibraryForm"
-     $cc.Update($false)
-     $ctx.ExecuteQuery()  
-  }
-        
-      $ctx.Dispose()
-   
+	foreach($cc in $ll.ContentTypes){     
+	     Write-Host $cc.DisplayFormTemplateName
+	     $cc.DisplayFormTemplateName="DocumentLibraryForm"
+	     $cc.Update($false)
+	     $ctx.ExecuteQuery()  
+	}
+
+	  $ctx.Dispose()  
 }
         
 
