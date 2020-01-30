@@ -1,26 +1,13 @@
 The script is part of the explanation on editing the content types available in the article here:
 
-SharePoint Online content types in Powershell: Edit.
+[SharePoint Online content types in Powershell: Edit.](https://social.technet.microsoft.com/wiki/contents/articles/31444.sharepoint-online-content-types-in-powershell-edit.aspx)
 
 This example changes the display form url of all content types called ITEM (so basically all items in a list) in all lists in one site to the default one.
 
+ It allows us also to retract our changes and turn to the default form in case something went wrong with the Custom form and items are no longer viewable. (**[screenshot](https://github.com/PowershellScripts/AllGalleryScriptsSamples/blob/develop/Content%20Types/Display%20Forms/Unable%20to%20view%20items-%20modify%20the%20DisplayFormUrl%20back%20to%20default%20one/DisplayFormUrl4.png)**)
  
 
- 
-
- It allows us also to retract our changes and turn to the default form in case something went wrong with the Custom form and items are no longer viewable:
- 
-
-
- 
-
- 
-
- 
-
- 
-
-In order to use the script you need SharePoint Online SDK installed. Before running the script modify the following lines to refer to the SDK libraries installed on your computer and the content type data:
+In order to use the script you need [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038) installed. Before running the script modify the following lines to refer to the SDK libraries installed on your computer and the content type data:
 
  
 
