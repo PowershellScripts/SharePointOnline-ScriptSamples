@@ -21,7 +21,7 @@ $Username="admin@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries"
 ``` 
-**If you have any questions, please use Q&A section**
+**If you have any questions, please open an issue!**
 
  
 
