@@ -1,4 +1,4 @@
-The script below is described in the article SharePoint Online content types in Powershell: Get and is part of various options on retrieving a single Content Type.
+The script below is described in the article [SharePoint Online content types in Powershell: Get](https://social.technet.microsoft.com/wiki/contents/articles/31151.sharepoint-online-content-types-in-powershell-get.aspx) and is part of various options on retrieving a single Content Type.
 
  
 
