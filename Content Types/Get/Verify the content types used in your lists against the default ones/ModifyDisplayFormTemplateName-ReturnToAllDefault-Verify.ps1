@@ -16,9 +16,8 @@ function Set-SPOContentType{
 	  $ctx.Load($listy)
 	  $ctx.ExecuteQuery()
 
-
-	     $defaultoweFormaty=Import-Csv C:\Users\ivo\Desktop\Book1.csv
-	     Write-Host $defaultoweFormaty[5].DisplayFormTemplateName
+          $defaultoweFormaty=Import-Csv C:\Users\ivo\Desktop\Book1.csv
+	  Write-Host $defaultoweFormaty[5].DisplayFormTemplateName
 
 	foreach($ll in $listy)
 	{
