@@ -13,7 +13,6 @@ function Get-SPOContentType{
 	  $ctx.ExecuteQuery() 
 
 	  $ctx.Load($ctx.Web)
-
 	  $ctx.Load($ctx.Web.ContentTypes)
 	  $ctx.ExecuteQuery()
 	  Write-Host $ctx.Web.ContentTypes[0].Name
