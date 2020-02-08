@@ -8,19 +8,16 @@ param (
         [Parameter(Mandatory=$true,Position=3)]
 		[string] $url,
         [Parameter(Mandatory=$false,Position=4)]
-        [string] $object=""
+        	[string] $object=""
 		)
 
-
- 
-  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $RestUrl=$url+"/_api/"
-  if($object -ne "")
-  {
-    $RestUrl+=$object
-  }
-
-
+	  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	  $RestUrl=$url+"/_api/"
+	  
+	  if($object -ne "")
+	  {
+	    $RestUrl+=$object
+	  }
   
         $request = [System.Net.WebRequest]::Create($RESTUrl) 
         $request.Credentials = $Credentials 
@@ -36,21 +33,17 @@ param (
         $results = $data.ToString().Replace("ID", "_ID") | ConvertFrom-Json 
         $objekty=$results.d.results 
 
-
-
         if($objekty -ne $null)
         {
             Write-Output $objekty
-            }
+        }
         else
         {
             Write-Output $results.d
 
         }
         
-        
 
-        
   }
 
 
