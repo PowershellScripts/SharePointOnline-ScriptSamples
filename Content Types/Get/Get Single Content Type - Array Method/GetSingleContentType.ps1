@@ -1,26 +1,22 @@
-function Get-SPOContentType
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Get-SPOContentType{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
-  
-  $ctx.Load($ctx.Web)
+	)
 
-  $ctx.Load($ctx.Web.ContentTypes)
-  $ctx.ExecuteQuery()
-  Write-Host $ctx.Web.ContentTypes[0].Name
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx.ExecuteQuery() 
 
-  }
+	  $ctx.Load($ctx.Web)
+	  $ctx.Load($ctx.Web.ContentTypes)
+	  $ctx.ExecuteQuery()
+	  Write-Host $ctx.Web.ContentTypes[0].Name
+}
         
 
 

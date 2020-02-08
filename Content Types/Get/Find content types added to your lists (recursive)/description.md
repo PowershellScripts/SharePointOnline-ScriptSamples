@@ -1,4 +1,4 @@
-A short script to find all content types added to all of your lists in a given site collection and its subsites.
+A short script to find all content types added to all of your lists **in a given site collection and its subsites**.
 
  
 
@@ -16,13 +16,11 @@ when trying to remove a content type.
 
  
 
-<h3>How to use?</h3>
+### *How to use?*
 
+1. Download and install [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
-
-1. Download and install SharePoint Online SDK.
-
-2. Download the .ps1 file.
+2. Download the *.ps1* file.
 
 3. Open the file (you can do it also in NotePad)
 
@@ -39,18 +37,14 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries" 
 ```
 
-a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
-b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
-c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types
- 
+a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths </br>
+b)  Instead of "admin@tenant.onmicrosoft.com" enter you username </br>
+c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types </br>
 
 5. Run the script in Powershell (any module). 
 
 6. The result should show the table of names and associated lists and websites where those lists are located
 <img src="../Find content types added to your lists (recursive)/recursiveResult.PNG" width="850">
- 
-
- 
 
 You can also export it to CSV:
 
