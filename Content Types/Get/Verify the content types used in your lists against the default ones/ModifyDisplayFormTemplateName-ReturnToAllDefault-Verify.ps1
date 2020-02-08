@@ -1,59 +1,44 @@
 ﻿
 
-function Set-SPOContentType
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
-		[string]$Url
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $listy=$ctx.Web.Lists
-  $ctx.Load($listy)
-  $ctx.ExecuteQuery()
+function Set-SPOContentType{
+	param (
+	[Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	$AdminPassword,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$Url
+	)
 
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $listy=$ctx.Web.Lists
+	  $ctx.Load($listy)
+	  $ctx.ExecuteQuery()
 
-     $defaultoweFormaty=Import-Csv C:\Users\ivo\Desktop\Book1.csv
-     Write-Host $defaultoweFormaty[5].DisplayFormTemplateName
-     foreach($ll in $listy)
-     {
-  $ctx.Load($ll.ContentTypes)
-  $ctx.ExecuteQuery()
+          $defaultoweFormaty=Import-Csv C:\Users\ivo\Desktop\Book1.csv
+	  Write-Host $defaultoweFormaty[5].DisplayFormTemplateName
 
+	foreach($ll in $listy)
+	{
+	  $ctx.Load($ll.ContentTypes)
+	  $ctx.ExecuteQuery()
 
-  foreach($cc in $ll.ContentTypes)
-  {
-          
-          $opo=$defaultoweFormaty | where {$_.Name -eq $cc.Name}
-          Write-Host $ll.Title -ForegroundColor Green
-          Write-Host $opo.DisplayFormTemplateName
-          Write-Host $cc.DisplayFormTemplateName
-          Write-Host "----------------------------------------------------"
-         # $cc.DisplayFormTemplateName="DocumentLibraryForm"
-         # $cc.Update($false)
-         # $ctx.ExecuteQuery()
-      
-     
+		foreach($cc in $ll.ContentTypes){
+			  $opo=$defaultoweFormaty | where {$_.Name -eq $cc.Name}
+			  Write-Host $ll.Title -ForegroundColor Green
+			  Write-Host $opo.DisplayFormTemplateName
+			  Write-Host $cc.DisplayFormTemplateName
+			  Write-Host "----------------------------------------------------"
+			 # $cc.DisplayFormTemplateName="DocumentLibraryForm"
+			 # $cc.Update($false)
+			 # $ctx.ExecuteQuery()
+		}
+	}
+
+	$ctx.Dispose()       
 }
-        
-      }
-     
-      $ctx.Dispose()
-        
-        
-  }
-        
-
-  
-  
-  
-
+ 
 
   # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 

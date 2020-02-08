@@ -2,13 +2,13 @@ A script to copy folder structure from a library in one tenant to a library in a
 
  
 
-How to use?
+## How to use?
 
 1. Download the script and open the file (you can use Powershell ISE or e.g. NotePad).
 
 2. Edit the following lines, entering your values (# means comment, changing these lines won't bring any effect):
 
-PowerShell
+```PowerShell
 # Enter the username of a user who has enough permissions to read the source site 
 $admin1="t@trial890.onmicrosoft.com" 
  
@@ -22,14 +22,14 @@ $destLibr="try1"
  
 # Enter the username of a user who has enough permissions to create folders in the target site 
 $admin2="t@trial900.onmicrosoft.com" 
- 
-$admin1 - user who has enough permissions to read the source site
-$admin2 - user who has enough permissions to create folders in the target site
-$Sourcesite  - url of the site where the source library is; it's the url of the site where you want to copy FROM
-$destinationSite - url of the site where the target library is; it's the url of the site where you want to copy TO
-$sourceLibrary - title of the original library where you want to copy the structure FROM
+``` 
+```$admin1``` - user who has enough permissions to read the source site
+```$admin2``` - user who has enough permissions to create folders in the target site
+```$Sourcesite```  - url of the site where the source library is; it's the url of the site where you want to copy FROM
+```$destinationSite``` - url of the site where the target library is; it's the url of the site where you want to copy TO
+```$sourceLibrary``` - title of the original library where you want to copy the structure FROM
 
-$destLibr - title of the destination library where you want to copy the structure TO
+```$destLibr``` - title of the destination library where you want to copy the structure TO
 
 For all the data please stick to the formats as in the example.
  
@@ -39,7 +39,7 @@ For all the data please stick to the formats as in the example.
 
  
 
-Technicalities
+## Technicalities
 
 The scripts works with libraries, not lists.
 
@@ -47,7 +47,7 @@ I tested it with several scenarios and it worked. However, testing went only as 
 
  
 
-Error handling
+## Error handling
 
 Upper/lower case shouldn't cause any issues. That means whether you enter "DocLibrary" or "docliBRARY" they should be treated the same. If you notice otherwise, please report.
 
@@ -55,7 +55,7 @@ Folders keep their casing. That means that "Big InvestMent" will remain "Big Inv
 
  
 
-Other migration solutions
+## Other migration solutions
 
 Copy folder structure across SharePoint Online sites
 
@@ -63,3 +63,5 @@ Copy folder structure from one library to another (SharePoint Online)
 
  
 
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

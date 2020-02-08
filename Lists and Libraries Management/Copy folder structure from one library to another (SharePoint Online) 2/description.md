@@ -34,13 +34,7 @@ $destLibr - title of the destination library where you want to copy the structur
  
 3. Save and run the script. During execution it will ask you for a password.
 
- 
 
- 
-
- 
-
- 
 
 ### Technicalities
 
@@ -48,8 +42,11 @@ The scripts works with libraries, not lists.
 
  
 
- 
-
 ### Error handling
 
 There isn't any. Make sure you enter the names correctly.
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

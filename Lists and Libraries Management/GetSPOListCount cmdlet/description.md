@@ -92,8 +92,8 @@ You get the count for all sites and subsite + the error for public site.
  
 
  
-
-Let me know about your experience in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>
 
  
 

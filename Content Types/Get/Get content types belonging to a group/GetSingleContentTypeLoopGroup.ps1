@@ -1,49 +1,33 @@
 ﻿
 
-function Get-SPOContentType
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Get-SPOContentType{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-[Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$GroupName
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
-  
-  $ctx.Load($ctx.Web)
+	)
 
-  $ctx.Load($ctx.Web.ContentTypes)
-  $ctx.ExecuteQuery()
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx.ExecuteQuery() 
+
+	  $ctx.Load($ctx.Web)
+
+	  $ctx.Load($ctx.Web.ContentTypes)
+	  $ctx.ExecuteQuery()
 
 
-     foreach($cc in $ctx.Web.ContentTypes)
-     {
-        if($cc.Group -eq $GroupName)
-        {
-          Write-Host $cc.Name
-        }
-     }
-
-        
-       
-     
-      
-        
-        
-  }
-        
-
-  
-  
-  
+	foreach($cc in $ctx.Web.ContentTypes){
+		if($cc.Group -eq $GroupName){
+		  Write-Host $cc.Name
+		}
+	}     
+}
 
 
   # Paths to SDK. Please verify location on your computer.

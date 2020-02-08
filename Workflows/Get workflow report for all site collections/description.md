@@ -10,7 +10,7 @@ Before you run the script, open .ps1 file and edit all necessary information:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -20,7 +20,7 @@ $Username="user@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant-admin.sharepoint.com" 
 $CSVPath="C:\Users\ivo\Desktop\SomePath.csv"
- 
+``` 
  
 
  
@@ -41,7 +41,7 @@ As the script runs you will see how many workflows each list has:
  
 
  
-
+<img src="../Get workflow report for all site collections/wf1.png" width="850">
 
 
  
@@ -50,15 +50,7 @@ As the script runs you will see how many workflows each list has:
 
  
 
- 
-
- 
-
- 
-
- 
-
-Sample report
+### Sample report
  
 
 #TYPE Microsoft.SharePoint.Client.Workflow.WorkflowAssociation	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
@@ -74,7 +66,7 @@ https://tenant.sharepoint.com/TeamsitewithLists	Generic List With GeolocationCol
 
  
 
-Related scripts
+### Related scripts
  
 
 Get workflow report for one site
