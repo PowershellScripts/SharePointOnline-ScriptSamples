@@ -1,5 +1,3 @@
-﻿
-
 function Get-SPOList{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
@@ -22,16 +20,17 @@ function Get-SPOList{
 	foreach( $ll in $ctx.Web.Lists){
 	   $ctx.Load($ll.ContentTypes)
 
-		try{
-		   $ctx.ExecuteQuery()
-		}
-		catch{}
+	   try{
+	       $ctx.ExecuteQuery()
+	   }
+	   catch{
+	   }
 
 	   Write-Host $ll.Title -ForegroundColor Green
 
-		foreach($cc in $ll.ContentTypes){
-		   Write-Output $cc.Name
-		} 
+	   foreach($cc in $ll.ContentTypes){
+		Write-Output $cc.Name
+	   } 
 
 	}
 }
