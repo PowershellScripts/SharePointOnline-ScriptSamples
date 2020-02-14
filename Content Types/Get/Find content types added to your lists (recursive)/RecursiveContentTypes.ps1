@@ -1,58 +1,50 @@
-function Get-SPOContentType
-{
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Get-SPOContentType{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
-  
-  $ctx.Load($ctx.Web.Lists)
-  $ctx.Load($ctx.Web.Webs)
-  $ctx.ExecuteQuery()
-  Write-Host 
-  Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
-  foreach( $ll in $ctx.Web.Lists)
-  {
-            
-        $ctx.Load($ll.ContentTypes)
+	)
 
-        try{
-        	$ctx.ExecuteQuery()
-        }
-        	catch{
-		#do nothing
-        }
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx.ExecuteQuery() 
 
+	  $ctx.Load($ctx.Web.Lists)
+	  $ctx.Load($ctx.Web.Webs)
+	  $ctx.ExecuteQuery()
+	  Write-Host 
+	  Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
 
-        foreach($cc in $ll.ContentTypes)
-     {
-	     $obj = New-Object PSObject
-	     $obj | Add-Member NoteProperty Title($cc.Name)
-	     $obj | Add-Member NoteProperty  List($ll.Title)
-	     $obj | Add-Member NoteProperty Web($url)
+	foreach( $ll in $ctx.Web.Lists){     
+	   $ctx.Load($ll.ContentTypes)
 
-	     Write-Output $obj
-     } 
+		try{
+		   $ctx.ExecuteQuery()
+		}
+		catch{
+			#do nothing
+		}
 
 
-   }
+		foreach($cc in $ll.ContentTypes){
+		     $obj = New-Object PSObject
+		     $obj | Add-Member NoteProperty Title($cc.Name)
+		     $obj | Add-Member NoteProperty  List($ll.Title)
+		     $obj | Add-Member NoteProperty Web($url)
+
+		     Write-Output $obj
+		} 
+	}
 
 
-     if($ctx.Web.Webs.Count -gt 0)
-      {
-       foreach ($web in $ctx.Web.Webs)
-       {
-        Get-SPOContentType -Username $Username -Url $web.Url -AdminPassword $AdminPassword
-       }
-      }
-      
+	if($ctx.Web.Webs.Count -gt 0){
+	       foreach ($web in $ctx.Web.Webs){
+		  Get-SPOContentType -Username $Username -Url $web.Url -AdminPassword $AdminPassword
+	       }
+	}     
 }
   
         
