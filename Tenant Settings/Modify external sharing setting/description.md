@@ -1,6 +1,7 @@
 Short Powershell script sets the external sharing setting in SharePoint Online and controls how users share content with people outside the organization.
 
-It sets sharing outside the organization using CSOM and requires SharePoint Online SDK.
+It sets sharing outside the organization using CSOM to Disabled, ExternalUserSharingOnly, ExternalUserAndGuestSharing, or ExistingExternalUserSharingOnly.
+It requires SharePoint Online SDK.
 
 The script is part of and more described in a TechNet Wiki [SharePoint Online Sharing settings with CSOM](https://social.technet.microsoft.com/wiki/contents/articles/39365.sharepoint-online-sharing-settings-with-csom.aspx?Sort=MostRecent&PageIndex=1) article.
 
