@@ -38,3 +38,9 @@ Remove-SPOListAllItemsInheritance -Username "trial@trialtrial123.onmicrosoft.com
 ```
 Enter your credentials and the site where you want to modify the inheritance. 
 Verify if the SharePoint Online SDK is installed in the same location on your computer
+
+
+
+
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>s

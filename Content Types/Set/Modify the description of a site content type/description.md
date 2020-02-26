@@ -33,3 +33,8 @@ $AdminUrl="https://tenant.sharepoint.com/sites/powie1"
 $Description="My crazy Powershell description2" 
 $ContentTypeGUID="0x0116006288692BD2247D48BA5D55B164C79F51"
 ``` 
+
+
+
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

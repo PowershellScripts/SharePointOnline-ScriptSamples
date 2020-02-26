@@ -1,14 +1,8 @@
 A short script to get all properties of all content types in all lists across one SharePoint site.
 
-The script is fully described in an article here: 
+The script is fully described in an article [here](http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-online-content-types-in-powershell.aspx).
 
-http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-online-content-types-in-powershell.aspx
-
- 
-
- 
-
-The script is similar to Get all properties of all content types in a SharePoint site with the following differences:
+The script is similar to [Get all properties of all content types in a SharePoint site](https://gallery.technet.microsoft.com/Get-all-properties-of-all-3a9c5c4b) with the following differences:
 
 + In addition to all the default properties it adds also every workflow, field, and fieldLink instance as an additional custom property.
 
@@ -18,23 +12,17 @@ The script is similar to Get all properties of all content types in a SharePoint
 
  
 
-How to use?
+### *How to use?*
 
+1. Download and install [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
-
-1. Download and install SharePoint Online SDK.
-
-2. Download the .ps1 file.
+2. Download the *.ps1* file.
 
 3. Open the file (you can do it also in NotePad)
 
 4. Insert your data in these lines:
 
- 
-
- 
-
-PowerShell
+```PowerShell
    # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -43,27 +31,22 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 $Username="admin@tenant.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant.sharepoint.com/sites/teamsitewithlibraries"
- 
-a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
-b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
-c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types
-d) Fill in the properties of the content type.
- 
-
- 
+``` 
+a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths </br>
+b)  Instead of "admin@tenant.onmicrosoft.com" enter you username </br>
+c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types </br>
+d) Fill in the properties of the content type. </br>
 
 5. Run the script in Powershell (any module). 
 
 6. Results can be viewed either in Powershell window or exported to csv as a report:
 
+<img src="../Get All Properties of All Content Types in All Lists (Detailed) across one site/GetPropertiesWITHOUTExtr.PNG" width="850">
+<img src="../Get All Properties of All Content Types in All Lists (Detailed) across one site/GetPropertiesWITHOUTExtr2.PNG" width="850">
 
 
 
 
  
-
-
-
- 
-
-Please share your feedback in the Q&A section!
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

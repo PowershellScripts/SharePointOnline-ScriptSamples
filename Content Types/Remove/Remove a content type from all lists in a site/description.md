@@ -4,7 +4,7 @@ A short script to find all lists across a site collection and its subsites where
 
 Very useful if you receive an error message:
 
-  <img src="../Remove a content type from all lists in a site/Error (4).PNG" width="850">
+  <img src="../Remove a content type from all lists in a site/Error.PNG" width="850">
 
 
 
@@ -56,3 +56,5 @@ Errors can be ignored unless they include "Failed to remove".
 You can also export it to CSV.
 
  
+<br/><br/>
+<b>Enjoy and please share feedback!</b>

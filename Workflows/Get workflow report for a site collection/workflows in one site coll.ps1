@@ -1,36 +1,35 @@
 ﻿function Get-Workflows
 {
 param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+    [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+    [Parameter(Mandatory=$true,Position=4)]
 		[string]$CSVPath
 )
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
   $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
- $ctx.Load($ctx.Web)
+  $Lists=$ctx.Web.Lists
+  $ctx.Load($ctx.Web)
   $ctx.Load($ctx.Web.Webs)
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+  $ctx.Load($Lists)
+  $ctx.ExecuteQuery()
 
-foreach ( $ll in $Lists)
+  foreach ( $ll in $Lists)
             {
-
+                $WorkflowCollection = $ll.WorkflowAssociations;
+                $ctx.Load($WorkflowCollection);
                 
-                $workflo = $ll.WorkflowAssociations;
-                $ctx.Load($workflo);
                 try
                 {
                     $ctx.ExecuteQuery();
-                    Write-host $ll.Title $workflo.Count -ForegroundColor Green 
+                    Write-host $ll.Title $WorkflowCollection.Count -ForegroundColor Green 
                     
                 }
                 catch [Net.WebException] 
@@ -39,15 +38,15 @@ foreach ( $ll in $Lists)
                 }
 
 
-                    foreach ($workfloek in $workflo)
-                    {
-                        $workfloek | Add-Member NoteProperty "SiteUrl"($ctx.Web.Url)
-                        $workfloek | Add-Member NoteProperty "ListTitle"($ll.Title)
-                        Write-Output $workfloek
+                foreach ($SingleWorkflow in $WorkflowCollection)
+                {
+                    $SingleWorkflow | Add-Member NoteProperty "SiteUrl"($ctx.Web.Url)
+                    $SingleWorkflow | Add-Member NoteProperty "ListTitle"($ll.Title)
+                    Write-Output $SingleWorkflow
 
-                     $workfloek | export-csv -Path $CSVPath -Append
-                     
-                    }
+                    $SingleWorkflow | export-csv -Path $CSVPath -Append
+                    
+                }
                 
 
 }

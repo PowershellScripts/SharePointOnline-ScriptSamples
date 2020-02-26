@@ -39,12 +39,9 @@ c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter 
 d) Fill in the properties of the content type.
  
 
- 
-
 5. Run the script in Powershell (any module). 
 
 6. When the script has executed, Powershell will show a message Content Type  Name of the Content Type2  has been added to Title of the List.
-
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>

@@ -1,34 +1,17 @@
 A short script to create a content type and add it to a content type hub.
 
-The script is fully described in an article here: 
-
-http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-online-content-types-in-powershell.aspx
-
- 
-
- 
-
- 
-
- 
-
- 
+The script is fully described in an article [here](http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-online-content-types-in-powershell.aspx
+).
 
 ### How to use?
 
+1. Download and install [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
-
-1. Download and install SharePoint Online SDK.
-
-2. Download the .ps1 file.
+2. Download the *.ps1* file.
 
 3. Open the file (you can do it also in NotePad)
 
 4. Insert your data in these lines:
-
- 
-
- 
 
 ```PowerShell
    # Paths to SDK. Please verify location on your computer. 
@@ -44,25 +27,15 @@ $Name="Name of the Content Type2"
 $ParentContentTypeID="0x01" 
 $Group="List Content Types"
 ``` 
-a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
-b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
-c) Instead of TENANT in "https://tenant.sharepoint.com/sites/contenttypehub" enter the name of your tenant
-d) Fill in the properties of the content type.
- 
-
- 
+a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths </br>
+b)  Instead of "admin@tenant.onmicrosoft.com" enter you username </br>
+c) Instead of TENANT in "https://tenant.sharepoint.com/sites/contenttypehub" enter the name of your tenant </br>
+d) Fill in the properties of the content type. </br>
 
 5. Run the script in Powershell (any module). 
 
-6. When the script has executed, Powershell will show a message Content Type  Name of the Content Type2  has been added to Url of the Site.
+6. When the script has executed, Powershell will show a message *Content Type  Name of the Content Type2  has been added to Url of the Site*.
 
- 
-
- 
-
- 
-
- 
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>

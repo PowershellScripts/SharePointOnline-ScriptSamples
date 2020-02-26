@@ -20,7 +20,7 @@ You have to enter the library data before running the script:
 
  
 
-PowerShell
+```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
@@ -31,6 +31,7 @@ $username="trial@trialtrial125.onmicrosoft.com"
 $Url="https://trialtrial125.sharepoint.com/sites/teamsitewithlibraries" 
 $ListTitle="Not-Empty-Document-Library" 
 $csvPath="C:\Users\ivo\Desktop\testpath114.csv" 
+```
 $Url specifies the url of the site with the library
 
  
@@ -41,21 +42,14 @@ The script will generate a report that states whether any versions were found an
 
  
 
-Sample report:
+### Sample report
+
+<img src="../<img src="../Delete all previous file versions in a library/DeleteVersionsAllFolders.PNG" width="850">
+
 
  
 
-
-
- 
-
- 
-
- 
-
- 
-
-Related scripts:
+### Related scripts
  
 
 Create a report on file versions
@@ -66,6 +60,6 @@ Create a report on all file versions in the library
 
  
 
- 
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>
 
-Please share your feedback in the Q&A section!

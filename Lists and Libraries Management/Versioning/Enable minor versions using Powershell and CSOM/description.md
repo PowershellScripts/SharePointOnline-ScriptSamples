@@ -10,7 +10,7 @@ You have to enter the library data before running the script:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -21,7 +21,7 @@ $username="trial@trialtrial125.onmicrosoft.com"
 $Url="https://trialtrial125.sharepoint.com/sites/teamsitewithlibraries" 
 $ListTitle="Not-Empty-Document-Library" 
 $Versioning=$true
- 
+``` 
  
 
 Full description of the script is available in the article  Versioning and SharePoint: the Powershell perspective
@@ -30,7 +30,7 @@ Full description of the script is available in the article  Versioning and Share
 
  
 
-Related scripts
+## Related scripts
  
 
 Enable minor versions for all SharePoint Online lists using Powershell
@@ -44,3 +44,8 @@ SharePoint Module for lists, items and files
 Disable versioning for all lists in SharePoint Online tenant (C#)
 
 Enable versioning for all lists in SharePoint Online tenant (C#)
+
+
+
+ <br/><br/>
+<b>Enjoy and please share feedback!</b>

@@ -41,4 +41,8 @@ Connect-SPOCSOM -Username "user@tenant.onmicrosoft.com" -Url "https://tenant.sha
 
 
 <br/><br/>
+
 <b>Enjoy and please share feedback!</b>
+
+<b>Enjoy and please share feedback!</b>
+

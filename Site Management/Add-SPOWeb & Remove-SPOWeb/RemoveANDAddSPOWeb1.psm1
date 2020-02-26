@@ -1,12 +1,9 @@
-﻿
-
-
 function Remove-SPOWeb
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$AdminPassword,
@@ -14,7 +11,7 @@ param (
 		[bool]$RemoveSubsites=$true
 		)
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
@@ -23,13 +20,13 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
 
   try
      {
-       $ctx.Web.DeleteObject()
+         $ctx.Web.DeleteObject()
          $ctx.ExecuteQuery()
          Write-Host "Site " $ctx.Web.Url " has been removed."
      }
      catch [Net.WebException]
      { 
-        Write-Host $_.Exception.ToString()
+         Write-Host $_.Exception.ToString()
      }
 
 if($ctx.Web.Webs.Count -gt 0)
@@ -38,12 +35,12 @@ if($ctx.Web.Webs.Count -gt 0)
      {
         if($RemoveSubsites)
         {
-         Remove-SPOWeb -Username $Username -Url $ctx.Web.Webs[$i].Url -AdminPassword $AdminPassword -RemoveSubsites $RemoveSubsites
+          Remove-SPOWeb -Username $Username -Url $ctx.Web.Webs[$i].Url -AdminPassword $AdminPassword -RemoveSubsites $RemoveSubsites
         }
         
         else
         {
-        $yesorno=Read-Host -Prompt "Proceeding to remove subsite " $ctx.Web.Webs[$i].Url ". Press Y to proceed or N not to remove the subsite. If you choose N, the parent site won't be removed."
+         $yesorno=Read-Host -Prompt "Proceeding to remove subsite " $ctx.Web.Webs[$i].Url ". Press Y to proceed or N not to remove the subsite. If you choose N, the parent site won't be removed."
         if($yesorno -eq "y")
         {
           Remove-SPOWeb -Username $Username -Url $ctx.Web.Webs[$i].Url -AdminPassword $AdminPassword -RemoveSubsites $RemoveSubsites

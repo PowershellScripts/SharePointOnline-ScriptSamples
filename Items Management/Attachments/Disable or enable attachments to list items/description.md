@@ -5,7 +5,16 @@ Want to keep your lists tidy? Saving space?? This is a solution for you! Looking
 Want to keep your lists tidy? Saving space? Do you want to prevent users from adding unnecessary attachments to the list because their place belongs elsewhere?
 This is a solution for you!
 Or maybe you already disabled the feature? For some of the lists - for some not, and now you are looking for a quick way to restore the option for all lists?
+
+This is also a solution for you! :)
+
+ 
+
+ 
+ 
+
 </br>**This is also a solution for you! :)**
+
  
 ```Powershell 
 # Paths to SDK. Please verify location on your computer. 

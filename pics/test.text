@@ -1,4 +1,4 @@
-gg
+gg  
 $run = Get-SPOSiteDesignRun -WebUrl https://etr56.sharepoint.com/sites/fullsitedesign4 -SiteDesignId 6e7dbb3b-3657-4cbb-881c-bb2ba959719a
 PS C:\WINDOWS\system32> Get-SPOSiteDesignRun -WebUrl https://etr56.sharepoint.com/sites/fullsitedesign4 -SiteDesignId 6e7dbb3b-3657-4cbb-881c-bb2ba959719a | Get-SPOSiteDesignRunStatus
 

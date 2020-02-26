@@ -13,12 +13,11 @@ $Users = Get-MsolUser -All
  $noSPO = New-MsolLicenseOptions -AccountSkuId $Plan -DisabledPlans $disabledPlans
 
  Write-Host $Plan
+ 
  foreach($user in $Users)
  {
-
-Set-MsolUser -UserPrincipalName $user.UserPrincipalName -UsageLocation "US"
-Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -RemoveLicenses $Plan
-Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -AddLicenses $Plan -LicenseOptions $noSPO
-Write-Host "Done for user " $user.UserPrincipalName
- 
+   Set-MsolUser -UserPrincipalName $user.UserPrincipalName -UsageLocation "US"
+   Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -RemoveLicenses $Plan
+   Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -AddLicenses $Plan -LicenseOptions $noSPO
+   Write-Host "Done for user " $user.UserPrincipalName 
  }
