@@ -1,16 +1,15 @@
 function Get-SPOListFields{
-  <#
+   <#
     .link
     http://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-cmdlets-resources.aspx
-
-    #>
+   #>
 
   param (
-    [Parameter(Mandatory=$true,Position=3)]
-		[string]$ListTitle,
-    [Parameter(Mandatory=$false,Position=4)]
-		[bool]$IncludeSubsites=$false
-	)
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListTitle,
+	[Parameter(Mandatory=$false,Position=4)]
+	[bool]$IncludeSubsites=$false
+  )
 
   $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
   $ctx.Load($ll)
@@ -52,16 +51,16 @@ function Get-SPOListItems{
   #>
 
   param (
-    [Parameter(Mandatory=$true,Position=1)]
-		[string]$ListTitle,
-    [Parameter(Mandatory=$false,Position=2)]
-		[bool]$IncludeAllProperties=$false,
-    [switch]$Recursive,
-    [Parameter(Mandatory=$false,Position=4)]
-		$DestinationLibrary,
-    [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Overwrite
-	)
+	[Parameter(Mandatory=$true,Position=1)]
+	[string]$ListTitle,
+ 	[Parameter(Mandatory=$false,Position=2)]
+	[bool]$IncludeAllProperties=$false,
+	[switch]$Recursive,
+	[Parameter(Mandatory=$false,Position=4)]
+	$DestinationLibrary,
+	[Parameter(Mandatory=$false,Position=5)]
+	[bool]$Overwrite
+  )
   
   
   $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
@@ -69,8 +68,6 @@ function Get-SPOListItems{
   $ctx.Load($ll.Fields)
   $ctx.ExecuteQuery()
   $i=0
-
-
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
   # $spqQuery.ViewAttributes = "Scope='Recursive'"
@@ -95,7 +92,8 @@ function Get-SPOListItems{
         $ctx.Load($attache)
         $ctx.ExecuteQuery()
         Write-Host $itemki[$j]["Title"] -BackgroundColor DarkCyan
-        foreach($att in $attache){
+        
+	foreach($att in $attache){
            #Write-Output $att
            $file =
           $ctx.Web.GetFileByServerRelativeUrl($att.ServerRelativeUrl);
@@ -112,7 +110,6 @@ function Get-SPOListItems{
           
           try{
             $ctx.ExecuteQuery()        
-        
             Write-Host $file.Name " has been copied to" $DestinationLibrary   -ForegroundColor DarkGreen 
           }
           catch [Net.WebException]{ 
@@ -127,8 +124,7 @@ function Connect-SPOCSOM{
   <#
     .link
     http://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-cmdlets-resources.aspx
-
-    #>
+  #>
 
   param (
     [Parameter(Mandatory=$true,Position=1)]
