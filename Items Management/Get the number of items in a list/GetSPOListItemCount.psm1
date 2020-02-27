@@ -1,18 +1,14 @@
-﻿function Get-SPOListItemCount
-{
-  
-   param (
+function Get-SPOListItemCount{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$ListTitle
-		)
-  
-  
+	[string]$ListTitle
+   )
   
    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -25,8 +21,6 @@
   $ctx.Load($ll)
   $ctx.ExecuteQuery()
 
-
-
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
 
   $itemki=$ll.GetItems($spqQuery)
@@ -34,12 +28,9 @@
   $ctx.ExecuteQuery()
 
   $count=$itemki.Count
- 
-  
+
   return $count
-  
-  
-  }
+}
 
 
 # Paths to SDK. Please verify location on your computer.
