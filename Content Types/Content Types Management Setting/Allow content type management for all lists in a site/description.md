@@ -22,9 +22,9 @@ $Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists"
 $ContentTypesEnabled=$true 
 ``` 
 
-###Please share your thoughts in the Q&A section!
+### Please share your thoughts in the Q&A section!
 
-####Related scripts</br>
+#### Related scripts</br>
 [Set direction of the reading order for a single list](https://gallery.technet.microsoft.com/office/Set-SPOList-properties-9d16f2ba)
 
 [Set-SPOList properties (module)](https://gallery.technet.microsoft.com/scriptcenter/Disable-or-enable-12cf3795)
