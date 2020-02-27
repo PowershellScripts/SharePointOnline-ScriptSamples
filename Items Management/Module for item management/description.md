@@ -1,5 +1,5 @@
 5 cmdlets for item management:
-<b>
+</br><b>
 Update-SPOListItem
 
 Remove-SPOListItem
