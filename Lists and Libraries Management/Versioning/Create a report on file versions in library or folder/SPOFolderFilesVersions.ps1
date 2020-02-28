@@ -1,19 +1,19 @@
 ﻿function Get-SPOFolderFiles
 {
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		$password,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ServerRelativeUrl,
-        [Parameter(Mandatory=$true,Position=5)]
+		[Parameter(Mandatory=$true,Position=5)]
 		[string]$CSVPath,
-        [Parameter(Mandatory=$true,Position=6)]
+		[Parameter(Mandatory=$true,Position=6)]
 		[string]$CSVPath2  
-		)
+	)
 
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -29,12 +29,11 @@ param (
         $ctx.ExecuteQuery()
 
         
-        foreach ($file in $fileCollection)
-        {
+        foreach ($file in $fileCollection){
 		$ctx.Load($file.Versions)
 		$ctx.ExecuteQuery()
-		if ($file.Versions.Count -eq 0)
-		{
+		
+		if ($file.Versions.Count -eq 0){
 		  $obj=New-Object PSObject
 		  $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
 		  $obj | Add-Member NoteProperty Versions("No Verions Available")
@@ -43,17 +42,14 @@ param (
 
 
 		Foreach ($versi in $file.Versions){
-
 			$user=$versi.CreatedBy
 			$ctx.Load($versi)
 			$ctx.Load($user)
 			$ctx.ExecuteQuery()
 			$versi | Add-Member NoteProperty CreatedByUser($user.LoginName)
 			 $versi |export-csv -Path $CSVPath -Append
-		    }
+		}
         }
-
-
 }
 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
