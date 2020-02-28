@@ -28,12 +28,13 @@
 	    "setb"  { 
 	    $ll=$ctx.Web.Lists.GetByID($ListGUID)
 	    $vv=$ll.Views.GetByID($ViewGUID); break} 
-	    }
+	}
+	    
 	    $ctx.Load($vv)
 	    $ctx.ExecuteQuery()
 	    $vv.DeleteObject()
 	    $ctx.ExecuteQuery
-	}
+}
 
 
   # Paths to SDK. Please verify location on your computer.
