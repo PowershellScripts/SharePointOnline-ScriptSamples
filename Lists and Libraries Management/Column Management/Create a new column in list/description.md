@@ -1,10 +1,6 @@
 Powershell Module that allows you to add a new column to a SharePoint Online list, using the following cmdlet:
 
-New-SPOListColumn
-
- 
-
- 
+**New-SPOListColumn**
 
 Import the module using import-module and use the cmdlet whenever you want!
 
