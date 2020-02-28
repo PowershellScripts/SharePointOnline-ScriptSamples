@@ -1,27 +1,26 @@
-﻿function New-SPOList
-{
-param (
+function New-SPOList{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$Title,
+	[string]$Title,
         [Parameter(Mandatory=$false,Position=5)]
-		[int]$TemplateType=100,
+	[int]$TemplateType=100,
         [Parameter(Mandatory=$false,Position=6)]
-		[string]$Description="",
+	[string]$Description="",
         [Parameter(Mandatory=$false,Position=7)]
-		[Int]$DocumentTemplateType,
+	[Int]$DocumentTemplateType,
         [Parameter(Mandatory=$false,Position=8)]
-		[GUID]$TemplateFeatureID,
+	[GUID]$TemplateFeatureID,
         [Parameter(Mandatory=$false,Position=9)]
-		[string]$ListUrl=""
-		)
+	[string]$ListUrl=""
+   )
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
@@ -33,31 +32,26 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $lci.Description=$Description
   $lci.Title=$Title
   $lci.Templatetype=$TemplateType
-  if($ListUrl -ne "")
-  {
-  $lci.Url =$ListUrl
-  }
-  if($DocumentTemplateType.IsPresent)
-  {
-  $lci.DocumentTemplateType=$DocumentTemplateType
-  }
-  if($TemplateFeatureID.IsPresent)
-  {
-  $lci.TemplateFeatureID=$TemplateFeatureID
-  }
+  
+    if($ListUrl -ne ""){
+        $lci.Url =$ListUrl
+    }
+    if($DocumentTemplateType.IsPresent){
+        $lci.DocumentTemplateType=$DocumentTemplateType
+    }
+    if($TemplateFeatureID.IsPresent){
+        $lci.TemplateFeatureID=$TemplateFeatureID
+    }
   $list = $ctx.Web.Lists.Add($lci)
   $ctx.Load($list)
-  try
-     {
-       
-         $ctx.ExecuteQuery()
-         Write-Host "List " $Title " has been added to " $Url
-     }
-     catch [Net.WebException]
-     { 
+  
+    try{  
+        $ctx.ExecuteQuery()
+        Write-Host "List " $Title " has been added to " $Url
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-
+    }
 }
 
 
