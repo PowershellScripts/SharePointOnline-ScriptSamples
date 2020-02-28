@@ -12,14 +12,9 @@ It retrieves all the users and creates a contact list with
 
 "CellPhone"
 
- 
-
- 
-
 Screenshot with test data
 
-
-
+<img src="../C# Create a contact list with internal user data/intern.png">
 
 Technicalities:
 
