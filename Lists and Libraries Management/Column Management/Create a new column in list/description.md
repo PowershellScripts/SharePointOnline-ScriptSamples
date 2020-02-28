@@ -17,14 +17,19 @@ The cmdlet is using the following parameters:
 
 The string specifies admin of the site
 </br>```[string]$Url```
+
 Specifies the url of a site where you have the list
-</br>```[string]$AdminPassword,```      
+</br>```[string]$AdminPassword,```  
+
 Admin's password
 </br>```[string]$ListTitle```
+
 Specifies the title of the list where you want to change the settings.
 </br>```[string]$FieldDisplayName```
+
 Mandatory. Specifies the display name of the column
 </br>```[System.String]$FieldType```
+
 Mandatory. Specifies the type of the field. You can choose among:
 
  'AllDayEvent','Attachments','Boolean', 'Calculate', 'Choice', 'Computed', 'ContenttypeID', 'Counter', 'CrossProjectLink', 'Currency', 'DateTime', 'Error', 'File', 'Geolocation', 'GridChoice', 'Guid', 'Integer', 'Invalid', 'Lookup', 'MaxItems', 'ModStat', 'MultiChoice', 'Note', 'Number', 'OutcomeChoice', 'PageSeparator', 'Recurrence', 'Text', 'ThreadIndex', 'Threading', 'Url','User', 'WorkflowEventType', 'WorkflowStatus'
