@@ -1,49 +1,44 @@
 ﻿function Get-SPOListEventreceivers
 {
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-)
+	)
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
 
-try
-{
-$ctx.ExecuteQuery()
-} catch [Net.WebException] 
-        {
-            
-            Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
-}
+	try{
+		$ctx.ExecuteQuery()
+	}
+	catch [Net.WebException] {
+		Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
+	}
 
  $ctx.Load($ctx.Site)
   $ctx.Load($ctx.Web.Lists)
   $ctx.ExecuteQuery()
   Write-Host $ctx.Web.Lists.Count
-  for($j=0;$j -lt $ctx.Web.Lists.Count;$j++)
-  {
-  $lista=$ctx.Web.Lists[$j]
- $ctx.Load($lista)
-  $ctx.ExecuteQuery()
- $recevery=$lista.EventReceivers
- $ctx.Load($recevery)
- $ctx.ExecuteQuery()
- Write-Host $recevery.Count  $lista.Title
+  
+  for($j=0;$j -lt $ctx.Web.Lists.Count;$j++){
+	  $lista=$ctx.Web.Lists[$j]
+	 $ctx.Load($lista)
+	  $ctx.ExecuteQuery()
+	 $recevery=$lista.EventReceivers
+	 $ctx.Load($recevery)
+	 $ctx.ExecuteQuery()
+	 Write-Host $recevery.Count  $lista.Title
 
- for($i=0;$i -lt $recevery.Count ; $i++)
- {
- $ctx.Load($recevery[$i])
- $ctx.ExecuteQuery()
- Write-Output $recevery[$i]
- }
-
- }
-
+	 for($i=0;$i -lt $recevery.Count ; $i++){
+		 $ctx.Load($recevery[$i])
+		 $ctx.ExecuteQuery()
+		 Write-Output $recevery[$i]
+	 }
+  }
 }
 
 
