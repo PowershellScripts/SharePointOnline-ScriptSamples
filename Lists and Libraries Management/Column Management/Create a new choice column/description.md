@@ -13,46 +13,46 @@ Import the module to make the cmdlet available.
 ## Parameters
 
 The cmdlet is using the following parameters:
+</br>``` [string]$Username```
 
-``` [string]$Username```
 The string specifies admin of the site
+</br>```[string]$Url```
 
-```[string]$Url```
 Specifies the url of a site where you have the list
+</br>```[string]$AdminPassword``` 
 
-```[string]$AdminPassword```       
 Admin's password
+</br>```[string]$ListTitle```
 
-```[string]$ListTitle```
 Specifies the title of the list where you want to change the settings.
+</br>```[string]$FieldDisplayName```
 
-```[string]$FieldDisplayName```
 Mandatory
+</br>```[String[]]  $ChoiceNames```
 
-```[String[]]  $ChoiceNames```
 Choices that you want to add as options for users to choose. Add each choice after a comma - you can add as many as you like.
 
 e.g. -ChoiceNames choice1, choice2, option3, option5, option100
+</br>```[string]$Description=""```
 
-```[string]$Description=""```
 Optional.
+</br>```[string]$Required="false"```
 
-```[string]$Required="false"```
 Optional. Specifies whether the field is required.
+</br>```[ValidateSet('Dropdown','Radiobuttons', 'Checkboxes')] [string]$Format="Dropdown"```
 
-```[ValidateSet('Dropdown','Radiobuttons', 'Checkboxes')] [string]$Format="Dropdown"```
 Optional. Specifies the format of the field. By default set to "dropdown"
+</br>```[string]$Group=""```
 
-```[string]$Group=""```
 Optional.
+</br>```[string]$StaticName```
 
-```[string]$StaticName```
 Mandatory
+</br>```[string]$Name```
 
-```[string]$Name```
 Mandatory
+</br>```[string]$Version="1"```
 
-```[string]$Version="1"```
 Optional.
 
  
@@ -66,13 +66,13 @@ New-SPOListChoiceColumn -Username  -Url https://tenant.sharepoint.com/sites/team
 ```
  
 
- <img src="../Create a new choice column/choicecolumn.PNG" width="850">
+ <img src="../Create a new choice column/choicecolumn.png" width="850">
  
 
  
 Results:
 
-<img src="../Create a new choice column/choicecolumn2.PNG" width="850">
+<img src="../Create a new choice column/choicecolumn2.png" width="850">
 
 
  
