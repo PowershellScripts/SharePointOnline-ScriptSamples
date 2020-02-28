@@ -13,23 +13,18 @@ Import the module using import-module and use the cmdlet whenever you want!
 ## Parameters
 
 The cmdlet is using the following parameters:
+</br>```[string]$Username```
 
- [string]$Username
 The string specifies admin of the site
-
-[string]$Url
+</br>```[string]$Url```
 Specifies the url of a site where you have the list
-
-[string]$AdminPassword,       
+</br>```[string]$AdminPassword,```      
 Admin's password
-
-[string]$ListTitle
+</br>```[string]$ListTitle```
 Specifies the title of the list where you want to change the settings.
-
-[string]$FieldDisplayName
+</br>```[string]$FieldDisplayName```
 Mandatory. Specifies the display name of the column
-
-[System.String]$FieldType
+</br>```[System.String]$FieldType```
 Mandatory. Specifies the type of the field. You can choose among:
 
  'AllDayEvent','Attachments','Boolean', 'Calculate', 'Choice', 'Computed', 'ContenttypeID', 'Counter', 'CrossProjectLink', 'Currency', 'DateTime', 'Error', 'File', 'Geolocation', 'GridChoice', 'Guid', 'Integer', 'Invalid', 'Lookup', 'MaxItems', 'ModStat', 'MultiChoice', 'Note', 'Number', 'OutcomeChoice', 'PageSeparator', 'Recurrence', 'Text', 'ThreadIndex', 'Threading', 'Url','User', 'WorkflowEventType', 'WorkflowStatus'
@@ -38,17 +33,11 @@ Mandatory. Specifies the type of the field. You can choose among:
 
 It corresponds to GUI:
 
- 
-
-
-
- 
-
- 
+<img src="../Create a new column in list/NewspoList.png">
 
 Examples
 
- 
+ <img src="../Create a new column in list/SPOLisstColumn6.PNG">
 
  New-SPOListColumn -Username trial@trialtrial123.onmicrosoft.com -Url https://tenant.sharepoint.com -AdminPassword Pass -LisTitle "contacts list" -FieldDisplayName "Business Phone" -FieldType Number
 
