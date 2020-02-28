@@ -1,17 +1,16 @@
-﻿function Set-ListCheckout
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListCheckout{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$ForceCheckout=$true
-		)
+	[bool]$ForceCheckout=$true
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -24,39 +23,33 @@
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+    
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
-function Set-ListVersioning
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListVersioning{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Enabled=$true
-		)
+	[bool]$Enabled=$true
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -69,40 +62,34 @@ function Set-ListVersioning
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+    
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Set-ListMinorVersioning
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListMinorVersioning{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Enabled=$true
-		)
+	[bool]$Enabled=$true
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -115,40 +102,33 @@ function Set-ListMinorVersioning
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Remove-ListInheritance
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Remove-ListInheritance{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$KeepPermissions=$true
-		)
+	[bool]$KeepPermissions=$true
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -161,38 +141,32 @@ function Remove-ListInheritance
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Restore-ListInheritance
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Restore-ListInheritance{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword
-		)
+	[string]$AdminPassword
+   )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -205,40 +179,34 @@ function Restore-ListInheritance
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Set-ListContentTypesEnabled
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListContentTypesEnabled{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Enabled=$true
-		)
+	[bool]$Enabled=$true
+   )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -251,38 +219,32 @@ function Set-ListContentTypesEnabled
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Remove-SPOList
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Remove-SPOList{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword
-		)
+	[string]$AdminPassword
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -292,38 +254,31 @@ function Remove-SPOList
   $ctx.ExecuteQuery()  
   $ll=$ctx.Web.Lists.GetByTitle($ListName)
     $ll.DeleteObject();
-        try
-        {
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
-            Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
+    catch [Net.WebException] {    
+        Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
+    }
 }
 
 
-function Set-ListFolderCreationEnabled
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListFolderCreationEnabled{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Enabled=$true
-		)
+	[bool]$Enabled=$true
+   )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -336,40 +291,34 @@ function Set-ListFolderCreationEnabled
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
-function Set-ListIRMEnabled
-{
-  param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$ListName,
+function Set-ListIRMEnabled{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
+	[Parameter(Mandatory=$true,Position=3)]
+	[string]$ListName,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=5)]
-		[bool]$Enabled=$true
-		)
+	[bool]$Enabled=$true
+   )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -382,23 +331,18 @@ function Set-ListIRMEnabled
     $ll.Update()
     
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
-        try
-        {
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    try{
         #$ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host "Done!" -ForegroundColor DarkGreen             
-        }
-
-        catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-          
-  
-
+    }
 }
 
 
