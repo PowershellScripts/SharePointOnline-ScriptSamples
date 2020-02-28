@@ -1,15 +1,14 @@
-﻿function Get-SPOFolderFiles
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
-		$password,
-        [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle
-		)
+function Get-SPOFolderFiles{
+  param (
+    [Parameter(Mandatory=$true,Position=1)]
+    [string]$Username,
+    [Parameter(Mandatory=$true,Position=2)]
+    [string]$Url,
+    [Parameter(Mandatory=$true,Position=3)]
+    $password,
+    [Parameter(Mandatory=$true,Position=4)]
+    [string]$ListTitle
+ )
 
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -25,12 +24,11 @@ param (
    $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
-  foreach($item in $itemki)
-  {
+  foreach($item in $itemki){
 
-  Write-Host $item["FileRef"] $item.ElementType
-  
-  $file =
+    Write-Host $item["FileRef"] $item.ElementType
+    
+    $file =
         $ctx.Web.GetFileByServerRelativeUrl($item["FileRef"]);
         $ctx.Load($file)
         $ctx.Load($file.Versions)     
@@ -47,34 +45,28 @@ param (
         $ctx.Load($file.EffectiveInformationRightsManagementSettings)
         $ctx.Load($file.Properties)
         $ctx.Load($file.VersionEvents)
-        try
-        {
-        $ctx.ExecuteQuery()
-        }
-        catch
-        {}
+        
+    try{
+      $ctx.ExecuteQuery()
+    }
+    catch{}
        
-       if($CheckedOutByUser.LoginName -ne $null){
+    if($CheckedOutByUser.LoginName -ne $null){
        Write-Host $file.Name
        Write-Host $CheckedOutByUser.LoginName
        $file.CheckIn('Checked in automatically', 'MajorCheckIn')
-  $ctx.Load($file)
-  try
-  {
-  $ctx.ExecuteQuery()        
-  Write-Host $file.Name " has been checked in"     -ForegroundColor DarkGreen 
-  }
-        catch [Net.WebException]
-     { 
+        $ctx.Load($file)
+          
+      try{
+        $ctx.ExecuteQuery()        
+        Write-Host $file.Name " has been checked in"     -ForegroundColor DarkGreen 
+      }
+      catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-       
-       }
-        
-
-        
-     }   
-  }
+      }   
+    }        
+  }   
+}
 
 
 
