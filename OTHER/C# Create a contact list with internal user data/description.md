@@ -2,15 +2,15 @@ Short C# application.
 
 It retrieves all the users and creates a contact list with  
 
-"LastName"
+**"LastName"
 
-"FirstName"
+**"FirstName"
 
-"WorkEmail"
+**"WorkEmail"
 
-"WorkPhone"
+**"WorkPhone"
 
-"CellPhone"
+**"CellPhone"
 
 Screenshot with test data
 
