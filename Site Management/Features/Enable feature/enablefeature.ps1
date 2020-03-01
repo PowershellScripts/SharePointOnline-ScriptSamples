@@ -24,32 +24,25 @@ $featureguid=new-object System.Guid $feature
 $RemoveorAdd= Read-Host "Do you want to activate the feature to the sites (a) or deactivate it (d)? Press a or d."
 $RemoveorAdd=$RemoveorAdd.Trim()
 
-if($RemoveorAdd -like "a")
-{
-   
-   foreach($site in $sites)
-   {
+if($RemoveorAdd -like "a"){   
+   foreach($site in $sites){
       $site.Features.Add($featureguid, $true, [Microsoft.SharePoint.Client.FeatureDefinitionScope]::None)
       #$site.Features.Remove($featureguid, $true);
       $ctx.ExecuteQuery()
       Write-Host "Feature enabled for" $site.Url
-      }
-      Write-Host "Done."
+   }
+   Write-Host "Done."
 }
-elseif($RemoveorAdd -like "d")
-{
-   
-   foreach($site in $sites)
-   {
+elseif($RemoveorAdd -like "d"){
+   foreach($site in $sites){
       $site.Features.Remove($featureguid, $true);
       $ctx.ExecuteQuery()
       Write-Host "Feature removed for" $site.Url
-      }
+   }
       Write-Host "Done."
 }
-else
-{
-Write-Host "Didn't recognize the command"
+else{
+   Write-Host "Didn't recognize the command"
 }
     
     
