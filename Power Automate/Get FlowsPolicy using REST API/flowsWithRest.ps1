@@ -1,26 +1,21 @@
-﻿function Get-SPOFlowSetting
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-SPOFlowSetting{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-        [Parameter(Mandatory=$false,Position=2)]
+		[Parameter(Mandatory=$false,Position=2)]
 		[SecureString] $password = (Read-Host -AsSecureString),
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string] $url,
-        [Parameter(Mandatory=$false,Position=4)]
-        [string] $object=""
-		)
-
-
+		[Parameter(Mandatory=$false,Position=4)]
+		[string] $object=""
+	)
  
-  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $RestUrl=$url+"/_api/site/"
-  if($object -ne "")
-  {
-    $RestUrl+=$object
-  }
-
-
+	  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	  $RestUrl=$url+"/_api/site/"
+  
+	  if($object -ne ""){
+	    $RestUrl+=$object
+	  }
   
         $request = [System.Net.WebRequest]::Create($RESTUrl) 
         $request.Credentials = $Credentials 
@@ -34,13 +29,7 @@ param (
         $data=$read.ReadToEnd() 
         $results = $data | ConvertFrom-Json 
         Write-Output $results.d
-
-        
-        
-        
-
-        
-  }
+}
 
 
 
