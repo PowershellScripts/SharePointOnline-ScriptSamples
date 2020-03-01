@@ -8,4 +8,4 @@ Does not require any modifications, just open the script in any Powershell and r
 
  <img src="../Get all site collections and their subsites/GetAllSitesandSubsites.PNG">
 
-**and please share your feedback!!**
+**Enjoy and please share your feedback!!**
