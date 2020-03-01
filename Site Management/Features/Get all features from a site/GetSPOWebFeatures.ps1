@@ -1,29 +1,24 @@
-﻿function Get-SPOFeature
-{
-param (
-        [string]$Username,
+﻿function Get-SPOFeature{
+	param (
+		[string]$Username,
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		$password
-)
+	)
 
-$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  
-$site=$ctx.Web
-$ctx.Load($site.Features)
-$ctx.Load($ctx.Web.Webs)
-$ctx.ExecuteQuery()
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+
+	$site=$ctx.Web
+	$ctx.Load($site.Features)
+	$ctx.Load($ctx.Web.Webs)
+	$ctx.ExecuteQuery()
 
 
-    for($i=0;$i -lt $site.Features.Count ;$i++)
-{
-
-Write-Output $site.Features[$i].DefinitionID
-
-}
-
+	for($i=0;$i -lt $site.Features.Count ;$i++){
+		Write-Output $site.Features[$i].DefinitionID
+	}
 }
 
 
@@ -40,23 +35,14 @@ $ctx = New-Object Microsoft.SharePoint.Client.ClientContext($siteUrl)
 $credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password) 
 $ctx.Credentials= New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password) 
 
-try
-{
-$ctx.ExecuteQuery()
+try{
+	$ctx.ExecuteQuery()
 }
-catch [Net.WebException] 
-        {
-            
-            Write-Host "Wrong credentials" $_.Exception.Message -ForegroundColor Red
-        }
+catch [Net.WebException] {
+	Write-Host "Wrong credentials" $_.Exception.Message -ForegroundColor Red
+}
 
-
-
-
-   Get-SPOFeature -Username $username -Url $siteUrl -password $password
-
-    
-    
+Get-SPOFeature -Username $username -Url $siteUrl -password $password 
    
 Write-Host "Done."    -ForegroundColor Green
   
