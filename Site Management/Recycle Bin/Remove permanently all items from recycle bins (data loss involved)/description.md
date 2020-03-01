@@ -1,12 +1,8 @@
 The script removes permanently and irrevocably items from the specified site recycle bin and its corresponding site collection recycle bin. 
 
 The data cannot be retrieved afterwards. Test the script before using on production environment.
-
  
-
- 
-
-PowerShell
+```PowerShell
  $ctx.Load($ctx.Web) 
   $ctx.Load($ctx.Site) 
   $rb=$ctx.Web.RecycleBin 
@@ -22,18 +18,11 @@ $siteRB.DeleteAll()
 $siteRB.DeleteAllSecondStageItems() 
  
 $ctx.ExecuteQuery()
- 
- 
-
- 
+ ```
 
 The script requires SharePoint Online SDK installed:
 
 https://www.microsoft.com/en-us/download/details.aspx?id=42038
-
- 
-
- 
 
 Before running the script, open the file and enter correct paths to the SDK and your tenant data:
 
