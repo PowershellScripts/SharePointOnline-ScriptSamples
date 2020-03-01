@@ -4,8 +4,9 @@ The program has 2 basic functions: creation and destruction.
 
 **Godly Creation:**
 
-<blockqoute>- it creates the following site collections, all named after the templates they have been created from:</blockqoute> 
-
+<blockqoute>
+  - it creates the following site collections, all named after the templates they have been created from:
+</blockqoute> 
 - TeamsiteWithLibraries
 - TeamsiteWithLists
 - Empty Teamsite
@@ -13,19 +14,34 @@ The program has 2 basic functions: creation and destruction.
 - "BlogSite"
 - "CommunitySite"
 - "PublishingPortal"
-<blockqoute>- it creates 2 subsites : subsite1 and subsite2 to the TeamsiteWithLibraries
 
+<blockqoute>
+- it creates 2 subsites : subsite1 and subsite2 to the TeamsiteWithLibraries
+</blockqoute>
+</br>
+<blockqoute>
 - it creates  2 document libraries, 2 picture libraries, Wiki Page library, XML Form library and Data Connection library to the TeamsiteWithLibraries
+</blockqoute>
 
+<blockqoute>
 - it creates 3 Custom lists in the TeamsiteWithLists: one empty, one with sample data, one with over 5000 items
+</blockqoute>
 
+<blockqoute>
 - it creates a default view limited to 70 items for 5000 items list. You can switch between the views using GUI
+</blockqoute>
 
+<blockqoute>
 - it creates Links list, Anouncements list, Contacts list, Events list, Tasks list  to the TeamsiteWithLists
+</blockqoute>
 
+<blockqoute>
 - it populates Custom, Anouncements list, Contacts list, Events list, and Tasks list with sample data (ca. 50 items - if you need more please look https://gallery.technet.microsoft.com/scriptcenter/Create-various-lists-with-0e714f70 and https://gallery.technet.microsoft.com/scriptcenter/Create-a-list-with-3f19ba11 )
+</blockqoute>
 
-- it adds all the available lists and libraries to the Quick Launch Menu. Also added are the lists that were previously accessible only via direct links, like Workflow History.</blockqoute>
+<blockqoute>
+- it adds all the available lists and libraries to the Quick Launch Menu. Also added are the lists that were previously accessible only via direct links, like Workflow History.
+</blockqoute>
 
 Watch out!  The process of creating 5000 items in a list takes time. You will be informed on the progress as the application runs. 
 
