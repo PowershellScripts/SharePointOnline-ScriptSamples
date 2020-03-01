@@ -49,25 +49,33 @@ Watch out!  The process of creating 5000 items in a list takes time. You will be
 ### Total Destruction:
 <blockqoute>
 - it retrieves all your site collections and deletes them, apart from the search, mysite (which cannot be recreated in SharePoint Online) and rootsite
-
+</blockqoute>
+</br>
+<blockqoute>
 - it checks the recycle bin for the deleted sites and removes them from the recycle bin 
 </blockqoute>
+</br>
 
 Watch out! Deleting a site collection takes a while and depends on SharePoint Online backend processes. The application waits for the site collections to be deleted and informs you about its attempts with status updates "Trying to delete site XYZ". However, after 6 unsuccessful attempts it may mean that SharePoint is not going to be very cooperative at the moment and the application will ask you whether it should close or keep trying.
 
 ### Only Recycle Bin:
 <blockqoute>
 - as the name suggests, permanently removes the content of the recycle bin
-
+<blockqoute>
+</br>
+<blockqoute>
 - cannot be reversed 
-
+</blockqoute>
+</br>
+<blockqoute>
 - can be used instead of Powershell Get-SpoDeletedSite | Remove-SpoDeletedSite
 </blockqoute>
 
 ### Only Created
-</blockqoute>
+<blockqoute>
 - removes only the site collections created by the program 
 </blockqoute>
+
 - TeamsiteWithLibraries
 - TeamsiteWithLists
 - Empty Teamsite
@@ -81,11 +89,17 @@ Watch out! If you added some of your own data to those site collections (other l
 ### *What doesn't it do?*
 <blockqoute>
 -Despite the name Non-Empty libraries are still empty
-
+</blockqoute>
+</br>
+<blockqoute>
 -The list with Geolocation column doesn't contain Geolocation column
-
+</blockqoute>
+</br>
+<blockqoute>
 -It doesn't verify your credentials. Change the examples in the fields into your own credentials, following the same pattern (don't put in a teamsite domain.sharepoint.com where it asks you to type admin site url preceded by https://). If you make a mistake, you will get an error at an early stage of the application.
-
+</blockqoute>
+</br>
+<blockqoute>
 - It's not perfect. I have made it as failsafe as the time allowed with a lot of try and catches and bugs handled. However, if it still stops at some point, just run it again. The program will detect the work already done and simply continue. 
 </blockqoute>
 
