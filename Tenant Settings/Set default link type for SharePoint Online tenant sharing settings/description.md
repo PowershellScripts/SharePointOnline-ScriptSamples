@@ -8,7 +8,7 @@ The script is related to and more described in a Wiki article [SharePoint Online
 
 ## How to use?
 
-- Download and open the .ps1 file.
+- Download and open the ```.ps1``` file.
 - Add correct libraries:
  
 ```PowerShell
