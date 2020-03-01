@@ -4,9 +4,9 @@ Remove-SPOWebInheritance
 
 Restore-SPOWebInheritance
 
-
-## Restore-SPOWebInheritance
 ---
+## Restore-SPOWebInheritance
+
 ### Parameters
 
 The cmdlet is using the following parameters:
@@ -21,9 +21,9 @@ Specifies the url of the parent site
 
 - [string]$AdminPassword,  
  
-
-## Remove-SPOWebInheritance
 ---
+## Remove-SPOWebInheritance
+
 ##Parameters
 
 The cmdlet is using the following parameters:
