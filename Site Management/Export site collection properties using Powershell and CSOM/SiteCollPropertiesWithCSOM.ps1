@@ -1,30 +1,27 @@
-﻿function Get-SiteColl
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-SiteColl{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		$password
-		)
+	)
 
 
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $ctx.Load($ctx.Web)
-  $ctx.ExecuteQuery()
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	$ctx.Load($ctx.Web)
+	$ctx.ExecuteQuery()
 
-  $spoTenant= New-Object Microsoft.Online.SharePoint.TenantAdministration.Tenant($Ctx) 
-  $spoTenantSiteCollections=$spoTenant.GetSiteProperties(0,$true) 
-  $ctx.Load($spoTenantSiteCollections) 
-  $ctx.ExecuteQuery() 
+	$spoTenant= New-Object Microsoft.Online.SharePoint.TenantAdministration.Tenant($Ctx) 
+	$spoTenantSiteCollections=$spoTenant.GetSiteProperties(0,$true) 
+	$ctx.Load($spoTenantSiteCollections) 
+	$ctx.ExecuteQuery() 
 
-   foreach($siteColl in $spoTenantSiteCollections)
-   {
-        Write-Output $siteColl
-   }     
-
+	foreach($siteColl in $spoTenantSiteCollections){
+		Write-Output $siteColl
+	}     
 }
 
 
