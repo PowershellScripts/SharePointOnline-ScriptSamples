@@ -9,7 +9,7 @@ It is one of the 3 additional settings:
 
  
 
-The script is related to and more described in a Wiki article SharePoint Online Sharing settings with CSOM.
+The script is related to and more described in a Wiki article [SharePoint Online Sharing settings with CSOM](https://social.technet.microsoft.com/wiki/contents/articles/39365.sharepoint-online-sharing-settings-with-csom).
 
  <img src="../Force external users to accept sharing invitations with the same account/0042.additional.PNG-550x0.png">
 
