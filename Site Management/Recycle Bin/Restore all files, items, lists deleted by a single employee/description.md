@@ -38,7 +38,7 @@ $Username="admin@tenant.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $AdminUrl="https://tenant-admin.sharepoint.com" 
 $userupn="i:0#.f|membership|uss2@arletka.cloudns.org"
- 
+ ```
 $Username correponds to the global admin who has access to all the site collections you want to loop through. $userupn is the naughty employee's SharePoint loginname who deleted the items. Pay attention to the format and DO NOT remove i:0#.f|membership| part unless you are 100% sure that your SharePoint user loginname includes something else than this.
-```
+
  
