@@ -1,10 +1,6 @@
-Powershell script. Creates a .csv file with a report on all workflows in a site collection.
+Powershell script. Creates a ```.csv``` file with a report on all workflows in a site collection.
 
- 
-
-Before you run the script, open .ps1 file and edit all necessary information:
-
- 
+Before you run the script, open ```.ps1``` file and edit all necessary information:
 
 ```PowerShell
  
@@ -20,18 +16,7 @@ $CSVpath="C:\testpath2.csv"
 ``` 
 As the script runs you will see how many workflows each list has:
 
- 
-
- 
 <img src="../Get workflow report for one site/wf1.png" width="850">
-
-
- 
-
- 
- 
-
- 
 
 ### Sample report
  
