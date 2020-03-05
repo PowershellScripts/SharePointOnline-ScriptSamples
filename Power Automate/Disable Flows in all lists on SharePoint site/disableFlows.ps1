@@ -1,15 +1,14 @@
-﻿function Set-SiteColl
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+﻿function Set-SiteColl{
+	param (
+        	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$AdminUrl,
-        [Parameter(Mandatory=$true,Position=3)]
+        	[Parameter(Mandatory=$true,Position=3)]
 		$Password,
-        [Parameter(Mandatory=$true,Position=4)]
+        	[Parameter(Mandatory=$true,Position=4)]
 		$Url
-		)
+	)
 
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Adminurl)
