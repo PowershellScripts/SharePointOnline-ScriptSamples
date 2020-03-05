@@ -19,11 +19,11 @@ At the end, a csv file is generated with the lists' urls and the status whether 
 As the script runs you will see green lists' titles for which the enabling succeeded and red for those which failed (not all lists support versioning).
 
 
- <img src="../PS Enable versioning for all SharePoint Online lists/versioningPS2.PNG" width="850">
+ <img src="../Enable versioning for all SharePoint Online lists/versioningPS2.png" width="850">
 
- <img src="../PS Enable versioning for all SharePoint Online lists/versioningPS.PNG" width="850">
+ <img src="../Enable versioning for all SharePoint Online lists/versioningPS.png" width="850">
 
-  <img src="../PS Enable versioning for all SharePoint Online lists/versioningPS3.PNG" width="850">
+<img src="../Enable versioning for all SharePoint Online lists/versioningPS3.png" width="850">
 
 You can customize the script by using the commented out tips.
 

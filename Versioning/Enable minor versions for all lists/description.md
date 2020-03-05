@@ -6,15 +6,7 @@ http://technet.microsoft.com/en-us/library/fp161372(v=office.15).aspx
 
 http://www.microsoft.com/en-us/download/details.aspx?id=30722
 
- 
-
- 
-
-
-
- 
-
- 
+ <img src="../Enable minor versions for all lists/minorversioning2.png">
 
 It uses recurrence to find all sites in all site collections and then goes through all the lists.
 
@@ -28,29 +20,11 @@ As the script runs you will see green lists' titles for which the enabling succe
 
 Versioning will always fail for public site.
 
- 
-
- 
-
- 
-
-
-
- 
-
- 
-
- 
-
- 
+<img src="../Enable minor versions for all lists/minorversioning.png"> 
 
 If you need to enable versioning in general and minor versioning for those lists that support it, first run this script for enabling versioning in general and then the one here for minor versions.  
 
- 
-
- 
-
-PowerShell
+```PowerShell
 function getall($urelek) 
 { 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek) 
@@ -132,7 +106,7 @@ foreach($sitecoll in $sitecollections)
  
 # Specify the path where the log file will be published 
 $Global:csv | Export-Csv -Path C:\Users\Public\Versioning.csv 
- 
+ ```
  
 
-If you think, I could have improved on anything, please let me know in the Q&A section!
+### If you think, I could have improved on anything, please let me know in the Q&A section!
