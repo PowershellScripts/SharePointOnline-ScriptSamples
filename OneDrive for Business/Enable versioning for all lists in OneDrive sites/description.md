@@ -1,6 +1,6 @@
 Powershell script that enables versioning for all the libraries and lists in all personal sites (OneDrive for Business). 
 
-It requires SharePoint Online Management Shell and SharePoint SDK installed:
+**It requires SharePoint Online Management Shell and SharePoint SDK installed:**
 
 http://technet.microsoft.com/en-us/library/fp161372(v=office.15).aspx
 

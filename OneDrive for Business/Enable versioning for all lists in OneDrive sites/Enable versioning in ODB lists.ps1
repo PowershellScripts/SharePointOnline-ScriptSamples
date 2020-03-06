@@ -1,54 +1,45 @@
-﻿function Set-SPOListVersioning($EnableVersioning, $Urelek)
-{
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $Adminpassword)
-  $ctx.Load($ctx.Web.Lists)
-  $ctx.Load($ctx.Web)
-  $ctx.Load($ctx.Web.Webs)
-  $ctx.ExecuteQuery()
-  Write-Host 
-  Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
-  foreach( $ll in $ctx.Web.Lists)
-  {
-    $ll.EnableVersioning = $EnableVersioning
-    $ll.Update()
-    $csvvalue= new-object PSObject
+﻿function Set-SPOListVersioning($EnableVersioning, $Urelek){
+    $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
+    $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $Adminpassword)
+    $ctx.Load($ctx.Web.Lists)
+    $ctx.Load($ctx.Web)
+    $ctx.Load($ctx.Web.Webs)
+    $ctx.ExecuteQuery()
+    Write-Host 
+    Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
+  
+  foreach( $ll in $ctx.Web.Lists){
+        $ll.EnableVersioning = $EnableVersioning
+        $ll.Update()
+        $csvvalue= new-object PSObject
         $listurl=$null
+        
         if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
         else {$listurl=$ctx.Url+"/"+$ll.Title}
+       
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
-        try
-        {
-        $ErrorActionPreference="Stop"
-        $ctx.ExecuteQuery() 
-        Write-Host $listurl -ForegroundColor DarkGreen
-        $csvvalue.Status="Success"
-        $Global:csv+= $csvvalue       
+        
+        try{
+          $ErrorActionPreference="Stop"
+          $ctx.ExecuteQuery() 
+          Write-Host $listurl -ForegroundColor DarkGreen
+          $csvvalue.Status="Success"
+          $Global:csv+= $csvvalue       
         }
-
-        catch
-        {
+        catch{
             $Global:csv+= $csvvalue
             Write-Host $listurl -ForegroundColor Red
         }
         finally
         {$ErrorActionPreference="Continue"}
-        
-
   }
 
-  if($ctx.Web.Webs.Count -gt 0)
-  {
-    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
-    {
+  if($ctx.Web.Webs.Count -gt 0){
+    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
         Set-SPOListVersioning -EnableVersioning $EnableVersioning -Urelek ($ctx.Web.Webs[$i].Url)
     }
-
   }
-  
-  
-
 }
 
 
@@ -71,21 +62,17 @@ $users=get-SPOUser -Site $myhost
 $EnableVersioning=$true
 $Global:csv=@()
 
-foreach($user in $users)
-{
+foreach($user in $users){
+  if($user.LoginName.Contains('@')){
+        $persweb=$user.LoginName.Replace(".","_").Replace("@","_")
+        $persweb=$myhost+"/personal/"+$persweb
+        Write-Host $persweb
 
+        $AdminUrl=$persweb
 
-  if($user.LoginName.Contains('@'))
-  {
-    $persweb=$user.LoginName.Replace(".","_").Replace("@","_")
-    $persweb=$myhost+"/personal/"+$persweb
-    Write-Host $persweb
-
-    $AdminUrl=$persweb
-
-    #Add the following line if you want to assign yourself, administrator or another user access to other users' personal sites
-    #Set-SPOUser -Site $AdminUrl -IsSiteCollectionAdmin $true -LoginName t@trial765.onmicrosoft.com
-   Set-SPOListVersioning -EnableVersioning $EnableVersioning -Urelek $AdminUrl
+        #Add the following line if you want to assign yourself, administrator or another user access to other users' personal sites
+        #Set-SPOUser -Site $AdminUrl -IsSiteCollectionAdmin $true -LoginName t@trial765.onmicrosoft.com
+       Set-SPOListVersioning -EnableVersioning $EnableVersioning -Urelek $AdminUrl
   }
 }
 
