@@ -4,7 +4,7 @@ Please test the script in test environment before using it in production.
 
  
 
-The script is a modification of the existing Restore Previous Versions script created to show 2 ways on filtering the file results. The filters are only examples that need to be adjusted to your specific needs.
+The script is a modification of the existing [Restore Previous Versions](https://gallery.technet.microsoft.com/Restore-previous-versions-bbcb0796) script created to show 2 ways on filtering the file results. The filters are only examples that need to be adjusted to your specific needs.
 
 The first filter uses CamlQuery to retrieve only files coming from a specific folder.
 
@@ -20,20 +20,13 @@ When dealing with large number of files CamlQuery is the preferred and more effi
 
  
 
-PowerShell
+```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
+ ```
  
- 
-
- 
-
- 
-
 The script needs to be edited before running. Enter the necessary data:
-
- 
 
 ```PowerShell
 #Enter the data 
@@ -43,13 +36,14 @@ $Url="https://testova365.sharepoint.com/sites/STS"
 $ListTitle="VersionTest"
 ``` 
 The CamlQuery below chooses only files whose ServerRelativeUrl includes a certain path. In this way you can restore versions only from a specific folder.
-PowerShell
+
+```PowerShell
  $spqQuery.ViewXml ="<View Scope='RecursiveAll' /><Where><Eq><FieldRef Name='ServerRelativeUrl'/><Value Type='Text'>/VersionTest/Folder2/FolderWithinFolder</Value></Eq></Where>"; 
- 
+ ```
  The following lines allow us to narrow the files only to those modified after 12/2/2017. 
-PowerShell
+```PowerShell
         $date=Get-Date ("2/12/2017") 
          
         if($file.TimeLastModified -gt $date) 
         {
- 
+ ```

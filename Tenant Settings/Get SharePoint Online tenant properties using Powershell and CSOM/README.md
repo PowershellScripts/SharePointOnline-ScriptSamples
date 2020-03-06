@@ -152,22 +152,15 @@ ServerObjectIsNull                             : False
 
 TypedObject 
 
- 
 
- 
+## Expected results
 
- Expected results
+ <img src="../Get SharePoint Online tenant properties using Powershell and CSOM/Untitled101.png">
 
+## How to use?
 
- 
-
- 
-
- 
-
-### How to use?
-Download and open the .ps1 file.
-Add correct libraries:
+- Download and open the .ps1 file.
+- Add correct libraries:
  
 
 ```PowerShell
@@ -175,7 +168,7 @@ Add correct libraries:
 Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.Online.SharePoint.PowerShell\Microsoft.Online.SharePoint.Client.Tenant.dll"   
 ```
-Enter the correct url and admin login: 
+- Enter the correct url and admin login: 
  
 
 ```PowerShell
@@ -185,5 +178,5 @@ $Url="https://TENANT-admin.sharepoint.com"
 ``` 
  
 
-  Run the script
+-  Run the script
  

@@ -9,11 +9,9 @@ http://social.technet.microsoft.com/wiki/contents/articles/31051.sharepoint-onli
 
 ### How to use?
 
+1. Download and install [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
-
-1. Download and install SharePoint Online SDK.
-
-2. Download the .ps1 file.
+2. Download the *.ps1* file.
 
 3. Open the file (you can do it also in NotePad)
 
@@ -33,15 +31,14 @@ $Name="Name of the Content Type2"
 $ParentContentTypeID="0x01" 
 $Group="List Content Types"
 ``` 
-a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths
-b)  Instead of "admin@tenant.onmicrosoft.com" enter you username
-c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types
-d) Fill in the properties of the content type.
+a) Find on your computer where SharePoint.Clitent.dll and SharePoint.Client.Runtime.dll libraries are located and insert the correct paths</br>
+b)  Instead of "admin@tenant.onmicrosoft.com" enter you username</br>
+c) Instead of "https://tenant.sharepoint.com/sites/teamsitewithlibraries" enter the name of the site collection where you want to find the content types</br>
+d) Fill in the properties of the content type.</br>
  
-
 5. Run the script in Powershell (any module). 
 
-6. When the script has executed, Powershell will show a message Content Type  Name of the Content Type2  has been added to Title of the List.
+6. When the script has executed, Powershell will show a message *Content Type  Name of the Content Type2  has been added to Title of the List*.
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>

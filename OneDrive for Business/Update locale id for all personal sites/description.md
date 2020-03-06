@@ -1,11 +1,11 @@
-Acknowledegement
-The script uses Vadim Gremyachev's Invoke-LoadMethod published here
+## Acknowledegement
+The script uses [Vadim Gremyachev's](https://sharepoint.stackexchange.com/users/10610/vadim-gremyachev) Invoke-LoadMethod published [here](https://sharepoint.stackexchange.com/questions/126221/spo-retrieve-hasuniqueroleassignements-property-using-powershell)
 
  
 
  
 
-Description
+## Description
 The script updates locale id in regional settings of all personal sites to which you have access. The locale id can later be verified by going to Site Settings>Regional Settings.
 
  
@@ -50,7 +50,7 @@ Set-SPOUser -Site $urelek -LoginName $username -IsSiteCollectionAdmin $true
 ``` 
  
 
-In order to use the cmdlet, you can either modify the.ps1 file or write a separate script.
+In order to use the cmdlet, you can either modify the ```.ps1``` file or write a separate script.
 
  
 

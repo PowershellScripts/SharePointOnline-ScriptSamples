@@ -2,7 +2,7 @@ A short solution to find event receivers on your SPO lists.
 
  
 
-1. Install SharePoint Online SDK
+1. Install [SharePoint Online SDK](http://www.microsoft.com/en-us/download/details.aspx?id=42038)
 
 2. Download the file and open (e.g. in NotePad)
 
@@ -31,19 +31,16 @@ Get-SPOListEventreceivers -Username $Username -AdminPassword $AdminPassword -Url
 
 It should ask you for your admin password
 
- 
-
 If you want to export the event-receivers' data to a .csv file, use PathToTheScript | export-csv c:\users\MyUsers\Desktop\CSVReport.csv
 
+ <img src="../Get all event receivers on your lists in a site/GetSPOEventReceivers.PNG">
 
+**Sample Report**
 
- 
-
-Sample Report
-
-ReceiverAssembly	ReceiverClass	ReceiverId	ReceiverName	SequenceNumber	Synchronization	EventType	ReceiverUrl	Context	Tag	Path	ObjectVersion	ServerObjectIsNull	TypedObject	 	 	 
-Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c	Microsoft.SharePoint.Portal.CommunityEventReceiver	f13fb801-b306-42ea-bb1e-2f4c1e4a8e81	 	10000	Synchronous	ItemAdding	Microsoft.SharePoint.Client.ClientContext	Microsoft.SharePoint.Client.ObjectPathIdentity	False	Microsoft.SharePoint.Client.EventReceiverDefinition
-Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c	Microsoft.SharePoint.Portal.CommunityEventReceiver	cebe300c-50ac-4d88-8a4b-a63b9d6da400	 	10000	Synchronous	ItemUpdating	Microsoft.SharePoint.Client.ClientContext	Microsoft.SharePoint.Client.ObjectPathIdentity	False	Microsoft.SharePoint.Client.EventReceiverDefinition
-Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c	Microsoft.SharePoint.Portal.CommunityEventReceiver	bfc4ca11-32d6-4248-923c-fe16bcf8145d	 	10000	Synchronous	ItemDeleting	Microsoft.SharePoint.Client.ClientContext	Microsoft.SharePoint.Client.ObjectPathIdentity	False	Microsoft.SharePoint.Client.EventReceiverDefinition
-Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c	Microsoft.SharePoint.Portal.CommunityEventReceiver	6f2b105a-4834-40df-a450-c480c5c94ef0	 	10000	Asynchronous	ItemAdded	Microsoft.SharePoint.Client.ClientContext	Microsoft.SharePoint.Client.ObjectPathIdentity	False	Microsoft.SharePoint.Client.EventReceiverDefinition
+ReceiverAssembly |	ReceiverClass |	ReceiverId |	ReceiverName |	SequenceNumber |	Synchronization |	EventType |	ReceiverUrl |	Context |	Tag |	Path |	ObjectVersion |	ServerObjectIsNull |	TypedObject	 	 
+--|--|--|--|--|--|--|--|--|--|--|--|--|--
+Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c |	Microsoft.SharePoint.Portal.CommunityEventReceiver |	f13fb801-b306-42ea-bb1e-2f4c1e4a8e81 |	  |	10000 |	Synchronous |	ItemAdding |	Microsoft.SharePoint.Client.ClientContext |	Microsoft.SharePoint.Client.ObjectPathIdentity |	False |	Microsoft.SharePoint.Client.EventReceiverDefinition
+Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c |	Microsoft.SharePoint.Portal.CommunityEventReceiver |	cebe300c-50ac-4d88-8a4b-a63b9d6da400 |	 	 | 10000 |	Synchronous |	ItemUpdating |	Microsoft.SharePoint.Client.ClientContext |	Microsoft.SharePoint.Client.ObjectPathIdentity |	False |	Microsoft.SharePoint.Client.EventReceiverDefinition
+Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c |	Microsoft.SharePoint.Portal.CommunityEventReceiver |	bfc4ca11-32d6-4248-923c-fe16bcf8145d |	 | 	10000 |	Synchronous |	ItemDeleting |	Microsoft.SharePoint.Client.ClientContext |	Microsoft.SharePoint.Client.ObjectPathIdentity |	False |	Microsoft.SharePoint.Client.EventReceiverDefinition
+Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c |	Microsoft.SharePoint.Portal.CommunityEventReceiver |	6f2b105a-4834-40df-a450-c480c5c94ef0 |	  |	10000 |	Asynchronous |	ItemAdded |	Microsoft.SharePoint.Client.ClientContext |	Microsoft.SharePoint.Client.ObjectPathIdentity |	False |	Microsoft.SharePoint.Client.EventReceiverDefinition
  

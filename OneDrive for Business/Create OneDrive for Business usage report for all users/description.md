@@ -32,11 +32,8 @@ $mysiteHost="https://tenant-my.sharepoint.com"
 
 4. Expected results:
 
-
-
- 
-
+<img src="../Create OneDrive for Business usage report for all users/WithCSOM.PNG">
  
  <br/><br/>
 ### Acknowledgement:
-The script is using Invoke-LoadMethod published here, without which it could not proceed. The method was created and belongs to a brilliant SharePointer and Guru, Vadim Gremyachev.
+The script is using Invoke-LoadMethod published here, without which it could not proceed. The method was created and belongs to a brilliant SharePointer and Guru, [Vadim Gremyachev.](https://sharepoint.stackexchange.com/users/10610/vadim-gremyachev)

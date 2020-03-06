@@ -1,37 +1,26 @@
-Description
+# Description
 The following script copies list attachments to another library within the same site.
 
- 
 
- 
 
-Scenario:
+# Scenario:
  
-
 List with attachments:
 
-
-
- 
+<img src="../Copy list attachments to a separate library/Capture.PNG">
 
 sometimes several attachments per item:
 
-
-
- 
+<img src="../Copy list attachments to a separate library/Capture2.PNG">
 
 The attachments are to be copied to another library:
 
+<img src="../Copy list attachments to a separate library/Capture3.PNG">
 
-
- 
-
-Requirements
+# Requirements
 The script requires SharePoint Online SDK.
 
- 
-
-How to use?
+# How to use?
 1. Download and open the file.
 
 2. Enter correct paths to the SDK:
@@ -52,4 +41,8 @@ Connect-SPOCSOM -Username "user@tenant.onmicrosoft.com" -Url "https://tenant.sha
 
 
 <br/><br/>
+
 <b>Enjoy and please share feedback!</b>
+
+<b>Enjoy and please share feedback!</b>
+
