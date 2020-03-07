@@ -27,9 +27,6 @@ Verify if the SharePoint Online SDK is installed in the same location on your co
 
  
 
- 
-
- 
 
 ### Related scripts
 

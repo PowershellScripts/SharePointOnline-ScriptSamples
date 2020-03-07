@@ -1,4 +1,4 @@
-The script below is described in the article SharePoint Online content types in Powershell: Get and is part of various options on retrieving a single Content Type.
+The script below is described in the article [SharePoint Online content types in Powershell: Get](https://social.technet.microsoft.com/wiki/contents/articles/31151.sharepoint-online-content-types-in-powershell-get.aspx) and is part of various options on retrieving a single Content Type.
 
  
 
@@ -7,9 +7,6 @@ It retrieves the content types that are hidden. If you want to retrieve the cont
 ```PowerShell
 if($cc.Hidden -eq $true)
 ``` 
- 
-
- 
 
 Before running the script, you need to open the file and edit the following lines, entering the Admin username and the site where you want to retrieve the content types. Do not enter the password - you will be prompted for it during the script execution. 
 
