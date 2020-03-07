@@ -1,4 +1,4 @@
-﻿function Get-SiteColl
+function Get-SiteColl
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
