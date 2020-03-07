@@ -1,57 +1,49 @@
-﻿
+
 #
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOList
-{
-param (
+function Set-SPOList{
+    param (
         [Parameter(Mandatory=$true,Position=0)]
-		[string]$ListName,
+        [string]$ListName,
         [Parameter(Mandatory=$true,Position=1)]
-		[bool]$Attachments 
-		)
+        [bool]$Attachments 
+    )
 
-$ll=$ctx.Web.Lists.GetByTitle($ListName)
+    $ll=$ctx.Web.Lists.GetByTitle($ListName)
 
-$ll.EnableAttachments = $Attachments 
-    $ll.Update()
+    $ll.EnableAttachments = $Attachments 
+        $ll.Update()
 
-    try
-    {
+    try{
         $ctx.ExecuteQuery()
         Write-Host "Done" -ForegroundColor Green
-       }
-
-       catch [Net.WebException] 
-        {
-            
-            Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-        
-
+    }
+    catch [Net.WebException] {
+        Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
+    }
 }
 
 
 
 
-function Connect-SPOCSOM
-{
- param (
-  [Parameter(Mandatory=$true,Position=1)]
+function Connect-SPOCSOM{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=2)]
 		[string]$Url
-)
+    )
 
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.ExecuteQuery()  
-$global:ctx=$ctx
+    $global:ctx=$ctx
 }
 
 

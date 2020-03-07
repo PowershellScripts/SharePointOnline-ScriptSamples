@@ -69,15 +69,11 @@ import-pssession $sesja
 
 $sitecollections=Get-SPOSite
 Write-Host "Found site collections:" 
-foreach($sitecoll in $sitecollections)
-{
+foreach($sitecoll in $sitecollections){
  Write-Host $sitecoll.Url
 }
 
-
-
-function Add-MailboxToSite($urelek)
-{
+function Add-MailboxToSite($urelek){
   $ctx = New-Object Microsoft.SharePoint.Client.ClientContext($urelek) 
   $ctx.Credentials= New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password) 
   $rootWeb = $ctx.Web 
@@ -94,36 +90,30 @@ function Add-MailboxToSite($urelek)
   new-sitemailbox -displayName $rootWeb.Title -SharePointUrl $rootWeb.Url
 
 
-     foreach($site in $sites)
-     {
+  foreach($site in $sites){
         $site.Features.Add($featureguid, $true, [Microsoft.SharePoint.Client.FeatureDefinitionScope]::None) | Out-Null
         $ctx.ExecuteQuery()
         Write-Host "Feature enabled for" $site.Url
-     }
-        Write-Host "Finished enabling site mailbox feature on" $rootWeb.Title " : " $rootWeb.Url
+  }
+  
+  Write-Host "Finished enabling site mailbox feature on" $rootWeb.Title " : " $rootWeb.Url
 
-
-      foreach($site in $sites)
-     {
-        Write-Host "Trying to add mailbox for" $site.Url
-        new-sitemailbox -displayName $site.Title -SharePointUrl $site.Url -ErrorAction SilentlyContinue | Out-Null   }
+  foreach($site in $sites){
+      Write-Host "Trying to add mailbox for" $site.Url
+      new-sitemailbox -displayName $site.Title -SharePointUrl $site.Url -ErrorAction SilentlyContinue | Out-Null   }
 
       Write-Host "Finished adding mailboxes on" $rootWeb.Title " : " $rootWeb.Url
 
-
-      if($ctx.Web.Webs.Count -gt 0)
-     {
-        for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
-        {
+      if($ctx.Web.Webs.Count -gt 0){
+        for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
             Add-MailboxToSite($ctx.Web.Webs[$i].Url)
         }
       }
  }
 
- foreach($sitecoll in $sitecollections)
-{
-  Add-MailboxToSite($sitecoll.Url)
-}
+ foreach($sitecoll in $sitecollections){
+     Add-MailboxToSite($sitecoll.Url)
+ }
 
 #Finishes by saving a transcript of the whole run to a local folder
 Stop-Transcript

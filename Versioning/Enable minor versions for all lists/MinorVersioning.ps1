@@ -1,5 +1,4 @@
-﻿function getall($urelek)
-{
+﻿function getall($urelek){
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)
   $ctx.Load($ctx.Web.Lists)
@@ -8,52 +7,40 @@
   $ctx.ExecuteQuery()
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
-  
-  foreach( $ll in $ctx.Web.Lists)
-  {
-    $ctx.Load($ll.RootFolder)
-    $ctx.ExecuteQuery()
-    $ll.EnableMinorVersions = $versioning
-    $ll.Update()
-    $csvvalue= new-object PSObject
-        $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url.Remove(($ctx.Url.Length-1),1)+$ll.RootFolder.ServerRelativeUrl}
-        else {
+
+  foreach( $ll in $ctx.Web.Lists){
+      $ctx.Load($ll.RootFolder)
+      $ctx.ExecuteQuery()
+      $ll.EnableMinorVersions = $versioning
+      $ll.Update()
+      $csvvalue= new-object PSObject
+      $listurl=$null
+
+      if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url.Remove(($ctx.Url.Length-1),1)+$ll.RootFolder.ServerRelativeUrl}
+      else {
         $index=$ctx.Url.LastIndexOf(".com")
         $listurl=$ctx.Url.Remove($index+4)+$ll.RootFolder.ServerRelativeUrl}
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
-        try
-        {
+      try{
         $ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host $listurl -ForegroundColor DarkGreen
         $csvvalue.Status="Success"
         $Global:csv+= $csvvalue       
-        }
-
-        catch
-        {
-            $Global:csv+= $csvvalue
-            Write-Host $listurl -ForegroundColor Red
-        }
-        finally
-        {$ErrorActionPreference="Continue"}
-        
-
-  }
-
-  if($ctx.Web.Webs.Count -gt 0)
-  {
-    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
-    {
-        getall($ctx.Web.Webs[$i].Url)
+      }
+      catch{
+        $Global:csv+= $csvvalue
+        Write-Host $listurl -ForegroundColor Red
+      }
+      finally{$ErrorActionPreference="Continue"}
     }
 
-  }
-  
-  
-
+    if($ctx.Web.Webs.Count -gt 0){
+      for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
+        getall($ctx.Web.Webs[$i].Url)
+      }
+    }
 }
 
 # Paths to SDK. Please verify location on your computer.
@@ -73,8 +60,7 @@ Connect-SPOService -Credential $credy -Url $siteUrl
 $sitecollections=get-SPOSite
 $Global:csv=@()
 
-foreach($sitecoll in $sitecollections)
-{
+foreach($sitecoll in $sitecollections){
     getall($sitecoll.Url)
 }
 

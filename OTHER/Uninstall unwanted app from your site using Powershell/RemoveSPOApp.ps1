@@ -1,42 +1,36 @@
-﻿function Uninstall-SPOApp
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+﻿function Uninstall-SPOApp{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[GUID]$SPOAppGUID
-)
+	)
 
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
 
-try
-{
-$ctx.ExecuteQuery()
-} catch [Net.WebException] 
-        {
-            
-            Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
-}
+	try{
+		$ctx.ExecuteQuery()
+	}
+	catch [Net.WebException] {
+		Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
+	}
 
- $ctx.Load($ctx.Site)
-  $ctx.Load($ctx.Web.Webs)
-  $ctx.Web.GetAppInstanceById($SPOAppGUID).Uninstall()
+	 $ctx.Load($ctx.Site)
+	  $ctx.Load($ctx.Web.Webs)
+	  $ctx.Web.GetAppInstanceById($SPOAppGUID).Uninstall()
 
-  try
-  {
-  $ctx.ExecuteQuery()
-  Write-Host "Success" -ForegroundColor Green
-  }
-  catch [Net.WebException] 
-  {
-  Write-Host "Failed to uninstall the app" $_.Exception.Message.ToString() -ForegroundColor Red
-  }
-
+  	try{
+	  	$ctx.ExecuteQuery()
+	  	Write-Host "Success" -ForegroundColor Green
+  	}
+  	catch [Net.WebException] {
+  		Write-Host "Failed to uninstall the app" $_.Exception.Message.ToString() -ForegroundColor Red
+  	}
 }
 
 

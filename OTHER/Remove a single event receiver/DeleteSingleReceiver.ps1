@@ -1,53 +1,46 @@
-﻿function Get-SPOListEventreceivers
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-SPOListEventreceivers{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle,
-        [Parameter(Mandatory=$true,Position=5)]
+		[Parameter(Mandatory=$true,Position=5)]
 		[GUID]$EventReceiverGUID
-)
+	)
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
 
-try
-{
-$ctx.ExecuteQuery()
-} catch [Net.WebException] 
-        {
-            
-            Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
-}
+	try{
+		$ctx.ExecuteQuery()
+	}
+	catch [Net.WebException] {
+		Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
+	}
 
- $ctx.Load($ctx.Site)
+	 $ctx.Load($ctx.Site)
 
-  $lista=$ctx.Web.Lists.GetByTitle($ListTitle)
- $ctx.Load($lista)
-  $ctx.ExecuteQuery()
- $recevery=$lista.EventReceivers
- $ctx.Load($recevery)
- $ctx.ExecuteQuery()
- Write-Host "Found " $recevery.Count " receivers in " $lista.Title
+	  $lista=$ctx.Web.Lists.GetByTitle($ListTitle)
+	 $ctx.Load($lista)
+	  $ctx.ExecuteQuery()
+	 $recevery=$lista.EventReceivers
+	 $ctx.Load($recevery)
+	 $ctx.ExecuteQuery()
+	 Write-Host "Found " $recevery.Count " receivers in " $lista.Title
 
-$recevery.GetById($EventReceiverGUID).DeleteObject()
+	$recevery.GetById($EventReceiverGUID).DeleteObject()
 
-try
-{
-$ctx.ExecuteQuery()
-Write-Host "receiver removed"
-}
-
- catch [Net.WebException] 
-  {
-  Write-Host "Failed to delete the receiver" $_.Exception.Message.ToString() -ForegroundColor Red
-  }
-
+	try{
+		$ctx.ExecuteQuery()
+		Write-Host "receiver removed"
+	}
+	catch [Net.WebException] {
+		Write-Host "Failed to delete the receiver" $_.Exception.Message.ToString() -ForegroundColor Red
+	}
 }
 
 
