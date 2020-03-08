@@ -1,29 +1,29 @@
 New SharePoint Online Powershell cmdlet Get-SPOListItemCount which allows you to view the number of items in a list.
 
 
-<h2>Parameters</h2>
+## *Parameters*
 
  
 
 The cmdlet is using the following parameters:
-
- ```[string]$Username```
+```powershell
+ [string]$Username
+ ```
 The string specifies admin of the site
-
-```[string]$Url```
+```powershell
+[string]$Url
+```
 Specifies the url of a site where you have the list
-
-```[string]$AdminPassword```      
+```powershell
+[string]$AdminPassword
+```
 Admin's password
-
-```PowerShell[string]$ListTitle```
+```powershell
+PowerShell[string]$ListTitle
+```
 Specifies the title of a list
 
- 
-
- 
-
-<h2>Requirements</h2>
+## *Requirements*
 
  
 
@@ -37,13 +37,9 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
 
  
 
-<h2>Examples</h2>
+## *Examples*
 
- 
 <img src="../Get the number of items in a list/GetSpoListCount.png" width="850">
-
-
- 
 
  <br/><br/>
 <b>Enjoy and please share feedback!</b>

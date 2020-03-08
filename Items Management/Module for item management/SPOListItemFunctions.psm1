@@ -1,18 +1,16 @@
-﻿function Remove-SPOListItemInheritance
-{
-  
-   param (
+function Remove-SPOListItemInheritance{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[Int]$ItemID
-		)
+	[Int]$ItemID
+   )
   
   
   
@@ -29,42 +27,37 @@
 
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
-$spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+    $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $itemek=$ll.GetItemByID($ItemID)
   $ctx.Load($itemek)
   $ctx.ExecuteQuery()
   $itemek.BreakRoleInheritance($true, $false)
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host $itemek.Name " Success"
-  }
- catch [Net.WebException]
-     { 
+  
+    try{
+        $ctx.ExecuteQuery()
+        write-host $itemek.Name " Success"
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-  
-  
-  }
+    }
+}
 
 
-  function Remove-SPOListItemPermissions
-{
-  
-   param (
+function Remove-SPOListItemPermissions{  
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[Int]$ItemID
-		)
+	[Int]$ItemID
+   )
   
   
   
@@ -81,42 +74,37 @@ $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
-$spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+    $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $itemek=$ll.GetItemByID($ItemID)
   $ctx.Load($itemek)
   $ctx.ExecuteQuery()
   $itemek.BreakRoleInheritance($false, $false)
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host $itemek.Name " Success"
-  }
-catch [Net.WebException]
-     { 
+  
+    try{
+        $ctx.ExecuteQuery()
+        write-host $itemek.Name " Success"
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-  
-  
-  }
+    }
+}
 
 
-  function Restore-SPOListItemInheritance
-{
-  
-   param (
+function Restore-SPOListItemInheritance{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[Int]$ItemID
-		)
+	[Int]$ItemID
+   )
   
   
   
@@ -133,41 +121,35 @@ catch [Net.WebException]
 
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
-$spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+    $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $itemek=$ll.GetItemByID($ItemID)
   $ctx.Load($itemek)
   $ctx.ExecuteQuery()
   $itemek.ResetRoleInheritance()
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host $itemek.Name " Success"
-  }
- catch [Net.WebException]
-     { 
+    try{
+        $ctx.ExecuteQuery()
+        write-host $itemek.Name " Success"
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-  
-  
-  }
+    }
+}
 
-  function Remove-SPOListItem
-{
-  
-   param (
+function Remove-SPOListItem{  
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[Int]$ItemID
-		)
+	[Int]$ItemID
+   )
   
   
   
@@ -184,48 +166,43 @@ $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
-$spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+    $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
 
 
   $itemek=$ll.GetItemByID($ItemID)
   $ctx.Load($itemek)
   $ctx.ExecuteQuery()
   $itemek.DeleteObject()
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host $itemek.Name " Success"
-  }
-catch [Net.WebException]
-     { 
+  
+    try{
+        $ctx.ExecuteQuery()
+        write-host $itemek.Name " Success"
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-  
-  
-  }
+    }
+}
 
 
 
 
-  function Update-SPOListItem
-{
-  
-   param (
+function Update-SPOListItem{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[Int]$ItemID,
-[Parameter(Mandatory=$true,Position=6)]
-		[string]$FieldToUpdate,
-[Parameter(Mandatory=$true,Position=7)]
-		[string]$ValueToUpdate
-		)
+	[Int]$ItemID,
+        [Parameter(Mandatory=$true,Position=6)]
+	[string]$FieldToUpdate,
+        [Parameter(Mandatory=$true,Position=7)]
+	[string]$ValueToUpdate
+   )
   
   
   
@@ -250,18 +227,15 @@ catch [Net.WebException]
   $ctx.ExecuteQuery()
   $itemek[$FieldToUpdate] = $ValueToUpdate
   $itemek.Update()
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host $itemek.Name " Success"
-  }
-  catch [Net.WebException]
-     { 
+  
+    try{
+        $ctx.ExecuteQuery()
+        write-host $itemek.Name " Success"
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-  
-  
-  }
+    }
+}
 
 # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
