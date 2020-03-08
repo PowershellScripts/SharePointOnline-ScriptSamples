@@ -1,23 +1,22 @@
-﻿function New-SPOListItem
-{
-param (
+function New-SPOListItem{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
         [Parameter(Mandatory=$true,Position=5)]
-		[string]$ItemTitle,
-[Parameter(Mandatory=$false,Position=6)]
-		[string]$AdditionalField="",
-[Parameter(Mandatory=$false,Position=7)]
-		[string]$AdditionalValue=""
-		)
+	[string]$ItemTitle,
+        [Parameter(Mandatory=$false,Position=6)]
+	[string]$AdditionalField="",
+        [Parameter(Mandatory=$false,Position=7)]
+	[string]$AdditionalValue=""
+   )
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
@@ -32,25 +31,21 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   
   $listItem = $ll.AddItem($lici)
   $listItem["Title"]=$ItemTitle
-  if($AdditionalField -ne "")
-  {
+  
+  if($AdditionalField -ne ""){
    $listItem[$AdditionalField]=$AdditionalValue
   }
+
   $listItem.Update()
   $ll.Update()
   
-  try
-     {
-       
-         $ctx.ExecuteQuery()
-         Write-Host "Item " $ItemTitle " has been added to list " $ListTitle
-     }
-     catch [Net.WebException]
-     { 
+    try{  
+        $ctx.ExecuteQuery()
+        Write-Host "Item " $ItemTitle " has been added to list " $ListTitle
+    }
+    catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString()
-     }
-
-
+    }
 }
 
 

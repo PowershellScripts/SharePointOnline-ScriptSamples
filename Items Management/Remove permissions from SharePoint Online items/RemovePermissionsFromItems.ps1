@@ -1,17 +1,15 @@
 <#Powershell script to remove permissions for all items in a SharePoint Online list. As a result, only the user running this script will have access to the files. Before you run it, you have to modify the last line of the script! #>
-function Remove-SPOListAllItemsInheritance
-{
-  
-   param (
+function Remove-SPOListAllItemsInheritance{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle
-		)
+	[string]$ListTitle
+   )
   
   
   
@@ -36,15 +34,13 @@ function Remove-SPOListAllItemsInheritance
   $ctx.ExecuteQuery()
 
 
-  for($j=0;$j -lt $itemki.Count ;$j++)
-  {    
+  for($j=0;$j -lt $itemki.Count ;$j++){    
       $itemki[$j].BreakRoleInheritance($false, $false)  
   }
 
- 
    $ctx.ExecuteQuery()
 
-  }
+}
 
 
 # Paths to SDK. Please verify location on your computer.
