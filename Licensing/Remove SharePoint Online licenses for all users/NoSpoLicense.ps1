@@ -1,4 +1,4 @@
-﻿Connect-MsolService
+Connect-MsolService
 # Disabled Plans
 $disabledPlans= @()
 $disabledPlans +="SHAREPOINTENTERPRISE"
@@ -14,8 +14,7 @@ $Users = Get-MsolUser -All
 
  Write-Host $Plan
  
- foreach($user in $Users)
- {
+ foreach($user in $Users){
    Set-MsolUser -UserPrincipalName $user.UserPrincipalName -UsageLocation "US"
    Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -RemoveLicenses $Plan
    Set-MsolUserLicense -UserPrincipalName $user.UserPrincipalName -AddLicenses $Plan -LicenseOptions $noSPO

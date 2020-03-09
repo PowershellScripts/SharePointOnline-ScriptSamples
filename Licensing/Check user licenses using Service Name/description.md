@@ -1,9 +1,7 @@
 Powershell script to check user licenses by the service name.
 
- 
-
 Possible service names:
-
+```
 PROJECTWORKMANAGEMENT
 
 SWAY
@@ -29,16 +27,16 @@ SHAREPOINTENTERPRISE
 EXCHANGE_S_STANDARD
 
 EXCHANGE_S_ENTERPRISE
-
+```
  
 
  
 
- 
+<hr>
 
-### How to use?
+## **How to use?**
 
-1. Make sure you have installed Azure AD module available here: https://msdn.microsoft.com/en-us/library/azure/jj151815(v=azure.98).aspx
+1. Make sure you have installed Azure AD module available [here](https://msdn.microsoft.com/en-us/library/azure/jj151815(v=azure.98).aspx).
 
 2. Download the script and open it (in Notepad, ISE, whatever you prefer).
 
@@ -83,29 +81,15 @@ $CSVPath="E:\technet\UsersWithDisabledEXO.csv"
 
 Important!  Disabled are only the services where you assigned the license but not all services are active (e.g. E3 is assigned, but Exchange Online is unmarked). See example below:
 
- 
-
 Here the license is disabled:
 
-
-<img src="../Check User Licenses using Service Name/Capture14.png" width="850">
- 
-
- 
+<img src="../Check user licenses using Service Name/Capture14.PNG" width="850">
 
 Here it is NOT:
 
-
-
- <img src="../Check User Licenses using Service Name/Capture15.png" width="850">
-
- 
-
- 
+ <img src="../Check user licenses using Service Name/Capture15.PNG" width="850">
 
 4. Save the script and drag&drop it to Powershell. It will ask you for credentials and display a list of users on the screen.
-
-
 
  <br/><br/>
 <b>Enjoy and please share feedback!</b>
