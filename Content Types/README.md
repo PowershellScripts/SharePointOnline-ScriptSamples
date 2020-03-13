@@ -11,3 +11,7 @@
   * Create and add content type to a content type hub
   * Create content type and add directly to SPO list
   * Create content type and add it to all lists in one site
+* Display Forms
+ * Find Custom Display Forms Deployed
+ * Modify the Display Form Template Name
+ * Unable to view items- modify the DisplayFormUrl back to default
