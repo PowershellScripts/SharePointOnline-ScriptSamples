@@ -1,47 +1,40 @@
-﻿function Add-SPOContentType
-{
-param(
-[Parameter(Mandatory=$true,Position=1)]
+﻿function Add-SPOContentType{
+	param(
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-	[Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle,
-	[Parameter(Mandatory=$true,Position=7)]
+		[Parameter(Mandatory=$true,Position=7)]
 		[string]$ContentTypeID
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.Load($ctx.Web.Lists)
-  $ctx.ExecuteQuery()
+	)
 
-  $contentType=$ctx.Web.ContentTypes.GetById($ContentTypeID)
-  $ctx.Load($contentType)
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx.Load($ctx.Web.Lists)
+	  $ctx.ExecuteQuery()
 
- $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
- $ctx.load($ll)
- $ctx.load($ll.ContentTypes)
- $ctx.ExecuteQuery()
-  $ll.ContentTypesEnabled=$true
- $AddedContentType=$ll.ContentTypes.AddExistingContentType($contentType)
- $ll.Update()
-  
-  try
-     {
-       
-         $ctx.ExecuteQuery()
-         Write-Host "Adding content type " $AddedContentType.Name " to " $ll.Title
-     }
-     catch [Net.WebException]
-     { 
-        Write-Host $_.Exception.ToString()
-     }
+	  $contentType=$ctx.Web.ContentTypes.GetById($ContentTypeID)
+	   $ctx.Load($contentType)
 
-     
-     
+	 $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
+	  $ctx.load($ll)
+	  $ctx.load($ll.ContentTypes)
+	  $ctx.ExecuteQuery()
+	 $ll.ContentTypesEnabled=$true
+	 $AddedContentType=$ll.ContentTypes.AddExistingContentType($contentType)
+	 $ll.Update()
+
+	try{
+	   $ctx.ExecuteQuery()
+	   Write-Host "Adding content type " $AddedContentType.Name " to " $ll.Title
+	}
+	catch [Net.WebException]{ 
+	   Write-Host $_.Exception.ToString()
+	}
 }
 
 
