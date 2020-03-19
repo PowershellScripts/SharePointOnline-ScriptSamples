@@ -1,11 +1,6 @@
 Short Powershell script to export user licenses and services' provisioning status.
 
- 
-
- 
-
-How to use?
- 
+## How to use?
 
 1. Download and run the script.
 
@@ -15,26 +10,15 @@ How to use?
 
  
 
-PowerShell
+```PowerShell
 $CSVPath="C:\Users\Arletka\Documents\usss34.csv" 
+```
+## Expected results
  
-Expected results
- 
-
 During script execution:
 
-
-
- 
-
- 
+<img src="../Get user licenses and services provisioning statuses/Capture73.PNG">
 
 In a csv file:
 
-
-
- 
-
- 
-
- 
+<img src="../Get user licenses and services provisioning statuses/Capture72.PNG"> 

@@ -2,22 +2,13 @@ Short Powershell script to export user licenses and services' provisioning statu
 
  
 
-The script is a variation on Get user licenses and services' provisioning statuses . It accounts for the fact that one user may have more than one license assigned and creates records per given user's license.
+The script is a variation on [Get user licenses and services' provisioning statuses](https://gallery.technet.microsoft.com/scriptcenter/Get-user-licenses-and-f20e5e42) . It accounts for the fact that one user may have more than one license assigned and creates records per given user's license.
 
 That means that in the exported csv file, a user with 2 licenses will appear twice, like this:
 
- 
+<img src="../Export all assigned licenses and services provisioning statuses/images/Capture74.PNG">
 
- 
-
- 
-
- 
-
- 
-
-How to use?
- 
+## How to use?
 
 1. Download and run the script.
 
@@ -27,28 +18,20 @@ How to use?
 
  
 
- 
-
-PowerShell
+```PowerShell
 $CSVPath="C:\Users\Arletka\Documents\usss34.csv" 
- 
+ ```
  
 
-Expected results
+## Expected results
  
 
 During script execution:
 
-
-
- 
-
- 
+<img src="../Export all assigned licenses and services provisioning statuses/images/Capture73.PNG">
 
 In a csv file:
 
-
-
- 
+ <img src="../Export all assigned licenses and services provisioning statuses/images/Capture72.PNG">
 
  
