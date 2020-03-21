@@ -1,6 +1,6 @@
 Powershell script that lists all SharePoint Online items with attachments. It is limited to a single list with less than 5000 items.
 
-It is also available on GitHub here: https://github.com/PowershellScripts/CamlQuery-examples All suggestions, code changes and improvements are welcome.
+All suggestions, code changes and improvements are welcome.
 
  
 
