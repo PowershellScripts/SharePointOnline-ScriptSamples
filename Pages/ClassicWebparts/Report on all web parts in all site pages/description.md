@@ -2,7 +2,7 @@ Powershell script to get web parts and all their details from all pages. The scr
 
  
 
-The script requires the following libraries from SharePoint Online SDK. Please confirm that the files are in the same location on your PC.
+The script requires the following libraries from [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038). Please confirm that the files are in the same location on your PC.
 
  
 
@@ -25,11 +25,8 @@ Get-SPOWebParts -Username $username -Url $Url -password $AdminPassword -Recursiv
 
 The script displays the webparts in the console window and exports them to a csv file.
 
-Expected results:
+**Expected results:**
 
+<img src="../Report on all web parts in all site pages/ReportAll.PNG">
 
-
- 
-
- 
-
+<img src="../Report on all web parts in all site pages/ReportAll2.PNG">

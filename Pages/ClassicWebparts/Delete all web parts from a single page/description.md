@@ -1,4 +1,4 @@
-Powershell script to delete ALL web parts from a single page. If you need to delete only one web part you can find its ID using GetAllWebParts script and remove it using DeleteSingleWebPart script.
+Powershell script to delete ALL web parts from a single page. If you need to delete only one web part you can find its ID using [GetAllWebParts script](https://gallery.technet.microsoft.com/office/Get-all-web-parts-and-449f1d47) and remove it using [DeleteSingleWebPart script.](https://gallery.technet.microsoft.com/Delete-single-web-part-6404fced)
 
  
 
@@ -25,5 +25,5 @@ $Url="https://trial567.sharepoint.com/sites/powie64"
  
 Remove-SPOWebParts -Username $username -Url $Url -password $AdminPassword -pageUrl "/sites/powie64/SitePages/pgie.aspx"
 ``` 
- 
+ <img src="../Delete all web parts from a single page/RemoveAllWebpartsResult.PNG">
 
