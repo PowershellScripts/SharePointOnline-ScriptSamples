@@ -16,10 +16,6 @@ $pathToExportReport="c:\MyCSV.csv"
 
 End result:
  
- 
-
- 
-
- 
+ <img src="../Get items, folders, lists with unique permissions (SharePoint Server 2013-2016)/Capture209.PNG">
 
 The script requires SharePoint Management Shell.
