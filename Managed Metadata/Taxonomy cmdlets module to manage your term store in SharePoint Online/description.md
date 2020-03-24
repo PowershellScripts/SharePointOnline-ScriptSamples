@@ -2,47 +2,43 @@ A module with new cmdlets for Taxonomy written in an easily-modifiable Powershel
 
  
 
-The cmdlets include:
+### The cmdlets include:
 
-New-SPOTerm
+### New-SPOTerm
 
-Get-SPOTermGroups
+### Get-SPOTermGroups
 
-Get-SPOTermSets
+### Get-SPOTermSets
 
-Get-SPOTermStore
+### Get-SPOTermStore
 
-Get-SPOHashTagsTermSet
+### Get-SPOHashTagsTermSet
 
-Get-SpoHashTagsTerms
+### Get-SpoHashTagsTerms
 
-Get-SPOKeyWordsTermSet
+### Get-SPOKeyWordsTermSet
 
-New-SPOTermGroup
+### New-SPOTermGroup
 
-Set-SPOTermGroup
+### Set-SPOTermGroup
 
-New-SPOTermSet
+### New-SPOTermSet
 
-Set-SPOTermSet
+### Set-SPOTermSet
 
-Get-SPOTerm
+### Get-SPOTerm
 
-Connect-SPOCSOM
-
- 
-
-Exact syntax and cmdlet descriptions with examples will be available here at SharePoint Online SPOMod cmdlets & resources.
+### Connect-SPOCSOM
 
  
 
- 
+Exact syntax and cmdlet descriptions with examples will be available here at [SharePoint Online SPOMod cmdlets & resources.](https://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-cmdlets-resources.aspx)
 
 One of the cmdlets:
 
  
 
-PowerShell
+```PowerShell
   function New-SPOTermSet 
   { 
     param( 
@@ -94,4 +90,4 @@ PowerShell
          
  
   }
- 
+ ```
