@@ -19,7 +19,7 @@ $pathToExportReport="c:\MyCSV.csv"
 End results:
 
 
-
+<img src="../Get items with unique permissions SharePoint Server/Capture211.PNG">
  
 
 The script requires SharePoint Management Shell.

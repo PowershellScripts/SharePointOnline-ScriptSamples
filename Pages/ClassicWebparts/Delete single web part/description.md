@@ -1,8 +1,8 @@
-Powershell script to delete SINGLE web part from a SharePoint Online page. If you need to delete all web parts, you can do it using DeleteAllWebParts script.
+Powershell script to delete SINGLE web part from a SharePoint Online page. If you need to delete all web parts, you can do it using [DeleteAllWebParts script.](https://gallery.technet.microsoft.com/office/Delete-all-web-parts-from-4c7bc264)
 
  
 
-The script requires the following libraries from SharePoint Online SDK. Please confirm that the files are in the same location on your PC.
+The script requires the following libraries from [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038). Please confirm that the files are in the same location on your PC.
 
  
 

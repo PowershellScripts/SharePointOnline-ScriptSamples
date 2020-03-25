@@ -1,4 +1,5 @@
-Short description
+## Short description
+
 The script retrieves all unified groups in your tenant and the storage quotas for their associated site collections.
 
 Whaaat? (explanation for those whose life doesn't evolve around O365 and who not only believe in but have actually seen the life beyond the firewall)
@@ -13,7 +14,8 @@ Whaaat? (explanation for those whose life doesn't evolve around O365 and who not
 
  
 
-Prerequisites
+## Prerequisites
+
 - SharePoint Online SDK
 
  
@@ -22,14 +24,14 @@ Make sure the script refers to the library paths on your computer:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
- 
+ ```
  
 
-How to use?
+## How to use?
 1. Download the file.
 
 2. Open in Powershell ISE or even notepad.
@@ -42,15 +44,14 @@ How to use?
 
  
 
-Expected results
+##Expected results
 
-
- 
-
- 
+<img src="../Unified Groups Storage Report/UnifiedGroups.PNG">
 
  
 
  
 
-I am waiting for your comments in the Q&A section!
+ 
+
+**I am waiting for your comments in the Q&A section!**

@@ -6,9 +6,9 @@ Have you ever created your tenant in the wrong language? Need to change it for t
 
 You know that the steps are:
 
-Newsfeed>About me>Edit my profile> ... (three dots)>Language and region>Add the display language
+**Newsfeed** > **About me** > **Edit my profile** > **... (three dots)** > **Language and region>Add the display language**
 
-OneDrive>Gear icon>Site settings>Language settings>Mark alternate language
+**OneDrive** > **Gear icon** > **Site settings** > **Language settings** > **Mark alternate language**
 
   <br/><br/>
 
@@ -18,23 +18,19 @@ It's cool and awesome and flexible. But what if you have a thousand users? Are y
 
 Here it is:
 
- 
-
-
-
- 
+<img src="../Change the default language for all the SharePoint Online users/changedeflg.PNG">
 
 The red errors for system accounts are by design. I am expecting to get it better in the next version. The green users indicate for which users the language has been changed and into what.
 
 At the end the report will contain all users who did not get their language changed.
 
-List of language ids
+[List of language ids](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c?redirectedfrom=MSDN)
 
  
  <br/><br/>
  
 
-Instructions
+## *Instructions*
 
 1. Download the .zip file
 
@@ -52,11 +48,11 @@ Instructions
 
 Acknowledgements:
 
-The app is using the new updates and nuggets.
+The app is using the [new updates and nuggets.](https://docs.microsoft.com/pl-pl/archive/blogs/)
 
-The app is prone to the known bug, which means it will not add desired alternate language for personal site unless there is one (any) added there already. 
+The app is prone to the [known bug](https://docs.microsoft.com/pl-pl/archive/blogs/), which means it will not add desired alternate language for personal site unless there is one (any) added there already. 
 
-Update on 20th of Dec  - Adding additional language to web has unfortunately a bug and it does not work unless site has already one or more additional languages set, which means that this API does not really usable until this bug is fixed. This will be fixed for future releases and to redistributable version of the CSOM package.  
+**Update on 20th of Dec  - Adding additional language to web has unfortunately a bug and it does not work unless site has already one or more additional languages set, which means that this API does not really usable until this bug is fixed. This will be fixed for future releases and to redistributable version of the CSOM package.**
 
  
 

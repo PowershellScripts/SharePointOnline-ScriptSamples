@@ -1,16 +1,14 @@
 ﻿
 
-function Set-SPOContentType
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
-		[string]$Url
-		)
+function Set-SPOContentType{
+param (
+	[Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	$AdminPassword,
+	[Parameter(Mandatory=$true,Position=3)]
+	string]$Url
+)
   
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
@@ -18,21 +16,12 @@ function Set-SPOContentType
   $ctx.ExecuteQuery()
 
 
-  foreach($cc in $ctx.Web.ContentTypes)
-  {
-          
-     Write-Host $cc.Name "  " $cc.DisplayFormTemplateName
-
-      
-     
+foreach($cc in $ctx.Web.ContentTypes){    
+     Write-Host $cc.Name "  " $cc.DisplayFormTemplateName    
 }
         
-      
-     
-      $ctx.Dispose()
-        
-        
-  }
+  $ctx.Dispose()
+}
         
 
   

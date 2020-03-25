@@ -78,21 +78,19 @@ new-sitemailbox -displayName $rootWeb.Title -SharePointUrl $rootWeb.Url
   
   #adding the feature and the mailbox for all the subsites. It checks for first-level subsites. If your structure is more complex, you need to add more loops
    
-   foreach($site in $sites)
-   {
+foreach($site in $sites){
       $site.Features.Add($featureguid, $true, [Microsoft.SharePoint.Client.FeatureDefinitionScope]::None)
       $ctx.ExecuteQuery()
       Write-Host "Feature enabled for" $site.Url
-   }
-      Write-Host "Finished enabling site mailbox feature."
+}
+
+Write-Host "Finished enabling site mailbox feature."
       
-   
-    foreach($site in $sites)
-   {
+foreach($site in $sites){
       new-sitemailbox -displayName $site.Title -SharePointUrl $site.Url
-   }
+}
    
-    Write-Host "Finished adding mailboxes."
+Write-Host "Finished adding mailboxes."
   
 
   #Finishes by saving a transcript of the whole run to a local folder
