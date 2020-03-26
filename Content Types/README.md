@@ -1,3 +1,4 @@
+INDEX
 
 * Content Type Management Setting
   * Allow content type management for all lists in a site
@@ -15,3 +16,13 @@
  * Find Custom Display Forms Deployed
  * Modify the Display Form Template Name
  * Unable to view items- modify the DisplayFormUrl back to default
+* Get
+ * All Content Types from a Content Type Hub and their DisplayFormTemplate
+ * Compare Web.AvailableContentTypes vs Web.ContentTypes
+ * Find content types added to your lists (recursive)
+ * Find content types added to your lists
+ * Get All Detailed Properties of All Content Types
+ * Get All Hidden Content Types added to the site
+* Modules
+* Remove
+* Set
