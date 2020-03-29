@@ -1,35 +1,32 @@
-function Remove-SPOPermissionGroup
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Remove-SPOPermissionGroup{
+   	param (
+   		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+       		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+        	[Parameter(Mandatory=$true,Position=3)]
 		[string]$groupname
-		)
-  # Connect and load all prerequisites
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.Load($ctx.Web)
-  $ctx.ExecuteQuery()
-  $Groups = $ctx.Web.SiteGroups
- $ctx.Load($Groups)
-  $ctx.ExecuteQuery()
+	)
+  
+	  # Connect and load all prerequisites
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ctx.Load($ctx.Web)
+	  $ctx.ExecuteQuery()
+	  $Groups = $ctx.Web.SiteGroups
+	 $ctx.Load($Groups)
+	  $ctx.ExecuteQuery()
    
-    foreach($group in $Groups)
-    {
-     Write-host $group.LoginName
-    }
-     
+	foreach($group in $Groups){
+		Write-host $group.LoginName
+	}
+
      $Groups.RemoveByLoginName($groupname)
      $ctx.Web.Update()
      $ctx.ExecuteQuery()
- 
-      } 
+ } 
 
   
   
@@ -53,16 +50,12 @@ Connect-SPOService -Url $AdminUrl
 
 $mysiteUrl=$AdminUrl.Replace("-admin","-my")
         
-foreach ($login in ((get-spouser -Site $mysiteUrl).LoginName))
-{
-
-   if($Login.Contains('@')) 
-      {
-        Write-Host $login -ForegroundColor Green
-        $login=$login.Replace('@','_'); $login=$login.Replace('.','_'); $login=$login.Replace('.','_'); $login=$mysiteUrl+"/personal/"+$login; 
-        Remove-SPOPermissionGroup -Username $Username -AdminPassword $AdminPassword -Url $login -groupname $groupname
-        
-        }  
+foreach ($login in ((get-spouser -Site $mysiteUrl).LoginName)){
+   	if($Login.Contains('@')) {
+		Write-Host $login -ForegroundColor Green
+		$login=$login.Replace('@','_'); $login=$login.Replace('.','_'); $login=$login.Replace('.','_'); $login=$mysiteUrl+"/personal/"+$login; 
+		Remove-SPOPermissionGroup -Username $Username -AdminPassword $AdminPassword -Url $login -groupname $groupname
+	}  
 }
 
 

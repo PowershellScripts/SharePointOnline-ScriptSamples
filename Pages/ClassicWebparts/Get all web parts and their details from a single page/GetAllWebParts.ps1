@@ -1,43 +1,39 @@
 ﻿ 
- function Get-SPOWebParts
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+ function Get-SPOWebParts{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		$password,
 		[Parameter(Mandatory=$true,Position=4)]
 		[string]$pageUrl
-		)
+	)
 
 
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $ctx.Load($ctx.Web)
-  $ctx.ExecuteQuery()
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	$ctx.Load($ctx.Web)
+	$ctx.ExecuteQuery()
 
-  $page = $ctx.Web.GetFileByServerRelativeUrl($pageUrl)
-  $wpm = $page.GetLimitedWebPartManager("Shared")
-            $ctx.Load($wpm);
-            $ctx.Load($wpm.WebParts);
-            $ctx.ExecuteQuery()
+	$page = $ctx.Web.GetFileByServerRelativeUrl($pageUrl)
+	$wpm = $page.GetLimitedWebPartManager("Shared")
+	$ctx.Load($wpm);
+	$ctx.Load($wpm.WebParts);
+	$ctx.ExecuteQuery()
 
-            foreach($webbie in $wpm.WebParts)
-            {
-             Write-Output $webbie
-             $ctx.Load($webbie.WebPart)
-             $ctx.Load($webbie.WebPart.Properties)
-             $ctx.ExecuteQuery()
-             Write-Host "Associated web part:" -ForegroundColor DarkGreen
-             Write-Output $webbie.WebPart
-             Write-Output $webbie.WebPart.Properties.FieldValues 
-             Write-Host "-------------------------------------------------------------------------------------------"-BackgroundColor Cyan
-            }
-
-
-  }
+	foreach($webbie in $wpm.WebParts){
+		Write-Output $webbie
+		$ctx.Load($webbie.WebPart)
+		$ctx.Load($webbie.WebPart.Properties)
+		$ctx.ExecuteQuery()
+		Write-Host "Associated web part:" -ForegroundColor DarkGreen
+		Write-Output $webbie.WebPart
+		Write-Output $webbie.WebPart.Properties.FieldValues 
+		Write-Host "-------------------------------------------------------------------------------------------"-BackgroundColor Cyan
+	}
+}
  
  
  
