@@ -16,7 +16,7 @@ INDEX
  * Find Custom Display Forms Deployed
  * Modify the Display Form Template Name
  * Unable to view items- modify the DisplayFormUrl back to default
-* Get
+* Get 
  * All Content Types from a Content Type Hub and their DisplayFormTemplate
  * Compare Web.AvailableContentTypes vs Web.ContentTypes
  * Find content types added to your lists (recursive)
