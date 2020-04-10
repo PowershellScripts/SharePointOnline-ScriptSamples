@@ -65,7 +65,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Modify the description of a site content type
     * Reset default content types
     * Unseal sealed content types in site
-    
+    <br/><br/>
 * File Management
   * Add thousands of documents to your SPO library
   * Audit folder structure
