@@ -38,7 +38,9 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
 
 ## Full index
-* Content Types
+
+<details open>
+<summary>* Content Types </summary>
   * Create
     * Add Content Type to Lists with Workflows
     * Add Content Type to Task Lists
@@ -65,7 +67,9 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Modify the description of a site content type
     * Reset default content types
     * Unseal sealed content types in site
-    <br/><br/>
+ </details>
+ 
+ <br/>
 * File Management
   * Add thousands of documents to your SPO library
   * Audit folder structure
