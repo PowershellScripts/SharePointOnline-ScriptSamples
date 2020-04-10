@@ -9,35 +9,39 @@ It corresponds to the following GUI option:
  
 
 The Set-ListCheckout cmdlet takes the following parameters:
-
+```powershell
  [string]$Username
+ ```
 The string specifies admin of a given site collection where you want to enforce or disable the enforcement
-
+```powershell
 [string]$Url
+```
 Specifies the url of a site where you have the list
-
+```powershell
 [string]$AdminPassword,       
+```
 Admin's password
-
+```powershell
 [bool]$ForceCheckout=$true
+```
 Specifies whether the documents should be checked out ($true) or disables the Checkout Requirement ($false).
-
+```powershell
 [string]$ListName
+```
 Specifies the title of the list where you want to change the settings.
 
+<hr>
+
+## *Example:*
+
+**PS C:\Windows\system32**> **Import-Module d:\Powershell\ListFunctionsCheckout1.psm1**
+
+**PS C:\Windows\system32**> **Set-ListCheckout -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -ListName doc -AdminPassword Password -ForceCheckout $trueDonePS**
  
 
-Example:
-
-PS C:\Windows\system32> Import-Module d:\Powershell\ListFunctionsCheckout1.psm1
-
-PS C:\Windows\system32> Set-ListCheckout -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -ListName doc -AdminPassword Password -ForceCheckout $trueDonePS 
-
  
 
- 
-
-It uses the following prerequisites. If those libraries are in different location on your computer, please edit the .psm1 file!
+It uses the following prerequisites. If those libraries are in different location on your computer, please edit the ```.psm1``` file!
 
  
 

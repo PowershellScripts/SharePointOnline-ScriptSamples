@@ -1,13 +1,13 @@
 ﻿function Get-ExperienceOptions
 {
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		$password
-		)
+	)
 
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($url)
@@ -19,22 +19,13 @@ param (
   $ctx.ExecuteQuery()
 
 
-  foreach($ll in $lls)
-  {
-  
+  foreach($ll in $lls){
     $obj = New-Object PSObject
     $obj | Add-Member NoteProperty "Title" ($ll.Title) -Force
     $obj | Add-Member NoteProperty "Experience" ($ll.ListExperienceOptions) -Force
     Write-Output ($obj)
   }
-
-
-
-        
-        
-
-        
-  }
+}
 
 
 

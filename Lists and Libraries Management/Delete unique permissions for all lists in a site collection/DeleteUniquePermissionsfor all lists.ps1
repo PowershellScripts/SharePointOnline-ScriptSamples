@@ -1,16 +1,14 @@
-﻿function Set-SPOListResetRoleInheritance
-{
-  
-   param (
+function Set-SPOListResetRoleInheritance{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=4)]
-		[bool]$IncludeSubsites=$false
-		)
+	[bool]$IncludeSubsites=$false
+   )
   
   
   
@@ -23,41 +21,27 @@
   $ctx.ExecuteQuery()
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
-  foreach( $ll in $ctx.Web.Lists)
-  {
+  
+    foreach( $ll in $ctx.Web.Lists){
             
         $ll.ResetRoleInheritance()
-    $ll.Update()
+        $ll.Update()
 
-        try
-        {
-        $ctx.ExecuteQuery()
-        Write-Host "Restored inherited permissions for " $ll.Title
+        try{
+            $ctx.ExecuteQuery()
+            Write-Host "Restored inherited permissions for " $ll.Title
         }
-        catch
-        {
-        Write-Host "Failed to restore permissions for " $ll.Title
+        catch{
+            Write-Host "Failed to restore permissions for " $ll.Title
         }
-
-         
-        
-        }
-  
-        
-
-  
-
-  if($ctx.Web.Webs.Count -gt 0 -and $IncludeSubsites)
-  {
-    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
-    {
-        Set-SPOListResetRoleInheritance -Url ($ctx.Web.Webs[$i].Url) -Username $Username -AdminPassword $AdminPassword -IncludeSubsites $IncludeSubsites
     }
-
-  }
   
-  
-  }
+    if($ctx.Web.Webs.Count -gt 0 -and $IncludeSubsites){
+        for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
+            Set-SPOListResetRoleInheritance -Url ($ctx.Web.Webs[$i].Url) -Username $Username -AdminPassword $AdminPassword -IncludeSubsites $IncludeSubsites
+        }
+    }
+}
 
 
 # Paths to SDK. Please verify location on your computer.

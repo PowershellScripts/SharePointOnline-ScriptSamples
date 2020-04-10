@@ -1,17 +1,17 @@
 ﻿function Get-SPOFolderFiles
 {
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		$password,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle,
-        [Parameter(Mandatory=$true,Position=5)]
+		[Parameter(Mandatory=$true,Position=5)]
 		[string]$CSVPath 
-		)
+	)
 
 
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -27,17 +27,16 @@ param (
    $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
-  foreach($item in $itemki)
-  {
+  foreach($item in $itemki){
 
-  Write-Host $item["FileRef"]
-  $file =
-        $ctx.Web.GetFileByServerRelativeUrl($item["FileRef"]);
-        $ctx.Load($file)
-        $ctx.Load($file.Versions)
-        $ctx.ExecuteQuery()
-        if ($file.Versions.Count -eq 0)
-        {
+	  Write-Host $item["FileRef"]
+	  $file =
+		$ctx.Web.GetFileByServerRelativeUrl($item["FileRef"]);
+		$ctx.Load($file)
+		$ctx.Load($file.Versions)
+		$ctx.ExecuteQuery()
+        
+	if ($file.Versions.Count -eq 0){
           $obj=New-Object PSObject
           $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
           $obj | Add-Member NoteProperty FileLeafRef($item["FileLeafRef"])
@@ -45,39 +44,28 @@ param (
 
           $obj | export-csv -Path $CSVPath -Append
         }
-        else
-        {
+        else{
           $file.Versions.DeleteAll()
 
-          try { $ctx.ExecuteQuery() 
-          $obj=New-Object PSObject
-          $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
-          $obj | Add-Member NoteProperty FileLeafRef($item["FileLeafRef"])
-          $obj | Add-Member NoteProperty Versions($file.Versions.Count + " versions were deleted")
+          try{ 
+		  $ctx.ExecuteQuery() 
+		  $obj=New-Object PSObject
+		  $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
+		  $obj | Add-Member NoteProperty FileLeafRef($item["FileLeafRef"])
+		  $obj | Add-Member NoteProperty Versions($file.Versions.Count + " versions were deleted")
 
-          $obj | export-csv -Path $CSVPath -Append
+		  $obj | export-csv -Path $CSVPath -Append
           }
           catch {
-          $obj=New-Object PSObject
-          $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
-          $obj | Add-Member NoteProperty FileLeafRef($item["FileLeafRef"])
-          $obj | Add-Member NoteProperty Versions($file.Versions.Count + " versions. Failed to delete")
+		  $obj=New-Object PSObject
+		  $obj | Add-Member NoteProperty ServerRelativeUrl($file.ServerRelativeUrl)
+		  $obj | Add-Member NoteProperty FileLeafRef($item["FileLeafRef"])
+		  $obj | Add-Member NoteProperty Versions($file.Versions.Count + " versions. Failed to delete")
 
-          $obj | export-csv -Path $CSVPath -Append
-
+		  $obj | export-csv -Path $CSVPath -Append
           }
-        }
-
-
-        
+        }   
   }
-
-
-
-        
-
-
-
 }
 
 #Paths to SDK

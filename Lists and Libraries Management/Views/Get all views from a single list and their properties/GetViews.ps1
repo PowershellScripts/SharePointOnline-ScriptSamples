@@ -1,16 +1,14 @@
-﻿function Get-SPOListView
-{
-param(
-[Parameter(Mandatory=$true,Position=1)]
+﻿function Get-SPOListView{
+	param(
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[string]$ListTitle
-
-		)
+	)
   
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
@@ -24,12 +22,7 @@ param(
   $ctx.Load($vv.ViewFields)
   $ctx.ExecuteQuery()
   Write-Output $vv
- }
-
-
-
-     
-     
+ } 
 }
 
 

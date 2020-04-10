@@ -1,63 +1,47 @@
 A short one-cmdlet Powershell module that adds another cmdlet to your set of cmdlets. Import the module to make the cmdlet available.
 
- 
-
-New-SPOListColumnWithProperties
-
- 
-
- 
-
+### New-SPOListColumnWithProperties
  
 
 ## Parameters
 
 The cmdlet is using the following parameters:
+</br>```[string]$Username```
 
- [string]$Username
 The string specifies admin of the site
+</br>```[string]$Url```
 
-[string]$Url
 Specifies the url of a site where you have the list
+</br>```[string]$AdminPassword,```  
 
-[string]$AdminPassword,       
 Admin's password
+</br>```[string]$ListTitle```
 
-[string]$ListTitle
 Specifies the title of the list where you want to change the settings.
+</br>```[string]$FieldDisplayName```
 
-[string]$FieldDisplayName
 Mandatory
+</br>```[string]$Description=""```
 
-[string]$Description=""
 Optional.
+</br>```[string]$Required="false"```
 
-[string]$Required="false"
 Optional. Specifies whether the field is required.
+</br>```[string]$Group=""```
 
-[string]$Group=""
+Optional.
+</br>```[string]$StaticName```
+
+Mandatory
+</br>```[string]$Name```
+
+Mandatory
+</br>```[string]$Version="1"```
+
 Optional.
 
-[string]$StaticName
-Mandatory
-
-[string]$Name
-Mandatory
-
-[string]$Version="1"
-Optional.
-
  
 
- 
-
- 
-
- 
-
- 
-
- 
 
 ## Requirements
 

@@ -3,47 +3,40 @@
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOListsVersioning
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+function Set-SPOListsVersioning{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$password,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		[bool]$Versioning
-)
+	)
 
 
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $ctx.ExecuteQuery() 
+	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	  $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+	$Lists=$ctx.Web.Lists
+	$ctx.Load($Lists)
+	$ctx.ExecuteQuery()
 
-Foreach($ll in $Lists)
-{
-    $ll.EnableVersioning = $Versioning
-    $ll.Update()
-    
+	Foreach($ll in $Lists){
+	    $ll.EnableVersioning = $Versioning
+	    $ll.Update()
 
-    try
-    {
-        $ctx.ExecuteQuery()
-        Write-Host $ll.Title "   Done" -ForegroundColor Green
-       }
+		try{
+			$ctx.ExecuteQuery()
+			Write-Host $ll.Title "   Done" -ForegroundColor Green
+		}
+		catch [Net.WebException] {
+			    Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
+		}
 
-       catch [Net.WebException] 
-        {
-            
-            Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-
-}
+	}
 }
 
 

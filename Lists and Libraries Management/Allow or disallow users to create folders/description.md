@@ -4,11 +4,7 @@ If you disable the button, you and your users will not be able to create folders
 
 Applies to lists and libraries
 
- 
-
- 
-
-It requires installed  SharePoint Online SDK
+It requires installed  [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038)
 
 You have to enter the list information before running the script:
 
@@ -26,18 +22,14 @@ $Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists"
 $EnableFolderCreation=$false 
  ```
 
- 
+## **Results**
 
-### Results
-
- 
-
- 
+<img src="../Allow or disallow users to create folders/EnableFolderCreation.png">
 
 ### Related scripts
-Set direction of the reading order for a single list
+[Set direction of the reading order for a single list](https://gallery.technet.microsoft.com/office/Set-the-direction-of-the-f17ca66a)
 
-Set-SPOList properties (module)
+[Set-SPOList properties (module)](https://gallery.technet.microsoft.com/office/Set-SPOList-properties-9d16f2ba)
 
 
  <br/><br/>

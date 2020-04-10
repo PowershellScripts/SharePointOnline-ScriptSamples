@@ -3,44 +3,37 @@
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOListVersioning
-{
-param (
-        [Parameter(Mandatory=$true,Position=0)]
+function Set-SPOListVersioning{
+	param (
+		[Parameter(Mandatory=$true,Position=0)]
 		[string]$ListName,
-        [Parameter(Mandatory=$true,Position=1)]
+		[Parameter(Mandatory=$true,Position=1)]
 		[bool]$Versioning,
-        [Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=4)]
+		[Parameter(Mandatory=$true,Position=4)]
 		$password
-		)
+	)
 
-$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $ctx.Load($ctx.Web)
-  $ctx.ExecuteQuery()
-  $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
-  $ctx.Load($ll)
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	  $ctx.Load($ctx.Web)
+	  $ctx.ExecuteQuery()
+	  $ll=$ctx.Web.Lists.GetByTitle($ListTitle)
+	  $ctx.Load($ll)
 
-$ll.EnableMinorVersions = $Versioning  
-    $ll.Update()
+	$ll.EnableMinorVersions = $Versioning  
+	    $ll.Update()
 
-    try
-    {
+    try{
         $ctx.ExecuteQuery()
         Write-Host "Done" -ForegroundColor Green
-       }
-
-       catch [Net.WebException] 
-        {
-            
+    }
+    catch [Net.WebException] {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-        
-
+    }
 }
 
 

@@ -9,21 +9,19 @@
 
 #>
 
-function Remove-SPOListColumn
-{
-
-param (
+function Remove-SPOListColumn{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
+	[string]$Username,
 	[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
+	[string]$ListTitle,
 	[Parameter(Mandatory=$false,Position=5)]
-		[string]$FieldTitle
-		)
+	[string]$FieldTitle
+   )
 
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -37,7 +35,6 @@ param (
   $ctx.ExecuteQuery()
   $Field.DeleteObject()
   $ctx.ExecuteQuery()
-
 }
 
 
