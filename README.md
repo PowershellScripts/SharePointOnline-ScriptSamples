@@ -44,7 +44,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  <br/>
  
- * Content Types
+
   * Create
     * Add Content Type to Lists with Workflows
     * Add Content Type to Task Lists
@@ -161,10 +161,8 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 * Create new column with properties
 * Get all columns associated to a SINGLE content type in a list
 * Module for list column management
-* images
 * Remove list column
 * Create SPO list with a Powershell cmdlet
-* images
 * Delete unique permissions for all lists in a site collection
 * Delete unique permissions in all items in a large list (5000+ items)
 * FolderStructure
@@ -184,9 +182,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 * Set all lists to New or Classic Experience
 * Set single list to New or Classic Experience
 * Verify which lists have the new UI
-* images
 * Verify which lists have the new UI using Powershell and REST
-* images
 * MultipleListsC#
 * Powershell Module for Managing SPO Lists
 * Set the direction of the reading order
