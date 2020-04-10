@@ -58,47 +58,50 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Get Content Types Derived From One Parent 2
     * Get Content Types Derived From One Parent
     *
- * Set
+  * Set
     * Add column (fieldlink) to a content type
     * Assign your Content Types back to their default Groups
     * Modify the description of a list content type
     * Modify the description of a site content type
     * Reset default content types
     * Unseal sealed content types in site
+    
 * File Management
- * Add thousands of documents to your SPO library
- * Audit folder structure
+  * Add thousands of documents to your SPO library
+  * Audit folder structure
     * Audit folder structure to XML
     * Audit Sharepoint folder structure to XML
     * Audit SharePoint Online folder structure to XML
     * Get the structure of your SharePoint library (folders and files) to XML
- * Create sample folder and file structure for testing
- * Get SPO Files from a folder
- * Get SPO Folder and File
- * Module for checking in and checking out the files
- * Module for easy file management
- * Powershell cmdlet for getting the number of files in a folder
- * Records Management
+  * Create sample folder and file structure for testing
+  * Get SPO Files from a folder
+  * Get SPO Folder and File
+  * Module for checking in and checking out the files
+  * Module for easy file management
+  * Powershell cmdlet for getting the number of files in a folder
+  * Records Management
     * Declare files as records
     * Undeclare files as records
- * Restore previous versions in selected files the entire library
+  * Restore previous versions in selected files the entire library
+  
 * Getting SPO objects with REST
-* Module for getting SharePoint objects with Powershell (limited)
-* Module for getting SharePoint Online objects with Powershell
-* Script to get SharePoint objects with REST
-* Unrestricted Module
+  * Module for getting SharePoint objects with Powershell (limited)
+  * Module for getting SharePoint Online objects with Powershell
+  * Script to get SharePoint objects with REST
+  * Unrestricted Module
+  
 * Items Management
-* Attachments
-* Add size of SharePoint item attachments to list view
-* Copy all SharePoint Online list item attachments
-* Copy list attachments to a separate library
-* Delete all your list attachments (data loss involved)
-* Disable or enable attachments to list items
-* Enable or disable attachments to items of a chosen list
-* Get size of attachments per SharePoint Online list item
-* Get the size of all attachments in a list
-* List all attachments from SharePoint Online list to CSV file
-* List all SharePoint Online list items with attachments
+  * Attachments
+    * Add size of SharePoint item attachments to list view
+    * Copy all SharePoint Online list item attachments
+    * Copy list attachments to a separate library
+    * Delete all your list attachments (data loss involved)
+    * Disable or enable attachments to list items
+    * Enable or disable attachments to items of a chosen list
+    * Get size of attachments per SharePoint Online list item
+    * Get the size of all attachments in a list
+    * List all attachments from SharePoint Online list to CSV file
+    * List all SharePoint Online list items with attachments
 * Bulk update all items in a list
 * Create new list item using Powershell
 * Get
