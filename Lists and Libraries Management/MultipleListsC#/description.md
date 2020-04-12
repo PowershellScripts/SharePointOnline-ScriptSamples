@@ -1,14 +1,12 @@
-Zip contains an .exe file which runs a program to add a list to a specified SharePoint site collection. You can choose the list template from among:
+Zip contains an ```.exe``` file which runs a program to add a list to a specified SharePoint site collection. You can choose the list template from among:
 
-contact list
+**contact list**
 
-announcement list
+**announcement list**
 
-task list
+**task list**
 
-event list
-
- 
+**event list**
 
 You can choose the number of items. Each list is created individually with different columns and different data. The data which populates the list comes from a Random() function. Some of the fields, however, intentionally have the same values to let you test filtering in your SharePoint Online tenant.
 
@@ -20,19 +18,14 @@ The program is meant mainly for  testing purposes, e.g.
 
 - troubleshooting issues which occur when your users added more than 5000 items and you don't want or can't test on the real data
 
- 
-
 As it runs, it will inform you on the percentage of its progress.
 
- 
-
-Error handling:
+## Error handling:
 
 There is no error handling in this tool. It is designed for admins who know what to do with them.
 
- 
 
-Expected errors:
+## Expected errors:
 
 The lists are named after the number of elements they include so be careful not to create another one with the same number on the same site collection - you will get an error!
 

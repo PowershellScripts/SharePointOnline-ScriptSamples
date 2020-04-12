@@ -1,14 +1,14 @@
-The script requires SharePoint Online SDK.
+The script requires [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
  
 
-## What does it do?
+## **What does it do?**
 
 The script finds all the files in a single library checked out by a specific user and checks them in.
 
- 
+<hr>
 
-## How to use?
+## **How to use?**
 
 1. Download and open the file.
 
@@ -32,18 +32,9 @@ $userLoginName="user@domain.onmicrosoft.com"
 ```
 4. Save the file, close, and run the script in Powershell.
 
- 
+### ***Expected results***
 
- 
-
- 
-
-Expected results
-
-
-
- 
-
+<img src="../Find all files in library checked out by a specific user and check them in/Capture (3).PNG">
  
  <br/><br/>
 <b>Enjoy and please share your comments and questions!</b>

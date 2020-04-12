@@ -68,15 +68,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
   # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.Online.SharePoint.PowerShell\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.Online.SharePoint.PowerShell\Microsoft.SharePoint.Client.Runtime.dll"

@@ -1,14 +1,14 @@
-The script requires SharePoint Online SDK.
+The script requires [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038).
 
  
 
-### What does it do?
+## **What does it do?**
 
 The script finds all the checked out files in a single library and checks them in.
 
- 
+<hr>
 
-### How to use?
+## **How to use?**
 
 1. Download and open the file.
 

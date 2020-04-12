@@ -1,10 +1,6 @@
 A short script to add a column with file extensions to a SharePoint Online library:
 
-
-
- 
-
- 
+<img src="../Add a library column with file extension/Capture2.PNG">
 
 The script is not an event receiver, so if you add a new item, it may need to be re-applied.
 
