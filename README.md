@@ -11,29 +11,6 @@ The scripts use Powershell, C#, CSOM and REST. They include copies of existing s
 
 Most of them were tested and verified by hundreds and thousands of users of [Technet Gallery, where you can still find these scripts](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) 
 
-You can find here script samples to:
-* enable, modify and change versioning settings, version numbers
-* set, modify and remove permissions
-* manage permission inheritance on list / folder or item level
-* get, set and report on content types
-* fix issues connected with content type removal, and bulk-remove them
-* modify and manipulate your item display forms
-* manage your files - move, copy across libraries and tenants, create reports on and generate randomized samples
-* copy structures across libraries, sites and tenants
-* move item attachments to another library
-* modify various list and library settings, e.g. reading order
-* check in and check out items, including bulk check in of checked out files
-* create columns, views, fix issues related to deleted/missing views
-* remove, modify fields
-* create OneDrive for Business storage reports
-* change time zones
-* get and delete page web parts
-* manipulate sites, subsites and their properties
-* report on and restore selected/all recycle bin items
-* set themes and get reports on workflows
-* There are also custom modules, for files/items or columns management cmdlets with tens of examples on how to use them available on [Technet Wiki](http://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-resources.aspx) 
-
-
 Their new home at GitHub is still relatively recent, so if you find any issues, please do let me know. I appreciate every comment and every feedback.
 
 
@@ -412,30 +389,55 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  </details>
  <br/>   
   
-* SiteMailboxes
-* Tenant Settings
-* Add BCC to all sharing invitations in OneDrive for Business
-* Allow external sharing only with specific domains
-* Block download of all files for guests in SharePoint with Powershell and CSOM
-* Force external users to accept sharing invitations with the same account
-* Get SharePoint Online tenant properties using Powershell and CSOM
-* Globally set OneDrive for Business Access Requests and Members Can Share
-* Hide OneDrive for Business Sync button using PS and CSOM
-* Modify external sharing setting
-* Notify OneDrive for Business owner if anonymous link to their content is created
-* Notify OneDrive for Business owner if their content is reshared
-* Prevent external users from resharing
-* Report on SharePoint Online tenant properties
-* Set Anonymous access for SPO tenant using PS and CSOM
-* Set anonymous link access level for SPO tenant
-* Set default link type for SharePoint Online tenant sharing settings
-* Set expiration for anonymous links in SPO
-* User Profiles
-* Export all user profiles using Powershell
-* Get all user profile properties using Powershell and REST
-* Get MUI Languages for multiple users using REST
-* Get user work email using Powershell and REST
-* Retrieve all user profiles and their properties using C# and CSOM
+  
+  <details>
+<summary>SiteMailboxes </summary>
+ <br/>   
+   <br/>
+ </details>
+ <br/>  
+ 
+ 
+  <details>
+<summary>Tenant Settings </summary>
+ <br/>  
+ 
+ 
+  * Add BCC to all sharing invitations in OneDrive for Business
+  * Allow external sharing only with specific domains
+  * Block download of all files for guests in SharePoint with Powershell and CSOM
+  * Force external users to accept sharing invitations with the same account
+  * Get SharePoint Online tenant properties using Powershell and CSOM
+  * Globally set OneDrive for Business Access Requests and Members Can Share
+  * Hide OneDrive for Business Sync button using PS and CSOM
+  * Modify external sharing setting
+  * Notify OneDrive for Business owner if anonymous link to their content is created
+  * Notify OneDrive for Business owner if their content is reshared
+  * Prevent external users from resharing
+  * Report on SharePoint Online tenant properties
+  * Set Anonymous access for SPO tenant using PS and CSOM
+  * Set anonymous link access level for SPO tenant
+  * Set default link type for SharePoint Online tenant sharing settings
+  * Set expiration for anonymous links in SPO
+
+   <br/>
+ </details>
+ <br/>  
+
+  <details>
+<summary>User Profiles </summary>
+ <br/>  
+ 
+  * Export all user profiles using Powershell
+  * Get all user profile properties using Powershell and REST
+  * Get MUI Languages for multiple users using REST
+  * Get user work email using Powershell and REST
+  * Retrieve all user profiles and their properties using C# and CSOM
+  
+   <br/>
+ </details>
+ <br/>  
+
 * Versioning
 * Create a report on all file versions in OneDrive for Business
 * Enable minor versions for all lists
