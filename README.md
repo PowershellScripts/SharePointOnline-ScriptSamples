@@ -53,8 +53,6 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  </details>
  
- <br/>
- 
  
  <details>
 <summary>File Management </summary>
@@ -78,11 +76,9 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Undeclare files as records
   * Restore previous versions in selected files the entire library
   
-  <br/>
  
  </details>
  
- <br/> 
   
   
  <details>
