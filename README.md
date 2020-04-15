@@ -12,7 +12,7 @@ The scripts use Powershell, C#, CSOM and REST. They include copies of existing s
 Most of them were tested and verified by hundreds and thousands of users of [Technet Gallery, where you can still find these scripts](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) 
 
 Their new home at GitHub is still relatively recent, so if you find any issues, please do let me know. I appreciate every comment and every feedback.
-
+ 
 
 ## Full index
 
