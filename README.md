@@ -434,7 +434,11 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  </details>
  <br/>  
 
-* Versioning
+
+<details>
+<summary>Versioning </summary>
+ <br/>
+ 
 * Create a report on all file versions in OneDrive for Business
 * Enable minor versions for all lists
 * Enable versioning for all lists in OneDrive sites
@@ -443,9 +447,19 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 * Restore previous versions in selected files the entire library
 * Restore previous versions in the entire library
 * Set the major version limit for all the lists and libraries (data loss involved)
-* Workflows
+   <br/>
+ </details>
+ <br/> 
+
+
+<details>
+<summary>Workflows </summary>
+ <br/>
+ 
 * Get workflow report for a site collection
 * Get workflow report for all site collections
 * Get workflow report for one site
 
-
+   <br/>
+ </details>
+ <br/> 
