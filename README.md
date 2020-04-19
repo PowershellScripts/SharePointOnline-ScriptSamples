@@ -96,7 +96,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  </details>
  
- <br/>   
+ 
  
  
  <details>
@@ -130,7 +130,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  </details>
  
- <br/>  
+
 
  <details>
 <summary>Licensing </summary>
@@ -144,7 +144,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>Lists and Libraries Management </summary>
@@ -222,7 +222,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>Managed Metadata </summary>
@@ -234,7 +234,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>OneDrive for Business </summary>
@@ -255,7 +255,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>
+
 
  <details>
 <summary>OTHER </summary>
@@ -271,7 +271,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>
+
  
  
   <details>
@@ -287,7 +287,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   <br/>
  </details>
- <br/>
+ 
  
  
   <details>
@@ -309,7 +309,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   <br/>
  </details>
- <br/>  
+
   
   
   <details>
@@ -322,7 +322,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>  
+
 
 
   <details>
@@ -383,7 +383,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
    <br/>
  </details>
- <br/>   
+  
   
   
   <details>
@@ -391,12 +391,12 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  <br/>   
    <br/>
  </details>
- <br/>  
+ 
  
  
   <details>
 <summary>Tenant Settings </summary>
- <br/>  
+  
  
  
   * Add BCC to all sharing invitations in OneDrive for Business
@@ -418,7 +418,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
    <br/>
  </details>
- <br/>  
+
 
   <details>
 <summary>User Profiles </summary>
@@ -432,7 +432,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
    <br/>
  </details>
- <br/>  
+
 
 
 <details>
@@ -449,7 +449,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 * Set the major version limit for all the lists and libraries (data loss involved)
    <br/>
  </details>
- <br/> 
+ 
 
 
 <details>
