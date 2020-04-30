@@ -1,10 +1,21 @@
 INDEX
 
-* Content Type Management Setting
+<details>
+<summary>Content Type Management Setting </summary>
+ 
+ <br/>
+
   * Allow content type management for all lists in a site
   * Allow content type management for all lists in site collection
   * Set content type management setting for a single list
-* Create
+  
+  </details>
+  
+  <details>
+<summary>Create </summary>
+ 
+ <br/>
+ 
   * Add Content Type to Lists with Workflows
   * Add Content Type to Task Lists
   * Add existing content type directly to SPO list
@@ -12,11 +23,27 @@ INDEX
   * Create and add content type to a content type hub
   * Create content type and add directly to SPO list
   * Create content type and add it to all lists in one site
-* Display Forms
+ 
+  </details>
+  
+  
+  <details>
+<summary>Display Forms </summary>
+ 
+ <br/>
+ 
   * Find Custom Display Forms Deployed
   * Modify the Display Form Template Name
   * Unable to view items- modify the DisplayFormUrl back to default
-* Get
+  
+    </details>
+  
+  
+  <details>
+<summary>Get </summary>
+ 
+ <br/>
+ 
   * All Content Types from a Content Type Hub and their DisplayFormTemplate
   * Compare Web.AvailableContentTypes vs Web.ContentTypes
   * Find content types added to your lists (recursive)
@@ -38,19 +65,49 @@ INDEX
   * Get properties of a single content type by its ID
   * Lists where a given content type is added
   * Verify the content types used in your lists against the default ones
-* Set
+  
+ </details>
+  
+  
+  <details>
+<summary>Set </summary>
+ 
+ <br/>
+ 
   * Add column (fieldlink) to a content type
   * Assign your Content Types back to their default Groups
   * Modify the description of a list content type
   * Modify the description of a site content type
   * Reset default content types
   * Unseal sealed content types in site
-* Modules
+  
+</details>
+  
+  
+  <details>
+<summary>Modules </summary>
+ 
+ <br/>
+
   * SharePoint Online module for managing content types
-* Remove
+  
+    </details>
+    
+  <details>
+<summary>Remove </summary>
+ 
+ <br/>
+ 
   * Remove a content type from all lists in a site
   * Remove content type from SharePoint site
-* Set
+  
+    </details>
+    
+  <details>
+<summary>Set </summary>
+ 
+ <br/>
+
   * Add column (fieldlink) to a content type
   * Assign your Content Types back to their default Groups
   * Modify the description of a list content type
@@ -59,4 +116,4 @@ INDEX
   * Unseal sealed content types in site
 
 
-
+  </details>
