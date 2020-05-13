@@ -14,7 +14,7 @@ In order to use the script, modify the following lines. DO NOT enter password in
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -28,7 +28,7 @@ $Url="https://etr56.sharepoint.com"
  # where should the report be saved 
 $csvPath = "C:\Users\Public\largelists.csv" 
 $itemThreshold = 20000 
- 
+``` 
  
  
 
