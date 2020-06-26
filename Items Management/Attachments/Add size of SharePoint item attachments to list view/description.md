@@ -16,7 +16,7 @@ Sample results:
 
 In order to use the script you need to enter your data:
 
-PowerShell
+```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
@@ -27,7 +27,7 @@ $username = "ana@etr56.onmicrosoft.com"
 $Url = "https://etr56.sharepoint.com" 
 $ListTitle = "attatest" 
 $ColumnName = "Size In KB"  #name of the column where you want to display size. 
- 
+``` 
  
  
 
