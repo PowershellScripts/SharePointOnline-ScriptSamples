@@ -1,4 +1,4 @@
-﻿function Set-SiteColl{
+﻿function Disable-Flows{
 	param (
         	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -29,8 +29,6 @@
 }
 
 
-
-
 #Paths to SDK
 Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"
 #Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"
@@ -46,4 +44,4 @@ $Url="https://TENANT.sharepoint.com"
 
 
 
-Set-SiteColl -Username $username -AdminUrl $AdminUrl -password $AdminPassword -Url $Url
+Disable-Flows -Username $username -AdminUrl $AdminUrl -password $AdminPassword -Url $Url
