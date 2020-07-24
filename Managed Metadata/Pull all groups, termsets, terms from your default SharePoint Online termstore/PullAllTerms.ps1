@@ -27,8 +27,6 @@
 	Write-Host "Termstore" -ForegroundColor Green
 	Write-Output $termstore
 
-
-
 	foreach ($gruppo in $termstore.Groups){
 	    $ctx.Load($gruppo)
 	    $ctx.Load($gruppo.TermSets)
@@ -45,7 +43,6 @@
 
 			Write-Host "--------------- Term Set --------------------" -ForegroundColor Magenta
 			Write-Output $termset
-
 
 				foreach($term in $termset.Terms){
 					$ctx.Load($term)
