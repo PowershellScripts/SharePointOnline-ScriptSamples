@@ -15,18 +15,18 @@ How to use?
 
  
 
-### PowerShell
+``` PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.Office.Client.Policy.dll"    
-###
+```
 
 3. Enter your data:
-### PowerShell
+``` PowerShell
 # Insert the credentials and the name of the admin site 
 $Username="ana@etr56.onmicrosoft.com" 
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $Url="https://etr56.sharepoint.com/sites/commsite" 
-### 
+``` 
 If the property is disabled, users with edit rights will be able to switch comments on and off. If the property is enabled, users will not see the comments section when editing the page:
