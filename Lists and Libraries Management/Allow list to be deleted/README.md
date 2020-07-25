@@ -16,7 +16,7 @@ How to use the script?
 
 2. Enter the connection data to your tenant and the paths to appropriate SDK libraries:
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -26,9 +26,9 @@ $Username="ana@etr56.onmicrosoft.com"
 $AdminPassword=Read-Host -Prompt "Password" -AsSecureString 
 $Url="https://etr56.sharepoint.com/sites/testflow" 
 $ListTitle="Customers" 
- 
+ ```
 3. Define whether you want to allow the list to be deleted ($true):
 
-PowerShell
+```PowerShell
 $lista.AllowDeletion = $false
- 
+ ```
