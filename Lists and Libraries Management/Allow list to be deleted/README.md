@@ -10,7 +10,7 @@ The script does not delete the list itself.
 
  
 
-How to use the script?
+### How to use the script?
 
 1. Download and open the file.
 
