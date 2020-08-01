@@ -11,31 +11,8 @@ The scripts use Powershell, C#, CSOM and REST. They include copies of existing s
 
 Most of them were tested and verified by hundreds and thousands of users of [Technet Gallery, where you can still find these scripts](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) 
 
-You can find here script samples to:
-* enable, modify and change versioning settings, version numbers
-* set, modify and remove permissions
-* manage permission inheritance on list / folder or item level
-* get, set and report on content types
-* fix issues connected with content type removal, and bulk-remove them
-* modify and manipulate your item display forms
-* manage your files - move, copy across libraries and tenants, create reports on and generate randomized samples
-* copy structures across libraries, sites and tenants
-* move item attachments to another library
-* modify various list and library settings, e.g. reading order
-* check in and check out items, including bulk check in of checked out files
-* create columns, views, fix issues related to deleted/missing views
-* remove, modify fields
-* create OneDrive for Business storage reports
-* change time zones
-* get and delete page web parts
-* manipulate sites, subsites and their properties
-* report on and restore selected/all recycle bin items
-* set themes and get reports on workflows
-* There are also custom modules, for files/items or columns management cmdlets with tens of examples on how to use them available on [Technet Wiki](http://social.technet.microsoft.com/wiki/contents/articles/32334.sharepoint-online-spomod-resources.aspx) 
-
-
 Their new home at GitHub is still relatively recent, so if you find any issues, please do let me know. I appreciate every comment and every feedback.
-
+ 
 
 ## Full index
 
@@ -44,39 +21,127 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  <br/>
  
+   <details>
+<summary>Content Type Management Setting </summary>
+ 
+ <br/>
 
-  * Create
-    * Add Content Type to Lists with Workflows
-    * Add Content Type to Task Lists
-    * Add existing content type directly to SPO list
-    * Create a content type
-    * Create and add content type to a content type hub
-    * Create content type and add directly to SPO list
-    * Create content type and add it to all lists in one site
-  * Get
-    * All Content Types from a Content Type Hub and their DisplayFormTemplate
-    * Compare Web.AvailableContentTypes vs Web.ContentTypes
-    * Find content types added to your lists (recursive)
-    * Find content types added to your lists
-    * Get All Detailed Properties of All Content Types
-    * Get All Hidden Content Types added to the site
-    * Get All Properties of All Content Types in All Lists (Detailed) across one site
-    * Get Content Types Derived From One Parent 2
-    * Get Content Types Derived From One Parent
-    *
-  * Set
-    * Add column (fieldlink) to a content type
-    * Assign your Content Types back to their default Groups
-    * Modify the description of a list content type
-    * Modify the description of a site content type
-    * Reset default content types
-    * Unseal sealed content types in site
+  * Allow content type management for all lists in a site
+  * Allow content type management for all lists in site collection
+  * Set content type management setting for a single list
+  
+  </details>
+  
+  <details>
+<summary>Create </summary>
+ 
+ <br/>
+ 
+  * Add Content Type to Lists with Workflows
+  * Add Content Type to Task Lists
+  * Add existing content type directly to SPO list
+  * Create a content type
+  * Create and add content type to a content type hub
+  * Create content type and add directly to SPO list
+  * Create content type and add it to all lists in one site
+ 
+  </details>
+  
+  
+  <details>
+<summary>Display Forms </summary>
+ 
+ <br/>
+ 
+  * Find Custom Display Forms Deployed
+  * Modify the Display Form Template Name
+  * Unable to view items- modify the DisplayFormUrl back to default
+  
+    </details>
+  
+  
+  <details>
+<summary>Get </summary>
+ 
+ <br/>
+ 
+  * All Content Types from a Content Type Hub and their DisplayFormTemplate
+  * Compare Web.AvailableContentTypes vs Web.ContentTypes
+  * Find content types added to your lists (recursive)
+  * Find content types added to your lists
+  * Get All Detailed Properties of All Content Types
+  * Get All Hidden Content Types added to the site
+  * Get All Properties of All Content Types in All Lists (Detailed) across one site
+  * Get Content Types Derived From One Parent 2
+  * Get Content Types Derived From One Parent
+  * Get Content Types with a particular column	
+  * Get Names of All Content Types
+  * Get Names of all Available Content Types
+  * Get Names of all content types added to your lists
+  * Get Single Content Type - Array Method
+  * Get all columns associated to a SINGLE content type in a list
+  * Get all properties of all content types in a site
+  * Get content types belonging to a group
+  * Get content types which cannot be modified	
+  * Get properties of a single content type by its ID
+  * Lists where a given content type is added
+  * Verify the content types used in your lists against the default ones
+  
+ </details>
+  
+  
+  <details>
+<summary>Set </summary>
+ 
+ <br/>
+ 
+  * Add column (fieldlink) to a content type
+  * Assign your Content Types back to their default Groups
+  * Modify the description of a list content type
+  * Modify the description of a site content type
+  * Reset default content types
+  * Unseal sealed content types in site
+  
+</details>
+  
+  
+  <details>
+<summary>Modules </summary>
+ 
+ <br/>
+
+  * SharePoint Online module for managing content types
+  
+    </details>
+    
+  <details>
+<summary>Remove </summary>
+ 
+ <br/>
+ 
+  * Remove a content type from all lists in a site
+  * Remove content type from SharePoint site
+  
+    </details>
+    
+  <details>
+<summary>Set </summary>
+ 
+ <br/>
+
+  * Add column (fieldlink) to a content type
+  * Assign your Content Types back to their default Groups
+  * Modify the description of a list content type
+  * Modify the description of a site content type
+  * Reset default content types
+  * Unseal sealed content types in site
+
+
+  </details>
  
  <br/>
  
  </details>
- 
- <br/>
  
  
  <details>
@@ -101,11 +166,9 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Undeclare files as records
   * Restore previous versions in selected files the entire library
   
-  <br/>
  
  </details>
  
- <br/> 
   
   
  <details>
@@ -123,7 +186,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  </details>
  
- <br/>   
+ 
  
  
  <details>
@@ -157,7 +220,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  
  </details>
  
- <br/>  
+
 
  <details>
 <summary>Licensing </summary>
@@ -171,7 +234,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>Lists and Libraries Management </summary>
@@ -249,7 +312,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>Managed Metadata </summary>
@@ -261,7 +324,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/> 
+
 
  <details>
 <summary>OneDrive for Business </summary>
@@ -282,7 +345,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>
+
 
  <details>
 <summary>OTHER </summary>
@@ -298,7 +361,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>
+
  
  
   <details>
@@ -314,7 +377,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   <br/>
  </details>
- <br/>
+ 
  
  
   <details>
@@ -336,7 +399,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   <br/>
  </details>
- <br/>  
+
   
   
   <details>
@@ -349,7 +412,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 
   <br/>
  </details>
- <br/>  
+
 
 
   <details>
@@ -410,33 +473,62 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
    <br/>
  </details>
- <br/>   
   
-* SiteMailboxes
-* Tenant Settings
-* Add BCC to all sharing invitations in OneDrive for Business
-* Allow external sharing only with specific domains
-* Block download of all files for guests in SharePoint with Powershell and CSOM
-* Force external users to accept sharing invitations with the same account
-* Get SharePoint Online tenant properties using Powershell and CSOM
-* Globally set OneDrive for Business Access Requests and Members Can Share
-* Hide OneDrive for Business Sync button using PS and CSOM
-* Modify external sharing setting
-* Notify OneDrive for Business owner if anonymous link to their content is created
-* Notify OneDrive for Business owner if their content is reshared
-* Prevent external users from resharing
-* Report on SharePoint Online tenant properties
-* Set Anonymous access for SPO tenant using PS and CSOM
-* Set anonymous link access level for SPO tenant
-* Set default link type for SharePoint Online tenant sharing settings
-* Set expiration for anonymous links in SPO
-* User Profiles
-* Export all user profiles using Powershell
-* Get all user profile properties using Powershell and REST
-* Get MUI Languages for multiple users using REST
-* Get user work email using Powershell and REST
-* Retrieve all user profiles and their properties using C# and CSOM
-* Versioning
+  
+  
+  <details>
+<summary>SiteMailboxes </summary>
+ <br/>   
+   <br/>
+ </details>
+ 
+ 
+ 
+  <details>
+<summary>Tenant Settings </summary>
+  
+ 
+ 
+  * Add BCC to all sharing invitations in OneDrive for Business
+  * Allow external sharing only with specific domains
+  * Block download of all files for guests in SharePoint with Powershell and CSOM
+  * Force external users to accept sharing invitations with the same account
+  * Get SharePoint Online tenant properties using Powershell and CSOM
+  * Globally set OneDrive for Business Access Requests and Members Can Share
+  * Hide OneDrive for Business Sync button using PS and CSOM
+  * Modify external sharing setting
+  * Notify OneDrive for Business owner if anonymous link to their content is created
+  * Notify OneDrive for Business owner if their content is reshared
+  * Prevent external users from resharing
+  * Report on SharePoint Online tenant properties
+  * Set Anonymous access for SPO tenant using PS and CSOM
+  * Set anonymous link access level for SPO tenant
+  * Set default link type for SharePoint Online tenant sharing settings
+  * Set expiration for anonymous links in SPO
+
+   <br/>
+ </details>
+
+
+  <details>
+<summary>User Profiles </summary>
+ <br/>  
+ 
+  * Export all user profiles using Powershell
+  * Get all user profile properties using Powershell and REST
+  * Get MUI Languages for multiple users using REST
+  * Get user work email using Powershell and REST
+  * Retrieve all user profiles and their properties using C# and CSOM
+  
+   <br/>
+ </details>
+
+
+
+<details>
+<summary>Versioning </summary>
+ <br/>
+ 
 * Create a report on all file versions in OneDrive for Business
 * Enable minor versions for all lists
 * Enable versioning for all lists in OneDrive sites
@@ -445,9 +537,19 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 * Restore previous versions in selected files the entire library
 * Restore previous versions in the entire library
 * Set the major version limit for all the lists and libraries (data loss involved)
-* Workflows
+   <br/>
+ </details>
+ 
+
+
+<details>
+<summary>Workflows </summary>
+ <br/>
+ 
 * Get workflow report for a site collection
 * Get workflow report for all site collections
 * Get workflow report for one site
 
-
+   <br/>
+ </details>
+ <br/> 

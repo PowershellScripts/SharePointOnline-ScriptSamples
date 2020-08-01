@@ -27,8 +27,8 @@ $username = "ana@etr56.onmicrosoft.com"
 $Url = "https://etr56.sharepoint.com" 
 $ListTitle = "attatest" 
 $ColumnName = "Size In KB"  #name of the column where you want to display size. 
-``` 
  
+``` 
  
 
  
