@@ -1,26 +1,12 @@
 Powershell script which moves all items from a site's recycle bin to a second stage recycle bin:
 
-
-
- 
+<img src="../Move items from first to second stage recycle bin/Capture49.PNG">
 
 After the move the items can still be restored using 'Restore Selection' button.
-
- 
-
- 
-
- 
-
- 
 
 The script requires SharePoint Online SDK installed:
 
 https://www.microsoft.com/en-us/download/details.aspx?id=42038
-
- 
-
- 
 
 Before running the script, open the file and enter correct paths to the SDK and your tenant data:
 

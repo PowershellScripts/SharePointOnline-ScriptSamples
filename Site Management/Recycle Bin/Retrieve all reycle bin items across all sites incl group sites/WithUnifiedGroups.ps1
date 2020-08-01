@@ -1,47 +1,40 @@
-﻿function Get-DeletedItems
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-DeletedItems{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-)
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
+	)
+	#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.ExecuteQuery() 
 
- $ctx.Load($ctx.Web)
-  $ctx.Load($ctx.Web.Webs)
-  $rb=$ctx.Web.RecycleBin
-$ctx.Load($rb)
-$ctx.ExecuteQuery()
-Write-Host $ctx.Web.Url $rb.Count.ToString()
+	$ctx.Load($ctx.Web)
+	$ctx.Load($ctx.Web.Webs)
+	$rb=$ctx.Web.RecycleBin
+	$ctx.Load($rb)
+	$ctx.ExecuteQuery()
+	Write-Host $ctx.Web.Url $rb.Count.ToString()
 
-for($i=0;$i -lt $rb.Count ;$i++)
-{
-        $obj = $rb[$i]
-        
-        Write-Output $obj
+	for($i=0;$i -lt $rb.Count ;$i++){
+		$obj = $rb[$i]
 
+		Write-Output $obj
+	}
 
-}
-#$ctx.Web.RecycleBin.RestoreAll()
-$ctx.ExecuteQuery()
+	#$ctx.Web.RecycleBin.RestoreAll()
+	$ctx.ExecuteQuery()
 
+	if($ctx.Web.Webs.Count -gt 0){
+		Write-Host "--"-ForegroundColor DarkGreen
 
-
-if($ctx.Web.Webs.Count -gt 0)
-  {
-     Write-Host "--"-ForegroundColor DarkGreen
-     for($i=0;$i -lt $ctx.Web.Webs.Count ;$i++)
-     {
-        Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $ctx.Web.Webs[$i].Url
-        }
-     }
-
+		for($i=0;$i -lt $ctx.Web.Webs.Count ;$i++){
+			Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $ctx.Web.Webs[$i].Url
+		}
+	}
 }
 
 
@@ -66,16 +59,10 @@ Import-PSSession $sesja
 
 $unifiedGroups=(get-unifiedGroup).SharePointSiteUrl
 
-foreach($site in $sites)
-{
-
- Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $site
-
+foreach($site in $sites){
+ 	Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $site
 }
 
-
-
-foreach($ug in $unifiedGroups)
-{
-  Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $ug
+foreach($ug in $unifiedGroups){
+  	Get-DeletedItems -Username $Username -AdminPassword $AdminPassword -Url $ug
 }

@@ -1,12 +1,8 @@
 Powershell script to set the email for access requests.  The setting is available from SharePoint Online User Interface at:
 
-Site Settings>Site Permissions>Access Requests Settings
+**Site Settings** > **Site Permissions** > **Access Requests Settings**
 
-
-
- 
-
- 
+<img src="../Set RequestAccessEmail for all subsites in one site collection/AccessRequestEmail.PNG">
 
 The script requires the following libraries. Please confirm that the files are in the same location on your PC.
 

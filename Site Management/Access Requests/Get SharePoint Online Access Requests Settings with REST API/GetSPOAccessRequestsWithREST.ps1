@@ -1,54 +1,34 @@
-﻿function Get-AccessRequests
-{
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-AccessRequests{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-        [Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		$password,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string] $url
-		)
-
-
- 
-  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-  $RestUrl=$url+"/_api/web/lists/getbytitle('Access Requests')"
-
-
-  
-        $request = [System.Net.WebRequest]::Create($RESTUrl) 
-        $request.Credentials = $Credentials 
-        $request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f") 
-        $request.Accept = "application/json;odata=verbose" 
-        [Microsoft.PowerShell.Commands.WebRequestMethod]$Method = [Microsoft.PowerShell.Commands.WebRequestMethod]::Get
-        $request.Method=$Method 
-        $response = $request.GetResponse() 
-        $requestStream = $response.GetResponseStream() 
-        $read = New-Object System.IO.StreamReader $requestStream 
-        $data=$read.ReadToEnd() 
-        $results = $data | ConvertFrom-Json 
-        
-
- 
-
-    Write-Output ($results.d)
-  
+	)
 
 
 
-        
-        
-
-        
-  }
+	$Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+	$RestUrl=$url+"/_api/web/lists/getbytitle('Access Requests')"
 
 
 
-        
-        
+	$request = [System.Net.WebRequest]::Create($RESTUrl) 
+	$request.Credentials = $Credentials 
+	$request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f") 
+	$request.Accept = "application/json;odata=verbose" 
+	[Microsoft.PowerShell.Commands.WebRequestMethod]$Method = [Microsoft.PowerShell.Commands.WebRequestMethod]::Get
+	$request.Method=$Method 
+	$response = $request.GetResponse() 
+	$requestStream = $response.GetResponseStream() 
+	$read = New-Object System.IO.StreamReader $requestStream 
+	$data=$read.ReadToEnd() 
+	$results = $data | ConvertFrom-Json 
 
-
-
+	Write-Output ($results.d)
+}
 
 #Paths to SDK
 Add-Type -Path "H:\Libraries\Microsoft.SharePoint.Client.dll"

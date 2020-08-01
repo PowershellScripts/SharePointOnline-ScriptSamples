@@ -7,38 +7,36 @@ its corresponding site collection recycle bin. The data cannot be retrieved afte
 Test the script before using on production environment. 
 #>
 
-function Remove-DeletedItems
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+function Remove-DeletedItems{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-)
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
+	)
 
- $ctx.Load($ctx.Web)
-  $ctx.Load($ctx.Site)
-  $rb=$ctx.Web.RecycleBin
-  $siteRB=$ctx.Site.RecycleBin
-$ctx.Load($rb)
-$ctx.load($siteRB)
-$ctx.ExecuteQuery()
-Write-Host $ctx.Web.Url $rb.Count.ToString()
-Write-Host $ctx.Site.Url $SiteRB.Count.ToString()
+	#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.ExecuteQuery() 
 
-$rb.DeleteAll()
-$siteRB.DeleteAll()
-$siteRB.DeleteAllSecondStageItems()
+	$ctx.Load($ctx.Web)
+	$ctx.Load($ctx.Site)
+	$rb=$ctx.Web.RecycleBin
+	$siteRB=$ctx.Site.RecycleBin
+	$ctx.Load($rb)
+	$ctx.load($siteRB)
+	$ctx.ExecuteQuery()
+	Write-Host $ctx.Web.Url $rb.Count.ToString()
+	Write-Host $ctx.Site.Url $SiteRB.Count.ToString()
 
-$ctx.ExecuteQuery()
+	$rb.DeleteAll()
+	$siteRB.DeleteAll()
+	$siteRB.DeleteAllSecondStageItems()
 
-
+	$ctx.ExecuteQuery()
 }
 
 
