@@ -1,116 +1,91 @@
-﻿function Get-folders()
+function Get-folders(){
+    param (
+        [Parameter(Mandatory=$true,Position=0)]
+        $foolders,
+        [Parameter(Mandatory=$true,Position=1)]
+        [string]$OriginalLibrary,
+        [Parameter(Mandatory=$true,Position=2)]
+        [string]$DestinationLibrary
+    )
 
-{
+    $Host.Runspace.ThreadOptions = “ReuseThread”
+    $ll2=$ctx.Web.Lists.GetByTitle($DestinationLibrary.Replace("/",""))
 
-param (
+    foreach($foolder in $foolders){
 
-[Parameter(Mandatory=$true,Position=0)]
-$foolders,
-[Parameter(Mandatory=$true,Position=1)]
-[string]$OriginalLibrary,
-[Parameter(Mandatory=$true,Position=2)]
-[string]$DestinationLibrary
+        $ctx.Load($foolder.Folders)
+        $ctx.ExecuteQuery()
 
-)
+        #Write-host $foolder.ServerRelativeUrl $foolder.folders.count
 
-$Host.Runspace.ThreadOptions = “ReuseThread”
-$ll2=$ctx.Web.Lists.GetByTitle($DestinationLibrary.Replace("/",""))
-foreach($foolder in $foolders)
+        if($foolder.ServerRelativeUrl -match $OriginalLibrary){
+            $urel= $foolder.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary)
+            Write-Host $urel
+            $newFolder=$ll2.RootFolder.Folders.Add($foolder.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary))
+            $ctx.Load($newFolder)
+            $ctx.ExecuteQuery()
+        }
 
-{
-
-$ctx.Load($foolder.Folders)
-$ctx.ExecuteQuery()
-
-#Write-host $foolder.ServerRelativeUrl $foolder.folders.count
-if($foolder.ServerRelativeUrl -match $OriginalLibrary)
-{
-$urel= $foolder.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary)
-Write-Host $urel
-$newFolder=$ll2.RootFolder.Folders.Add($foolder.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary))
-$ctx.Load($newFolder)
-$ctx.ExecuteQuery()
+        if($foolder.Folders.Count -gt 0){
+            Get-folders -foolders $foolder.Folders -OriginalLibrary $OriginalLibrary -DestinationLibrary $DestinationLibrary
+        }
+    }
 }
 
+function Get-Webfolders(){
+    param (
+        [Parameter(Mandatory=$true,Position=0)]
+        [string]$OriginalLibrary,
+        [Parameter(Mandatory=$true,Position=2)]
+        [string]$DestinationLibrary
+    )
 
-if($foolder.Folders.Count -gt 0){
+    $Host.Runspace.ThreadOptions = “ReuseThread”
 
-Get-folders -foolders $foolder.Folders -OriginalLibrary $OriginalLibrary -DestinationLibrary $DestinationLibrary
+    $ll=$ctx.Web.Lists.GetByTitle($OriginalLibrary)
+    $ll2=$ctx.Web.Lists.GetByTitle($DestinationLibrary)
+    $folderro=$ll.RootFolder.Folders
+    $ctx.load($ll)
+    $ctx.Load($folderro)
+    $ctx.ExecuteQuery()
+    $OriginalLibrary="/"+$OriginalLibrary+"/"
+    $DestinationLibrary="/"+$DestinationLibrary+"/"
 
+    foreach($fodler in $folderro){
+        $ctx.Load($fodler.Folders)
+        $ctx.ExecuteQuery()
+
+        #Write-host $fodler.ServerRelativeUrl $fodler.folders.count
+
+        if($fodler.ServerRelativeUrl -match $OriginalLibrary){
+            $urel= $fodler.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary)
+            Write-Host $urel
+            $newFolder=$ll2.RootFolder.Folders.Add($fodler.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary))
+            $ctx.Load($newFolder)
+            $ctx.ExecuteQuery()
+        }
+
+        if($fodler.Folders.Count -gt 0){
+            Get-folders -foolders $fodler.Folders -OriginalLibrary $OriginalLibrary -DestinationLibrary $DestinationLibrary
+        }
+    }
 }
 
-}
+function Connect-SPO(){
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+        [string]$Username,
+        [Parameter(Mandatory=$true,Position=2)]
+        [string]$Url,
+        [Parameter(Mandatory=$true,Position=3)]
+        $AdminPassword
+    )
 
-}
+    $global:ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
 
-function Get-Webfolders()
-
-{
-param (
-
-[Parameter(Mandatory=$true,Position=0)]
-[string]$OriginalLibrary,
-[Parameter(Mandatory=$true,Position=2)]
-[string]$DestinationLibrary
-
-)
-
-$Host.Runspace.ThreadOptions = “ReuseThread”
-
-$ll=$ctx.Web.Lists.GetByTitle($OriginalLibrary)
-$ll2=$ctx.Web.Lists.GetByTitle($DestinationLibrary)
-$folderro=$ll.RootFolder.Folders
-$ctx.load($ll)
-$ctx.Load($folderro)
-$ctx.ExecuteQuery()
-$OriginalLibrary="/"+$OriginalLibrary+"/"
-$DestinationLibrary="/"+$DestinationLibrary+"/"
-foreach($fodler in $folderro)
-
-{
-
-$ctx.Load($fodler.Folders)
-$ctx.ExecuteQuery()
-
-#Write-host $fodler.ServerRelativeUrl $fodler.folders.count
-if($fodler.ServerRelativeUrl -match $OriginalLibrary)
-{
-$urel= $fodler.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary)
-Write-Host $urel
-$newFolder=$ll2.RootFolder.Folders.Add($fodler.ServerRelativeUrl.Replace($OriginalLibrary,$DestinationLibrary))
-$ctx.Load($newFolder)
-$ctx.ExecuteQuery()
-}
-
-
-
-if($fodler.Folders.Count -gt 0){
-Get-folders -foolders $fodler.Folders -OriginalLibrary $OriginalLibrary -DestinationLibrary $DestinationLibrary
-}
-}
-}
-
-function Connect-SPO()
-
-{
-
-param (
-
-[Parameter(Mandatory=$true,Position=1)]
-[string]$Username,
-[Parameter(Mandatory=$true,Position=2)]
-[string]$Url,
-[Parameter(Mandatory=$true,Position=3)]
-$AdminPassword
-
-)
-
-$global:ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-
-$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-$ctx.Load($ctx.Web)
-$ctx.ExecuteQuery()
-
+    $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+    $ctx.Load($ctx.Web)
+    $ctx.ExecuteQuery()
 }
 
 # Paths to SDK. Please verify location on your computer.

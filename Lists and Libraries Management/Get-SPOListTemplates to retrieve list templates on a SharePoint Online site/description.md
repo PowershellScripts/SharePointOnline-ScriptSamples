@@ -1,7 +1,8 @@
 A short script to retrieve default list templates from a given site. It does NOT retrieve custom list templates.
 
+<hr>
 
-### How to use?
+## **How to use?**
 
 1. The script requires SharePoint Online SDK. Make sure you have those libraries on your machine:
 
@@ -26,7 +27,7 @@ $url="https://tenant.sharepoint.com/sites/invoices"
 
  
 
-### Expected results
+## *Expected results*
 
  
 <img src="../Get-SPOListTemplates to retrieve list templates on a SharePoint Online site/Get-SPOListTemplate.PNG" width="850">

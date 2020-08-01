@@ -2,7 +2,7 @@ A short solution to remove a single event receiver from your SPO lists.
 
  
 
-1. Install SharePoint Online SDK
+1. Install [SharePoint Online SDK](http://www.microsoft.com/en-us/download/details.aspx?id=42038)
 
 2. Download the file and open (e.g. in NotePad)
 
@@ -28,7 +28,7 @@ Get-SPOListEventreceivers -Username $Username -AdminPassword $AdminPassword -Url
 
 6. Instead of https://tenant.sharepint.com/sites/teamsitewithlibraries enter name of the site where the list with unwanted event receiver 
 
-7. Under $EventReceiverGUID, enter the guid of the receiver. If you need to find it, you can use Get all event receivers on your lists in a SharePoint Online site
+7. Under $EventReceiverGUID, enter the guid of the receiver. If you need to find it, you can use [Get all event receivers on your lists in a SharePoint Online site](https://gallery.technet.microsoft.com/Get-all-event-receivers-on-479a1e8d)
 
  
 
@@ -36,16 +36,10 @@ Run the script in any Powershell module.
 
 It should ask you for your admin password.
 
-
+<img src="../Remove a single event receiver/deletesinglereceiver.PNG">
 
 The script will inform you how many receivers it found on the list and if it encountered any issues.
 
- 
-
- 
-
-Please share your feedback in the Q&A section!
-
- 
+**Please share your feedback in the Q&A section!**
 
 Should you need any assistance or a different script, please let me know - I will be happy to help

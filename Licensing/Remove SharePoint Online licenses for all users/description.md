@@ -4,15 +4,7 @@ A short script to remove SharePoint Online license from all the users.
 
 The result for all users should be similar to:
 
- 
-
-
-
- 
-
- 
-
- 
+<img src="../Remove SharePoint Online licenses for all users/NOSPO.PNG">
 
 The script will ask you for admin credentials.
 
@@ -51,7 +43,7 @@ foreach($user in $Users)
 
  
 
-Though a different scenario and on a different occassions, I have been using this article http://blogs.technet.com/b/treycarlee/archive/2013/11/01/list-of-powershell-licensing-sku-s-for-office-365.aspx by Trey Carlee  for a long time and the script above would not exist without Trey's initial help. I do recommend his insights for all who struggle with user licensing.
+Though a different scenario and on a different occassions, I have been using this [article](http://blogs.technet.com/b/treycarlee/archive/2013/11/01/list-of-powershell-licensing-sku-s-for-office-365.aspx) by [Trey Carlee](https://social.technet.microsoft.com/profile/Trey%20Carlee)  for a long time and the script above would not exist without Trey's initial help. I do recommend his insights for all who struggle with user licensing.
 
  
 

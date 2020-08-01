@@ -1,39 +1,39 @@
-﻿function Remove-SPOListView
-{
- param (
-        [Parameter(ParameterSetName="seta", Mandatory=$true,Position=0)]
+﻿function Remove-SPOListView{
+	 param (
+		[Parameter(ParameterSetName="seta", Mandatory=$true,Position=0)]
 		[string]$ListName="",
-        [Parameter(ParameterSetName="seta", Mandatory=$true,Position=0)]
+		[Parameter(ParameterSetName="seta", Mandatory=$true,Position=0)]
 		[string]$ViewName="",
-        [Parameter(ParameterSetName="setb", Mandatory=$true,Position=0)]
+		[Parameter(ParameterSetName="setb", Mandatory=$true,Position=0)]
 		[string]$ListGUID="",
-        [Parameter(ParameterSetName="setb", Mandatory=$true,Position=0)]
+		[Parameter(ParameterSetName="setb", Mandatory=$true,Position=0)]
 		[string]$ViewGUID="",
-        [Parameter(Mandatory=$true,Position=1)]
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-		)
-$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ll
-  $vv
-   switch ($PsCmdlet.ParameterSetName) 
-    { 
-    "seta"  { 
-    $ll=$ctx.Web.Lists.GetByTitle($ListName)
-    $vv=$ll.Views.GetByTitle($ViewName); break} 
-    "setb"  { 
-    $ll=$ctx.Web.Lists.GetByID($ListGUID)
-    $vv=$ll.Views.GetByID($ViewGUID); break} 
-    }
-    $ctx.Load($vv)
-    $ctx.ExecuteQuery()
-    $vv.DeleteObject()
-    $ctx.ExecuteQuery
+	)
 
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	  $ll
+	  $vv
+	  
+  	 switch ($PsCmdlet.ParameterSetName) { 
+	    "seta"  { 
+	    $ll=$ctx.Web.Lists.GetByTitle($ListName)
+	    $vv=$ll.Views.GetByTitle($ViewName); break} 
+	    "setb"  { 
+	    $ll=$ctx.Web.Lists.GetByID($ListGUID)
+	    $vv=$ll.Views.GetByID($ViewGUID); break} 
+	}
+	    
+	    $ctx.Load($vv)
+	    $ctx.ExecuteQuery()
+	    $vv.DeleteObject()
+	    $ctx.ExecuteQuery
 }
 
 

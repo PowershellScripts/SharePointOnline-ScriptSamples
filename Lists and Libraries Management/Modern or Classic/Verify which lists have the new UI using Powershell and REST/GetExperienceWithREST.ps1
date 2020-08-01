@@ -1,13 +1,13 @@
 ﻿function Get-ExperienceOptions
 {
-param (
-        [Parameter(Mandatory=$true,Position=1)]
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-        [Parameter(Mandatory=$true,Position=2)]
+		[Parameter(Mandatory=$true,Position=2)]
 		$password,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string] $url
-		)
+	)
 
 
  
@@ -30,22 +30,13 @@ param (
         $listy=$results.d.results 
 
 
-  foreach($ll in $listy)
-  {
-  
+  foreach($ll in $listy){
     $obj = New-Object PSObject
     $obj | Add-Member NoteProperty "Title" ($ll.Title) -Force
     $obj | Add-Member NoteProperty "Experience" ($ll.ListExperienceOptions) -Force
     Write-Output ($obj)
-  }
-
-
-
-        
-        
-
-        
-  }
+  }   
+}
 
 
 

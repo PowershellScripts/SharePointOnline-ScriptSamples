@@ -1,41 +1,41 @@
 ﻿ # Vadim Gremyachev's function
- Function Invoke-LoadMethod() {
-param(
-   [Microsoft.SharePoint.Client.ClientObject]$Object = $(throw "Please provide a Client Object"),
-   [string]$PropertyName
-) 
-   $ctx = $Object.Context
-   $load = [Microsoft.SharePoint.Client.ClientContext].GetMethod("Load") 
-   $type = $Object.GetType()
-   $clientLoad = $load.MakeGenericMethod($type) 
+Function Invoke-LoadMethod() {
+	param(
+		[Microsoft.SharePoint.Client.ClientObject]$Object = $(throw "Please provide a Client Object"),
+		[string]$PropertyName
+	) 
+	
+	$ctx = $Object.Context
+	$load = [Microsoft.SharePoint.Client.ClientContext].GetMethod("Load") 
+	$type = $Object.GetType()
+	$clientLoad = $load.MakeGenericMethod($type) 
 
 
-   $Parameter = [System.Linq.Expressions.Expression]::Parameter(($type), $type.Name)
-   $Expression = [System.Linq.Expressions.Expression]::Lambda(
-            [System.Linq.Expressions.Expression]::Convert(
-                [System.Linq.Expressions.Expression]::PropertyOrField($Parameter,$PropertyName),
-                [System.Object]
-            ),
-            $($Parameter)
-   )
+	$Parameter = [System.Linq.Expressions.Expression]::Parameter(($type), $type.Name)
+	$Expression = [System.Linq.Expressions.Expression]::Lambda(
+		[System.Linq.Expressions.Expression]::Convert(
+			[System.Linq.Expressions.Expression]::PropertyOrField($Parameter,$PropertyName),
+			[System.Object]
+		),
+		$($Parameter)
+	)
+   
    $ExpressionArray = [System.Array]::CreateInstance($Expression.GetType(), 1)
    $ExpressionArray.SetValue($Expression, 0)
    $clientLoad.Invoke($ctx,@($Object,$ExpressionArray))
 }
 
-function Set-SPOUserRegionalSettings
-{
-  
+function Set-SPOUserRegionalSettings{
    param (
-   [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		$AdminPassword,
+  	[Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$Url,
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$LocaleID
-		)
+	[string]$LocaleID
+   )
   
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
@@ -49,12 +49,10 @@ function Set-SPOUserRegionalSettings
 
    Write-Host "Old locale id: " $ctx.Web.RegionalSettings.LocaleId.ToString()
 
-   $ctx.Web.RegionalSettings.LocaleId=$LocaleID
-$ctx.Web.Update()
-$ctx.ExecuteQuery()
-
-
-     }
+  $ctx.Web.RegionalSettings.LocaleId=$LocaleID
+  $ctx.Web.Update()
+  $ctx.ExecuteQuery()
+}
      
  
 
@@ -72,18 +70,13 @@ $LocaleID=1033
 
 
 $users=get-SPOUser -Site $myhost
-foreach($user in $users)
-{
-
-
-  if($user.LoginName.Contains('@'))
-  {
+foreach($user in $users){
+  if($user.LoginName.Contains('@')){
     $persweb=$user.LoginName.Replace(".","_").Replace("@","_")
     $persweb=$myhost+"/personal/"+$persweb
     Write-Host $persweb
 
     $AdminUrl=$persweb
-
 
    Set-SPOUserRegionalSettings -Username $Username -AdminPassword $AdminPassword -Url $AdminUrl -LocaleID $LocaleID
   }

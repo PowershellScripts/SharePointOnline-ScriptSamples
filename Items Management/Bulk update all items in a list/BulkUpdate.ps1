@@ -1,20 +1,18 @@
-﻿  function Update-SPOListItem
-{
-  
-   param (
-        [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
-        [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle,
-[Parameter(Mandatory=$true,Position=6)]
-		[string]$FieldToUpdate,
-[Parameter(Mandatory=$true,Position=7)]
-		[string]$ValueToUpdate
-		)
+function Update-SPOListItem{
+  param (
+    [Parameter(Mandatory=$true,Position=1)]
+    [string]$Username,
+    [Parameter(Mandatory=$true,Position=2)]
+    [string]$Url,
+    [Parameter(Mandatory=$true,Position=3)]
+    [string]$AdminPassword,
+    [Parameter(Mandatory=$true,Position=4)]
+    [string]$ListTitle,
+    [Parameter(Mandatory=$true,Position=6)]
+    [string]$FieldToUpdate,
+    [Parameter(Mandatory=$true,Position=7)]
+    [string]$ValueToUpdate
+  )
   
   
   
@@ -39,26 +37,20 @@
   $count=$itemki.Count
 
   Write-Host $count
-  foreach($item in $itemki)
-  {
-  $item[$FieldToUpdate]=$ValueToUpdate
+  
+  foreach($item in $itemki){
+    $item[$FieldToUpdate]=$ValueToUpdate
    $item.Update()
-
   }
  
- 
-  try
-  {
-  $ctx.ExecuteQuery()
-  write-host " Success"
+  try{
+    $ctx.ExecuteQuery()
+    write-host " Success"
   }
-  catch [Net.WebException]
-     { 
+  catch [Net.WebException]{ 
         Write-Host $_.Exception.ToString() -ForegroundColor Red
-     }
-  
-  
   }
+}
 
 # Paths to SDK. Please verify location on your computer.
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 

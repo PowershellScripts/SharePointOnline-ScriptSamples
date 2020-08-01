@@ -2,11 +2,8 @@ Powershell script to restore inherited permissions for all lists in a site colle
 
  
 
-Before you run it, you have to modify the last line of the script!
+<font color="red">Before you run it, you have to modify the last line of the script!</font>
 
- 
-
- 
 
 ```PowerShell
 # Paths to SDK. Please verify location on your computer. 
@@ -21,22 +18,21 @@ Set-SPOListResetRoleInheritance -Username "trial@trialtrial123.onmicrosoft.com" 
 Enter your credentials and the site where you want to modify the inheritance.
 Set -IncludeSubsites $true  if you want to restore inherited permissions also in the subsites 
 Set -IncludeSubsites $false if you want to restore inherited permissions only in the main/root site  
-Verify if the SharePoint Online SDK is installed in the same location on your computer
+Verify if the [SharePoint Online SDK](http://www.microsoft.com/en-us/download/details.aspx?id=30722) is installed in the same location on your computer
  
+ <hr>
 
- 
+## **Related scripts**
 
-## Related scripts
+[Break inheritance for all lists](https://gallery.technet.microsoft.com/scriptcenter/Break-inheritance-for-all-ded251fa)
 
-Break inheritance for all lists
+[Modify inherited permissions for a SharePoint Online site (module)](https://gallery.technet.microsoft.com/scriptcenter/Modify-Web-Inherited-125aaa54)
 
-Modify inherited permissions for a SharePoint Online site (module)
+[Modify list permissions with Powershell cmdlets (module)](https://gallery.technet.microsoft.com/scriptcenter/Powershell-Module-for-b88bc2d9)
 
-Modify list permissions with Powershell cmdlets (module)
+[Delete unique permissions (C# program)](https://gallery.technet.microsoft.com/scriptcenter/ResetRoleInhertienace-04f5c544)
 
-Delete unique permissions (C# program)
-
-Get lists with unique permissions (C# program)
+[Get lists with unique permissions (C# program)](https://gallery.technet.microsoft.com/scriptcenter/Get-Lists-with-Unique-90c4321b)
 
 
 
