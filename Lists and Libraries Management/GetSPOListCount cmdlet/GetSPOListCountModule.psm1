@@ -1,16 +1,14 @@
-﻿function Get-SPOListCount
-{
-  
-   param (
+function Get-SPOListCount{
+    param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
+	[string]$Username,
 	[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$AdminPassword,
+	[string]$AdminPassword,
         [Parameter(Mandatory=$false,Position=4)]
-		[bool]$IncludeSubsites=$false
-		)
+	[bool]$IncludeSubsites=$false
+    )
   
   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
@@ -21,10 +19,9 @@
   $ctx.ExecuteQuery()
   $i=0
 
-  foreach( $ll in $ctx.Web.Lists)
-  {
+    foreach( $ll in $ctx.Web.Lists){
         $i++
-        }
+    }
   
         $obj = New-Object PSObject
         $obj | Add-Member NoteProperty Url($ctx.Web.Url)
@@ -33,14 +30,12 @@
         Write-Output $obj
   
 
-  if($ctx.Web.Webs.Count -gt 0 -and $IncludeSubsites)
-  {
+  if($ctx.Web.Webs.Count -gt 0 -and $IncludeSubsites){
     for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
     {
         Get-SPOListCount -Url ($ctx.Web.Webs[$i].Url) -Username $Username -AdminPassword $AdminPassword -IncludeSubsites $IncludeSubsites
     }
   }
-  
 }
 
 

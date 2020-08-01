@@ -1,49 +1,42 @@
-﻿
+
 #
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOListsFolderCreation
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$AdminPassword,
+function Set-SPOListsFolderCreation{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$Url,
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=4)]
-		[bool]$EnableFolderCreation
-)
+	[bool]$EnableFolderCreation
+    )  
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+    $Lists=$ctx.Web.Lists
+    $ctx.Load($Lists)
+    $ctx.ExecuteQuery()
 
-Foreach($ll in $Lists)
-{
-    $ll.EnableFolderCreation = $EnableFolderCreation
-    $ll.Update()
-    
+    Foreach($ll in $Lists){
+        $ll.EnableFolderCreation = $EnableFolderCreation
+        $ll.Update()
+        
 
-    try
-    {
-        $ctx.ExecuteQuery()
-        Write-Host $ll.Title "   Done" -ForegroundColor Green
-       }
-
-       catch [Net.WebException] 
-        {
-            
+        try{
+            $ctx.ExecuteQuery()
+            Write-Host $ll.Title "   Done" -ForegroundColor Green
+        }
+        catch [Net.WebException] {        
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
         }
-
-}
+    }
 }
 
 

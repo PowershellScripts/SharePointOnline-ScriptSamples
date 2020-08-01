@@ -1,5 +1,4 @@
-﻿function getall($urelek)
-{
+function getall($urelek){
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)
   $ctx.Load($ctx.Web.Lists)
@@ -9,48 +8,37 @@
   Write-Host 
   Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
   
-  foreach( $ll in $ctx.Web.Lists)
-  {
+  foreach( $ll in $ctx.Web.Lists){
     $ll.ForceCheckout = $checkout
     $ll.Update()
     $csvvalue= new-object PSObject
         $listurl=$null
-        if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-        else {$listurl=$ctx.Url+"/"+$ll.Title}
+        
+    if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
+    else {$listurl=$ctx.Url+"/"+$ll.Title}
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
         $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
         
-        try
-        {
+      try{
         $ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
         Write-Host $listurl -ForegroundColor DarkGreen
         $csvvalue.Status="Success"
         $Global:csv+= $csvvalue       
-        }
-
-        catch
-        {
+      }
+      catch{
             $Global:csv+= $csvvalue
             Write-Host $listurl -ForegroundColor Red
-        }
-        finally
+      }
+      finally
         {$ErrorActionPreference="Continue"}
-        
-
   }
 
-  if($ctx.Web.Webs.Count -gt 0)
-  {
-    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++)
-    {
+  if($ctx.Web.Webs.Count -gt 0){
+    for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
         getall($ctx.Web.Webs[$i].Url)
     }
-
   }
-  
-  
-
 }
 
 # Paths to SDK. Please verify location on your computer.

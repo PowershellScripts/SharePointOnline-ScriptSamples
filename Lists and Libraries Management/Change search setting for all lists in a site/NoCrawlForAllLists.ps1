@@ -1,49 +1,41 @@
-﻿
+
 #
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOListsNoCrawl
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$AdminPassword,
+function Set-SPOListsNoCrawl{
+    param (
+        [Parameter(Mandatory=$true,Position=1)]
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
-		[string]$Url,
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=4)]
-		[bool]$NoCrawl
-)
+	[bool]$NoCrawl
+    )
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.ExecuteQuery() 
 
-$Lists=$ctx.Web.Lists
-$ctx.Load($Lists)
-$ctx.ExecuteQuery()
+    $Lists=$ctx.Web.Lists
+    $ctx.Load($Lists)
+    $ctx.ExecuteQuery()
 
-Foreach($ll in $Lists)
-{
-    $ll.NoCrawl = $NoCrawl
-    $ll.Update()
+    Foreach($ll in $Lists){
+        $ll.NoCrawl = $NoCrawl
+        $ll.Update()
     }
 
-    try
-    {
+    try{
         $ctx.ExecuteQuery()
         Write-Host "Done" -ForegroundColor Green
-       }
-
-       catch [Net.WebException] 
-        {
-            
-            Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-        }
-
-
+    }
+    catch [Net.WebException] {
+        Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
+    }
 }
 
 
