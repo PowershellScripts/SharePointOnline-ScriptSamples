@@ -2,7 +2,7 @@
 This is a Powershell module with a single function. Not very useful, it would make more sense as a function, 2019-me may say to 2014-me, but it was one of the first steps to create SPOMod and I keep it out of sentiment.
 >#
 
-function Set-Checkout{
+function Set-Checkout {
     param (
         [Parameter(Mandatory=$true,Position=1)]
 	[string]$Username,
