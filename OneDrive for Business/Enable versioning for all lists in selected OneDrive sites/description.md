@@ -26,7 +26,7 @@ You need to enter the appropriate data:
 
  
 
-PowerShell
+```PowerShell
   # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.Client\v4.0_16.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.Client.Runtime\v4.0_16.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.Runtime.dll" 
@@ -35,7 +35,7 @@ Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.
 $Username="ana@etr56.onmicrosoft.com" 
 Connect-SPOService https://etr56-admin.sharepoint.com -Credential $Username 
 $myhost="https://etr56-my.sharepoint.com"
- 
+ ```
  The user list is imported from a csv file that should look like this:
 
 
