@@ -23,4 +23,3 @@ $Url="https://TENANT-admin.sharepoint.com"
 $SharingCapability="Disabled"  # Disabled, ExternalUserSharingOnly, ExternalUserAndGuestSharing, ExistingExternalUserSharingOnly 
 ```
 - Run the script
- 
