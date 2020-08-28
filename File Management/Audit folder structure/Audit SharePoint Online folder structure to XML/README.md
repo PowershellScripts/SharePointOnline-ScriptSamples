@@ -11,7 +11,7 @@ There is also another, very similar version without the attributes available her
 Sample results:  
 
 
-
+<img src="../Audit SharePoint Online folder structure to XML/capture.PNG" width="850">
  
 
  
@@ -39,3 +39,5 @@ $script:XMLPath = "C:\Users\Public\foolders2.xml"
 #Enter your data above! 
  
  ```
+
+ 
