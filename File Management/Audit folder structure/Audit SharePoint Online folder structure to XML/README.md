@@ -11,7 +11,7 @@ There is also another, very similar version without the attributes available her
 Sample results:  
 
 
-
+<img src="../Audit SharePoint Online folder structure to XML/capture.png" width="850">
  
 
  
