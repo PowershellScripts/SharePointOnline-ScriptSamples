@@ -18,14 +18,14 @@ Open the file, enter your tenant's data:
 
  
 
-PowerShell
+```PowerShell
   
 #Enter the data 
 $AdminPassword=Read-Host -Prompt "Enter password" -AsSecureString 
 $username="t@t321.onmicrosoft.com" 
 $Url="https://t321.sharepoint.com/standard" 
 $object="lists" 
- 
+ ```
  
 
 $object refers to object you want to retrieve. Example objects are:
