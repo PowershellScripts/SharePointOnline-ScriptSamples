@@ -55,23 +55,22 @@ Then you can modify the last cmdlet:
 
  
 
-PowerShell
+```PowerShell
 Get-SPOObject -Username $username -Url $Url -password $AdminPassword -object $object 
- 
+ ```
  
 
 To retrieve whatever you need in a friendly and familiar Powershell fashion, e.g.:
 
  
 
-PowerShell
+```PowerShell
 Get-SPOObject -Username $username -Url $Url -password $AdminPassword -object "lists" | select title
- 
-PowerShell
+ ```
+```PowerShell
 Get-SPOObject -Username t@t321.onmicrosoft.com -password $password -url https://t321.sharepoint. 
-com/standard -object "lists/getbytitle('biblioteka')/files"  | where {$_.CreatedBy.Name -eq "Ana Trial"} | select Name, 
-CreatedBy
- 
+com/standard -object "lists/getbytitle('biblioteka')/files"  | where {$_.CreatedBy.Name -eq "Ana Trial"} | select Name, CreatedBy
+ ```
  
 
  
@@ -81,8 +80,7 @@ The script can serve to pull all kinds of data from SharePoint Online in an admi
  
 
 ```PowerShell
-Get-SPOObject -Username t@t321.onmicrosoft.com -password $password -url https://t321.sharepoint. 
-com/standard -object "lists/getbytitle('biblioteka')/files"  | where {$_.CreatedBy.Name -eq "Ana Trial"} | export-csv c:\MyReport.csv
+Get-SPOObject -Username t@t321.onmicrosoft.com -password $password -url https://t321.sharepoint.com/standard -object "lists/getbytitle('biblioteka')/files"  | where {$_.CreatedBy.Name -eq "Ana Trial"} | export-csv c:\MyReport.csv
 ``` 
  
 
