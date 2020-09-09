@@ -2,33 +2,33 @@ A module with new cmdlets for Taxonomy written in an easily-modifiable Powershel
 
  
 
-### The cmdlets include:
+ ### The cmdlets include:
 
-### New-SPOTerm
+ New-SPOTerm
 
-### Get-SPOTermGroups
+ Get-SPOTermGroups
 
-### Get-SPOTermSets
+ Get-SPOTermSets
 
-### Get-SPOTermStore
+ Get-SPOTermStore
 
-### Get-SPOHashTagsTermSet
+ Get-SPOHashTagsTermSet
 
-### Get-SpoHashTagsTerms
+ Get-SpoHashTagsTerms
 
-### Get-SPOKeyWordsTermSet
+ Get-SPOKeyWordsTermSet
 
-### New-SPOTermGroup
+ New-SPOTermGroup
 
-### Set-SPOTermGroup
+ Set-SPOTermGroup
 
-### New-SPOTermSet
+ New-SPOTermSet
 
-### Set-SPOTermSet
+ Set-SPOTermSet
 
-### Get-SPOTerm
+ Get-SPOTerm
 
-### Connect-SPOCSOM
+ Connect-SPOCSOM
 
  
 
