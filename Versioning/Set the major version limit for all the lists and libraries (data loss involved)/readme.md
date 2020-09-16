@@ -12,12 +12,12 @@ It uses recurrence to find all sites in all site collections and then goes throu
 
 If the list doesn't have versioning enabled, modifying the major version limit is not possible and you will receive the following error message:
 
-<img src="../Set the major version limit for all the lists and libraries (data loss involved)/bulkupdate2.png">
-Exception calling "ExecuteQuery" with "0" argument(s): "Specified method is not supported."For some lists, enabling version may not be possible and you will receive a notification of that.
+
+<i>Exception calling "ExecuteQuery" with "0" argument(s): "Specified method is not supported."For some lists, enabling version may not be possible and you will receive a notification of that.</i>
 
 At the end, a csv file is generated with the lists' urls and the status whether the setting was successful or not.
 
- 
+<img src="../Set the major version limit for all the lists and libraries (data loss involved)/Capture21.PNG">
 
 As the script runs you will see green lists' titles for which the setting succeeded and red for those which failed:
 
