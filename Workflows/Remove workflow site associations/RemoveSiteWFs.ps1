@@ -1,5 +1,12 @@
 function Remove-Workflows{
-
+    param(
+        [Parameter(Mandatory = $true, Position = 1)]
+        [string]$Username,
+        [Parameter(Mandatory = $true, Position = 2)]
+        $AdminPassword,
+        [Parameter(Mandatory = $true, Position = 3)]
+        [string]$Url
+    )
     $context = New-Object Microsoft.SharePoint.Client.ClientContext($Url)
     $context.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
     $web = $context.Web
