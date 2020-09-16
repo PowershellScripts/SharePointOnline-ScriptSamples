@@ -109,4 +109,4 @@ $Global:csv | Export-Csv -Path C:\Users\Public\Versioning.csv
  ```
  
 
-### If you think, I could have improved on anything, please let me know in the Q&A section!
+### If you think, I could have improved on anything, please let me know in the Issues section!
