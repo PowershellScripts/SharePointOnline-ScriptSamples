@@ -34,7 +34,7 @@ As the script runs you will see green lists' titles for which the setting succee
 
 In order to use the script, adjust the data inside:
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -67,4 +67,4 @@ $Global:csv=@()
  
 # Specify the path where the log file will be published 
 $Global:csv | Export-Csv -Path C:\Users\Public\Versioninglimitversion.csv 
- 
+ ```
