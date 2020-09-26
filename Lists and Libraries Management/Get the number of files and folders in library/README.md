@@ -54,4 +54,4 @@ If you want to see a division between files and folders, uncomment the following
 ``` 
 Expected results will display the total number of items, number of files, and number of folders:
 
- 
+ <img src="../Get the number of files and folders in library/Capture30.PNG">
