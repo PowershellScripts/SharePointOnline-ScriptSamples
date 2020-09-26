@@ -1,4 +1,4 @@
- <details>
+
 <summary>Lists and Libraries Management </summary>
  
  <br/> 
@@ -73,4 +73,4 @@
     * Remove view from SharePoint Online list
 
   <br/>
- </details>
+
