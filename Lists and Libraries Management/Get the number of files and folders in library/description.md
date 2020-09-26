@@ -10,7 +10,7 @@ In order to use it, download, open and edit the file:
 
  
 
-PowerShell
+```PowerShell
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
   
@@ -20,14 +20,14 @@ Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extens
  $Url = "https://tenant.sharepoint.com/sites/test" 
  $ListTitle = "noci" 
  $Password = Read-Host -Prompt "Enter password" -AsSecureString
- 
+``` 
  
 
 If you want to see a division between files and folders, uncomment the following part of the code:
 
  
 
-PowerShell
+```PowerShell
    
 <# Uncomment if you want to see the split between files and folders   
    
@@ -51,7 +51,7 @@ PowerShell
   Write-Host "Number of folders:" $NoOfFolders  
         
   #>
- 
+``` 
 Expected results will display the total number of items, number of files, and number of folders:
 
  
