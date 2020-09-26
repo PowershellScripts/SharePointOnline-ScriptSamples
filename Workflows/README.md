@@ -1,1 +1,1 @@
-Scripts dealing with SharePoint workflows
+Scripts dealing with SharePoint and Nintex workflows
