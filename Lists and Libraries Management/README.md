@@ -1,5 +1,5 @@
 
-<summary>Lists and Libraries Management </summary>
+<summary>Lists and Libraries Management Inventory</summary>
  
  <br/> 
 
