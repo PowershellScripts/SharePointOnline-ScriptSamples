@@ -1,17 +1,13 @@
 Short Powershell that sets a single SharePoint Online list to a chosen look: ClassicExperience (old UI), NewExperience (modern look) or Auto Setting.
 
  
-
 Old UI (ClassicExperience):
 
-
+<img src="../Set all lists to New or Classic Experience/Capture465.PNG">
 
 Modern UI (NewExperience):
 
-
-
- 
-
+<img src="../Set all lists to New or Classic Experience/Capture466.PNG">
  
 
  
