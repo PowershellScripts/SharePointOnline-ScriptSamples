@@ -15,15 +15,17 @@ How to use?
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
- 
+``` 
  3. Enter the data to your tenant. Do not enter your password:
-PowerShell
+```PowerShell
 $username = "anaida@etr546.onmicrosoft.com" 
 $siteurl = "https://etr546.sharepoint.com/sites/testflow" 
 $listTitle = "Customers"
+```
  4. Do not enter your password. You will be prompted for it during the script execution.
  5. Run the script.
+ 
