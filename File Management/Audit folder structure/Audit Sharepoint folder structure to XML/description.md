@@ -9,9 +9,6 @@ The audit may come in handy during migration, upgrades or company restructuring.
 This Powershell script allows you to investigate into your folder structure in a single library and creates an XML file as a report.
 
 
-
- 
-
  
 
 In order to use the script you need to modify the following lines:
