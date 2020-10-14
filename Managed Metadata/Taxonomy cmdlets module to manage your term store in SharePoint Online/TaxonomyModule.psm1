@@ -28,7 +28,6 @@
 	$term=$set.CreateTerm($Term, $TermLanguage,$guid)
 
 	$termstore.CommitAll()
-
 	$ctx.ExecuteQuery()
 }
 
