@@ -16,7 +16,7 @@ function New-SPOListItem{
 	[string]$AdditionalValue=""
    )
 
-    $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
