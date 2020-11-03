@@ -43,7 +43,6 @@ function Get-SPOTermGroups{
 
 	$groups=$termstore.Groups
 	$ctx.Load($groups)
-
 	$ctx.ExecuteQuery()
 
 	foreach($group in $groups){
