@@ -17,7 +17,7 @@ $TermLanguage=1033
 ``` 
  
 
-The script requires SharePoint Online SDK. Open the file and refer the appropriate libraries here:
+You need SharePoint Online SDK torun the script. Open the file and refer the appropriate libraries here:
 
  
 
