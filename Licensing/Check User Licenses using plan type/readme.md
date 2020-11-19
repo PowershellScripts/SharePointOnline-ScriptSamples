@@ -20,7 +20,6 @@ If you have multiple subscriptions in your tenant and would like to check a part
 
 3. In the first lines you see:
 
- 
 
 ```PowerShell
 $PlanToCheck="Exchange" 
