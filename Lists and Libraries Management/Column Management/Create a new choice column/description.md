@@ -6,9 +6,6 @@ Powershell module with a new cmdlet
 
 Import the module to make the cmdlet available.
 
- 
-
- 
 
 ## Parameters
 
