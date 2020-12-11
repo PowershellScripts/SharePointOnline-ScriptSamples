@@ -16,7 +16,7 @@ https://docs.microsoft.com/en-us/sharepoint/dev/general-development/create-a-map
 
  
 
-PowerShell
+```PowerShell
   $list = $web.Lists.GetByTitle($ListTitle) 
   $ctx.Load($list) 
   $ctx.ExecuteQuery() 
@@ -24,12 +24,12 @@ PowerShell
   $geolocationfield=$list.Fields.AddFieldAsXml("<Field Type='Geolocation' DisplayName='Location'/>", $true, [Microsoft.SharePoint.Client.AddFieldOptions]::AddToAllContentTypes) 
   $list.Update() 
   $ctx.ExecuteQuery()
- 
+ ```
  
 
 In order to use it, open the file and enter correct values:
 
-PowerShell
+```PowerShell
 #Paths to SDK 
 Add-Type -Path "C:\Program Files (x86)\Common Files\microsoft shared\Web Server Extensions\16\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "C:\Program Files (x86)\Common Files\microsoft shared\Web Server Extensions\16\Microsoft.SharePoint.Client.Runtime.dll" 
@@ -41,3 +41,4 @@ $Password=Read-Host -Prompt "Enter password" -AsSecureString
 $Username="me@testtenant.onmicrosoft.com" 
 $Url="https://tenant.sharepoint.com" 
 $ListTitle="test2"
+```
