@@ -6,10 +6,6 @@ It adds a column with file extensions to a SharePoint Online library:
 
 
 
- 
-
- 
-
 The script is not an event receiver, so if you add a new item, it may need to be re-applied.
 
 The script is not optimized. Please rewrite before applying to large or multiple lists.
