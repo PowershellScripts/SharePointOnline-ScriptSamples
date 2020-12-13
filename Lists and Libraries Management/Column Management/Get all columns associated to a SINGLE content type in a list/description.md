@@ -23,13 +23,13 @@ Results example:
 1. Only names 
 
 
-
+<img src="../Column Management/Przechwytywanie24.PNG" width="850">
  
 
 2. All properties of a fieldlink/column
 
 
-
+<img src="../Column Management/Przechwytywanie25.PNG" width="850">
  
 
  
