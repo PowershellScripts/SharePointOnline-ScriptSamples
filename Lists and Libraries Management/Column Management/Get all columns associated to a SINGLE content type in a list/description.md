@@ -6,7 +6,7 @@ You can either display the column name or all of its properties. If you want to 
 
 The script requires SharePoint Online SDK installed. Before running the script, enter the information:
 
-PowerShell
+```PowerShell
   # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -17,7 +17,7 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $AdminUrl="https://etr56.sharepoint.com/sites/commsite" 
 $ListTitle = "Site Pages" 
 $CTName = "Repost Page"  # name of the content type, e.g. Item, Folder, Site Page
- 
+``` 
 Results example:
 
 1. Only names 
