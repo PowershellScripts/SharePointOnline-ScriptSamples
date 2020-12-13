@@ -23,13 +23,13 @@ Results example:
 1. Only names 
 
 
-<img src="../Column Management/Przechwytywanie24.PNG" width="850">
+<img src="../Column Management/Get all columns associated to a SINGLE content type in a list/Przechwytywanie24.PNG" width="850">
  
 
 2. All properties of a fieldlink/column
 
 
-<img src="../Column Management/Przechwytywanie25.PNG" width="850">
+<img src="../Column Management/Get all columns associated to a SINGLE content type in a list/Przechwytywanie25.PNG" width="850">
  
 
  
