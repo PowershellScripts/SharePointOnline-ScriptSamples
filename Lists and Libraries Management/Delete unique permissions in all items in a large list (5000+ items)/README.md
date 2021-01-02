@@ -18,7 +18,7 @@ Before you run it, you have to modify the last lines of the script!
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
@@ -28,7 +28,7 @@ $AdminPassword=Read-Host -Prompt "Enter password" -AsSecureString
 $username="arleta@TENANT.onmicrosoft.com" 
 $Url="https://TENANT.sharepoint.com/sites/testID1de" 
 $ListTitle="testitems" 
- 
+``` 
 
 Enter your credentials and the site where you want to modify the inheritance. 
 Verify if the SharePoint Online SDK is installed in the same location on your computer
@@ -54,6 +54,3 @@ Modify inherited permissions for a SharePoint Online site (module)
 
 Modify list permissions with Powershell cmdlets (module)
 
-Delete unique permissions (C# program)
-
-Get lists with unique permissions (C# program)
