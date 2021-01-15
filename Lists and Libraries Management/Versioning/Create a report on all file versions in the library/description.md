@@ -4,10 +4,6 @@ It requires installed  [SharePoint Online SDK ](http://www.microsoft.com/en-us/d
 
 You have to enter the library data before running the script:
 
- 
-
- 
-
 ```PowerShell
 #Paths to SDK 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
