@@ -22,6 +22,7 @@ function Set-ExperienceOptions{
 
 
     foreach($ll in $lls){
+        Write-Host $ll.Title
         $ll.ListExperienceOptions = $ExperienceOption
         $ll.Update()
         $ctx.ExecuteQuery()
@@ -31,22 +32,18 @@ function Set-ExperienceOptions{
 
 
         
-        
+       
 
 
-
-
-#Paths to SDK
-Add-Type -Path "H:\Libraries\Microsoft.SharePoint.Client.dll"
-Add-Type -Path "H:\Libraries\Microsoft.SharePoint.Client.Runtime.dll"
-Add-Type -Path "H:\Libraries\Microsoft.Office.Client.Policy.dll"   
-#Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+# Paths to SDK. Please verify location on your computer.
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 
  
 #Enter the data
 $AdminPassword=Read-Host -Prompt "Enter password" -AsSecureString
-$username="t@testova365.onmicrosoft.com"
-$Url="https://testova365.sharepoint.com/sites/STS"
+$username="ana@etr45.onmicrosoft.com"
+$Url="https://etr45.sharepoint.com/sites/test1234/test1"
 
 
 Set-ExperienceOptions -Username $username -Url $Url -password $AdminPassword -ExperienceOption  NewExperience
