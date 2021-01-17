@@ -32,16 +32,3 @@ E:\technet\ListExperiences\GetExperience.ps1  | export-csv c:\ListExperiences.cs
  ```
  
 
-
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 

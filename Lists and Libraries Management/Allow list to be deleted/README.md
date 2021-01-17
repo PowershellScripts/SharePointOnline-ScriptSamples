@@ -8,7 +8,7 @@ Please beware that the button is missing for a reason. Do not execute the script
 
 The script does not delete the list itself.
 
- 
+
 
 ### How to use the script?
 

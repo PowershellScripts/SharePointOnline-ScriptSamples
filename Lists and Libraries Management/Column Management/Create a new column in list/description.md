@@ -36,7 +36,7 @@ It corresponds to GUI:
 
 <img src="../Create a new column in list/NewspoList.png">
 
-Examples
+## Examples
 
  <img src="../Create a new column in list/SPOLisstColumn6.PNG">
 
@@ -48,27 +48,18 @@ Examples
 
  
 
- 
-
 ## Requirements
 
 The following libraries (SharePoint Online SDK) are required. If those libraries are in different location on your computer, please edit the .psm1 file!
-
- 
-
- 
 
 ```PowerShell
 # Paths to SDK. Please verify location on your computer.   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"    
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
 ``` 
- 
 
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>
-
- 
 
  

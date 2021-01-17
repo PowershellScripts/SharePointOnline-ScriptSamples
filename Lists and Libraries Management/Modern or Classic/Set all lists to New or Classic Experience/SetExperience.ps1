@@ -32,9 +32,7 @@ function Set-ExperienceOptions{
 
 
         
-        
-
-
+       
 
 
 # Paths to SDK. Please verify location on your computer.

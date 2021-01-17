@@ -1,10 +1,7 @@
 Short Powershell script that hides Sync button in OneDrive for Business for all users.
 
- 
-
 The script uses CSOM and requires SharePoint Online SDK.
 
- 
 
 This button will be removed with the script:
 

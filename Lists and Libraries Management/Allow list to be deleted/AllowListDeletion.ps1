@@ -26,11 +26,11 @@ param (
     }
 
   $ctx.Load($ctx.Site)
-  $lista=$ctx.Web.Lists.GetByTitle($ListTitle)
-  $ctx.Load($lista)
+  $list=$ctx.Web.Lists.GetByTitle($ListTitle)
+  $ctx.Load($list)
   $ctx.ExecuteQuery()
-  $lista.AllowDeletion = $false
-  $lista.Update()
+  $list.AllowDeletion = $false
+  $list.Update()
   $ctx.ExecuteQuery()
 
 

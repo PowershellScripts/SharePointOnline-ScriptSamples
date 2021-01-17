@@ -9,9 +9,6 @@ The audit may come in handy during migration, upgrades or company restructuring.
 This Powershell script allows you to investigate into your folder structure in a single library and creates an XML file as a report.
 
 
-
- 
-
  
 
 In order to use the script you need to modify the following lines:
@@ -20,7 +17,7 @@ In order to use the script you need to modify the following lines:
 
  
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
@@ -34,6 +31,6 @@ $libraryTitle="test"
 $script:XMLPath = "C:\Users\Public\foldersAudit.xml" 
 #Enter your data above!
  
- 
+``` 
 
  

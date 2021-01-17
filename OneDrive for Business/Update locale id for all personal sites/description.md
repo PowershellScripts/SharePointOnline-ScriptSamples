@@ -21,13 +21,7 @@ Add-Type -Path "c:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint.
 ``` 
  
 
- 
-
- 
-
 Enter the correct data and specify the locale id you'd like to set:
-
- 
 
 ```PowerShell
 # Insert the credentials and the name of the admin site 
@@ -39,9 +33,6 @@ $LocaleID=1033
 ``` 
  
 
- 
-
- 
 
 If you are not currently an Administrator of the user's personal site, you can gain access using:
 
@@ -51,7 +42,5 @@ Set-SPOUser -Site $urelek -LoginName $username -IsSiteCollectionAdmin $true
  
 
 In order to use the cmdlet, you can either modify the ```.ps1``` file or write a separate script.
-
- 
 
  
