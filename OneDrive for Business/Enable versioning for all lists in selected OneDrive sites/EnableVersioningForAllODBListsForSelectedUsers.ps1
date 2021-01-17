@@ -71,7 +71,6 @@ $Global:csv=@()
 foreach($user in $users)
 {
 
-
   if($user.Username.Contains('@'))
   {
     $persweb=$user.Username.Replace(".","_").Replace("@","_")
@@ -82,7 +81,7 @@ foreach($user in $users)
 
     #Add the following line if you want to assign yourself, administrator or another user access to other users' personal sites
     #Set-SPOUser -Site $AdminUrl -IsSiteCollectionAdmin $true -LoginName t@trial765.onmicrosoft.com
-   Set-SPOListVersioning -EnableVersioning $EnableVersioning -Urelek $AdminUrl
+    Set-SPOListVersioning -EnableVersioning $EnableVersioning -Urelek $AdminUrl
   }
 }
 

@@ -9,38 +9,30 @@ function GetAllSubsitesAndDelete($SiteUrl)
    $ctx2.Load($sites2)  
    $ctx2.ExecuteQuery() 
    
-   if($sites2.Count -gt 0) 
-     { 
-        for($i=0;$i -lt $sites2.Count ;$i++) 
-        { 
+   if($sites2.Count -gt 0) { 
+        for($i=0;$i -lt $sites2.Count ;$i++) { 
            GetAllSubsitesAndDelete($sites2[$i].Url) 
         } 
         
-        try 
-        { 
-          $rootWeb2.DeleteObject() 
-            $ctx2.ExecuteQuery() 
-            Write-Host "Subsite " $rootWeb2.Url " has been removed" 
-        } 
-        catch [Net.WebException] 
-        {  
-           Write-Host $_.Exception.ToString() 
-        } 
-     } 
-     else 
-     { 
-        try 
-        { 
+        try { 
             $rootWeb2.DeleteObject() 
             $ctx2.ExecuteQuery() 
             Write-Host "Subsite " $rootWeb2.Url " has been removed" 
         } 
-        catch [Net.WebException] 
-        {  
+        catch [Net.WebException] {  
            Write-Host $_.Exception.ToString() 
         } 
-     } 
-
+   } 
+   else { 
+        try { 
+            $rootWeb2.DeleteObject() 
+            $ctx2.ExecuteQuery() 
+            Write-Host "Subsite " $rootWeb2.Url " has been removed" 
+        } 
+        catch [Net.WebException] {  
+           Write-Host $_.Exception.ToString() 
+        } 
+   } 
 } 
  
 #paths to SDK (copied from Victor's comment) 

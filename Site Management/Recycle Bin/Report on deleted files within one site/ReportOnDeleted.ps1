@@ -1,38 +1,30 @@
-﻿function Get-DeletedItem
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+﻿function Get-DeletedItem{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-)
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
+	)
+	#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.ExecuteQuery() 
 
- $ctx.Load($ctx.Site)
-  $rb=$ctx.Site.RecycleBin
-$ctx.Load($rb)
-$ctx.ExecuteQuery()
+	$ctx.Load($ctx.Site)
+	$rb=$ctx.Site.RecycleBin
+	$ctx.Load($rb)
+	$ctx.ExecuteQuery()
 
-for($i=0;$i -lt $rb.Count ;$i++)
-{
-        $obj = $rb[$i]
-        
-        Write-Output $obj
+	for($i=0;$i -lt $rb.Count ;$i++){
+		$obj = $rb[$i]
 
+		Write-Output $obj
+	}
 
-}
-#$ctx.Web.RecycleBin.RestoreAll()
-$ctx.ExecuteQuery()
-
-
-
-
-
+	#$ctx.Web.RecycleBin.RestoreAll()
+	$ctx.ExecuteQuery()
 }
 
 

@@ -3,9 +3,7 @@ A short Powershell script to set the direction of the reading order for the list
 You can choose between:
 
 ltr - left to right
-
 rtl - right to left
-
 none 
 
 It requires installed  [SharePoint Online SDK](https://www.microsoft.com/en-us/download/details.aspx?id=42038)
@@ -26,10 +24,6 @@ $ListName="Generic List"
 $Direction ="none"
 $Direction paramater specifies the reading order. Enter "ltr", "rtl" or "none"
 ``` 
-
- 
-
- 
 
 <br/><br/>
 <b>Enjoy and please share feedback!</b>

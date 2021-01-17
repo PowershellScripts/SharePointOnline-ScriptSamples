@@ -1,37 +1,35 @@
 ﻿
 
-function Add-SPOUILanguages
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Add-SPOUILanguages{
+   	param (
+   		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+        	[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
-        [Parameter(Mandatory=$true,Position=3)]
+        	[Parameter(Mandatory=$true,Position=3)]
 		[Int]$lcid
-		)
+	)
   
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-   $ctx.Load($ctx.Web)
-  $ctx.ExecuteQuery() 
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.Load($ctx.Web)
+	$ctx.ExecuteQuery() 
 
 
-   Write-Host $ctx.Web.Url
-   $ctx.Web.IsMultilingual=$true
-   $ctx.Web.Update()
-   $ctx.ExecuteQuery()
-   $ctx.Web.AddSupportedUILanguage($lcid)
-  
-   $ctx.Web.Update()
-   
+	Write-Host $ctx.Web.Url
+	$ctx.Web.IsMultilingual=$true
+	$ctx.Web.Update()
+	$ctx.ExecuteQuery()
+	$ctx.Web.AddSupportedUILanguage($lcid)
 
-$ctx.ExecuteQuery()
- 
- $ctx.Dispose()
+	$ctx.Web.Update()
+
+
+	$ctx.ExecuteQuery()
+
+	$ctx.Dispose()
 }
 
      
@@ -52,8 +50,6 @@ Connect-SPOService $adminUrl -Credential $Username
 
 $sites=(get-spoSite).Url
 
-foreach($site in $sites)
-{
-
-Add-SPOUILanguages -Username $Username -AdminPassword $AdminPassword -Url $site -lcid $lcid
+foreach($site in $sites){
+	Add-SPOUILanguages -Username $Username -AdminPassword $AdminPassword -Url $site -lcid $lcid
 }

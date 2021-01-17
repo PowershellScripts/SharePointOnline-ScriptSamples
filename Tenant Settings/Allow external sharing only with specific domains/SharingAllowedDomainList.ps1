@@ -1,4 +1,4 @@
-﻿function Set-SiteColl{
+﻿function Set-TenantSharing{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -35,4 +35,4 @@ $username="admin@TENANT.onmicrosoft.com"
 $Url="https://TENANT-admin.sharepoint.com"
 $AllowDomainList="test.com madeup.com"
 
-Set-SiteColl -Username $username -Url $Url -password $AdminPassword -AllowDomainList $AllowDomainList
+Set-TenantSharing -Username $username -Url $Url -password $AdminPassword -AllowDomainList $AllowDomainList

@@ -10,7 +10,7 @@ It requires installed  SharePoint Online SDK
 
 You have to enter the library data before running the script:
 
-PowerShell
+```PowerShell
 #Paths to SDK   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"   
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"   
@@ -26,6 +26,6 @@ $Url="https://test-my.sharepoint.com/personal/german_test_onmicrosoft_com"
 $csvPath="C:\MyFiles\Versions.csv" 
 #Path for a csv where files with no version will be recorded 
 $csvPath2="C:\MyFiles\FileThatShowsNoVersionsAvailable4.csv" 
- 
+ ```
 You will see the following output during the script execution and 2 csv files will be generated:
 

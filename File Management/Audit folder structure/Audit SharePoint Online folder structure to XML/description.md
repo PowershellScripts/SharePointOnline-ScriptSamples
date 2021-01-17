@@ -24,7 +24,7 @@ Sample results:
 
 IN order to use the script, you need to enter your data at the bottom of the file:
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
@@ -38,6 +38,4 @@ $libraryTitle="test"
 $script:XMLPath = "C:\Users\Public\foolders2.xml" 
 #Enter your data above! 
  
- 
-
- 
+ ```

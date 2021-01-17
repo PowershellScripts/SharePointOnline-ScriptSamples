@@ -1,29 +1,24 @@
-﻿function Restore-AllItems
-{
-param (
-  [Parameter(Mandatory=$true,Position=1)]
+﻿function Restore-AllItems{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-)
-#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
+	)
 
-  $rb=$ctx.Site.RecycleBin
-$ctx.Load($rb)
-$ctx.ExecuteQuery()
-Write-Host $ctx.Site.Url $rb.Count.ToString()
-$ctx.Site.RecycleBin.RestoreAll()
-$ctx.ExecuteQuery()
+	#$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.ExecuteQuery() 
 
-
-
-
-
+	$rb=$ctx.Site.RecycleBin
+	$ctx.Load($rb)
+	$ctx.ExecuteQuery()
+	Write-Host $ctx.Site.Url $rb.Count.ToString()
+	$ctx.Site.RecycleBin.RestoreAll()
+	$ctx.ExecuteQuery()
 }
 
 

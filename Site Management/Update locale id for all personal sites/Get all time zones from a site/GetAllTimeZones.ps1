@@ -1,38 +1,28 @@
 ﻿
 
-function Get-SPOUSerTimeZones
-{
-  
-   param (
-   [Parameter(Mandatory=$true,Position=1)]
+function Get-SPOUSerTimeZones{
+	param (
+		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
 		[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
-        [Parameter(Mandatory=$true,Position=3)]
+		[Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
-		)
-  
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-  $ctx.ExecuteQuery() 
-  
-  $ctx.Load($ctx.Web)
-  $ctx.Load($ctx.Web.RegionalSettings.TimeZone)
-  $ctx.Load($ctx.Web.RegionalSettings.TimeZones)
-   $ctx.ExecuteQuery()    
-   
-   foreach($timezone in  $ctx.Web.RegionalSettings.TimeZones)
-   {
-     Write-Host $timezone.ID  $timezone.Description
-   }
+	)
 
+	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+	$ctx.ExecuteQuery() 
 
+	$ctx.Load($ctx.Web)
+	$ctx.Load($ctx.Web.RegionalSettings.TimeZone)
+	$ctx.Load($ctx.Web.RegionalSettings.TimeZones)
+	$ctx.ExecuteQuery()    
 
-
-     }
-
-  
-
+	foreach($timezone in  $ctx.Web.RegionalSettings.TimeZones){
+		Write-Host $timezone.ID  $timezone.Description
+	}
+}
 
   # Paths to SDK. Please verify location on your computer.
 #Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 

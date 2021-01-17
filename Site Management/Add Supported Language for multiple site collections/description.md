@@ -1,8 +1,10 @@
 The script adds a supported language to all site collections.
 
-1. It retrieves the urls using Get-SPOSite.
-2. It loops through the urls.
-3. For each specified url, it adds a supported language.
+**1.** It retrieves the urls using Get-SPOSite.
+
+**2.** It loops through the urls.
+
+**3.** For each specified url, it adds a supported language.
 
 
 Make sure the script is using correct paths to the SDK libraries on your machine:
@@ -22,22 +24,22 @@ $AdminPassword=Read-Host -Prompt "Password" -AsSecureString
 $adminUrl="https://tenant-admin.sharepoint.com" 
 $lcid=1031
 ```
-$lcid refers to Locale ID. A list of Microsoft-assigned locale ids can be found here:https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx 
+$lcid refers to Locale ID. A list of Microsoft-assigned locale ids can be found [here](https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx).
 
 
 ### The script can be modified.
 
-1. If you want to add language only for a few site collections/subsites, enter the urls in the line below instead of Get-SPOSite cmdlet:
+**1.** If you want to add language only for a few site collections/subsites, enter the urls in the line below instead of Get-SPOSite cmdlet:
 ```PowerShell
 $sites=(get-spoSite).Url
 ``` 
  
- 2. If you want to add 2 or more languages, enter more AddSupportedUILanguage() methods:
+**2.** If you want to add 2 or more languages, enter more AddSupportedUILanguage() methods:
 ```PowerShell
    $ctx.Web.AddSupportedUILanguage($lcid)
 ```   
  
- 3. If you want to remove a language instead of adding it, modify the following line:
+**3.** If you want to remove a language instead of adding it, modify the following line:
 ```PowerShell
    $ctx.Web.AddSupportedUILanguage($lcid)
 ``` 
@@ -46,8 +48,7 @@ into:
    $ctx.Web.RemoveSupportedUILanguage($lcid)
 ```   
  
- 4. If you need to assign administrator's permissions to ODB, you can use the following script:
-     http://sharepoint.stackexchange.com/questions/138562/add-personal-site-collection-administrator-programmatically
+**4.** If you need to assign administrator's permissions to ODB, you can use the following [script](http://sharepoint.stackexchange.com/questions/138562/add-personal-site-collection-administrator-programmatically).
 
  
 <br/><br/> 
