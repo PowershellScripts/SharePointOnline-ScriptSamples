@@ -26,30 +26,21 @@ function Set-Versioning{
       $list.EnableVersioning = $Versioning
       $list.Update()
       $csvvalue= new-object PSObject
-      $listurl=$null
 
-      if($ctx.Url.EndsWith("/")){
-        
-        $listurl= $ctx.Url.Remove(($ctx.Url.Length-1),1)+$ll.RootFolder.ServerRelativeUrl
-        }
-      else {
-        $index=$ctx.Url.LastIndexOf(".com")
-        $listurl=$ctx.Url.Remove($index+4)+$ll.RootFolder.ServerRelativeUrl
-        }
-
-      $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
+      $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value $ctx.Url
+      $csvvalue | Add-Member -MemberType NoteProperty -Name "ListTitle" -Value $list.Title
       $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
 
       try{
         $ErrorActionPreference="Stop"
         $ctx.ExecuteQuery() 
-        Write-Host $listurl -ForegroundColor DarkGreen
+        Write-Host $list.Title -ForegroundColor DarkGreen
         $csvvalue.Status="Success"
         $Global:csv+= $csvvalue       
       }
       catch{
         $Global:csv+= $csvvalue
-        Write-Host $listurl -ForegroundColor Red
+        Write-Host $list.Title -ForegroundColor Red
       }
       finally{
         $ErrorActionPreference="Continue"
@@ -65,6 +56,12 @@ function Set-Versioning{
       }
     }
 }
+
+
+
+
+
+
 
 
 # Paths to SDK. Please verify location on your computer.
@@ -83,13 +80,13 @@ $LogPath = "C:\Users\Public\VersioningLogPath.csv"
 # You will be prompted for credentials when the script executes
 $username = Read-Host -Prompt "Enter admin's login, e.g. admin@domain.onmicrosoft.com"
 $password = Read-Host -Prompt "Enter password" -AsSecureString
-$credential= New-Object System.Management.Automation.PSCredential($username,$password) 
+$credential= New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password) 
 
 $sitecollections= Import-CSV $CSVPath
 $Global:csv=@()
 
 foreach($sitecollection in $sitecollections){
-    Set-Versioning -Url ($sitecollection.Url) -Credential $Credential -Versioning $Versioning
+    Set-Versioning -Url $sitecollection.Url -Credential $Credential -Versioning $Versioning
 }
 
 
