@@ -22,6 +22,7 @@ function Set-ExperienceOptions{
 
 
     foreach($ll in $lls){
+        Write-Host $ll.Title
         $ll.ListExperienceOptions = $ExperienceOption
         $ll.Update()
         $ctx.ExecuteQuery()
