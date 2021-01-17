@@ -20,8 +20,7 @@ function Set-ExperienceOptions{
   $ctx.Load($lls)
   $ctx.ExecuteQuery()
 
-
-    foreach($ll in $lls){
+  foreach($ll in $lls){
         Write-Host $ll.Title
         $ll.ListExperienceOptions = $ExperienceOption
         $ll.Update()
@@ -30,9 +29,6 @@ function Set-ExperienceOptions{
 }
 
 
-
-        
-       
 
 
 # Paths to SDK. Please verify location on your computer.
