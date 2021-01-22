@@ -1,9 +1,5 @@
 The script loads a single view from a list and displays all of its properties as in the screenshot below.
 
-View also similar scripts on Technet Gallery:
-
-Get all views from a single list and their properties using Powershell
-Get all SharePoint Online list view properties using view's name
 
 <br/>
 
