@@ -6,7 +6,7 @@ It breaks role inheritance for one specified list.
 
  
 
-How to use?
+### How to use?
  
 
 1. Download and open the file.
