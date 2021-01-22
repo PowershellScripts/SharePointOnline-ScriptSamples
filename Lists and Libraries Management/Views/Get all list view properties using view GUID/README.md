@@ -5,6 +5,7 @@ View also similar scripts on Technet Gallery:
 Get all views from a single list and their properties using Powershell
 Get all SharePoint Online list view properties using view's name
 
+<br/>
 
 
 ### Requirements
@@ -14,7 +15,7 @@ The following script requires:
 
 SharePoint Online SDK
 
- 
+ <br/>
 
  
 
