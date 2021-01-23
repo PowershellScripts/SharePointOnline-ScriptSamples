@@ -2,7 +2,7 @@ Short Powershell script that disables flows for all lists and libraries in Share
 
 It modifies DisableFlows property of a SharePoint Online site. The script is related to and more described in an article [Verifying and modifying Flows Policy in SharePoint Online site using Powershell](https://social.technet.microsoft.com/wiki/contents/articles/39331.sharepoint-online-verifying-and-modifying-flows-policy-in-site-using-powershell.aspx) on the TechNet Wiki.
 
- 
+
 
 If the setting is set to disabled, the flows button will be missing on all lists and libraries in the site:
 
