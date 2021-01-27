@@ -13,7 +13,6 @@ param (
 		)
 
 
- 
   $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $RestUrl=$url+"/_api/web/"
   if($object -ne "")
@@ -22,7 +21,6 @@ param (
   }
 
 
-  
         $request = [System.Net.WebRequest]::Create($RESTUrl) 
         $request.Credentials = $Credentials 
         $request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f") 
