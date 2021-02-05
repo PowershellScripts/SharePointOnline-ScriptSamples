@@ -9,7 +9,6 @@
 		$password
 	)
 
-
 	$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
 	$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
 	$ctx.Load($ctx.Web)
