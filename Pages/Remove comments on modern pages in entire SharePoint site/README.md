@@ -8,7 +8,7 @@ Its functionality is described also in an article on Social Technet: Powershell 
 
  
 
-How to use?
+### How to use?
 1. Download the script and open the file.
 
 2. Modify the following lines with appropriate paths to SharePoint SDKs:
