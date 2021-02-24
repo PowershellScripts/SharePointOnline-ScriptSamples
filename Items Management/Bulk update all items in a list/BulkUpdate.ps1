@@ -30,7 +30,7 @@ function Update-SPOListItem{
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
   $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
   $itemki=$ll.GetItems($spqQuery)
-   $ctx.Load($itemki)
+  $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
   $count=$itemki.Count
