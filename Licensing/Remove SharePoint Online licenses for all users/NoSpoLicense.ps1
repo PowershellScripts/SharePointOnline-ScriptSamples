@@ -5,8 +5,7 @@ $disabledPlans +="SHAREPOINTENTERPRISE"
 $disabledPlans +="SHAREPOINTWAC"
 
  
-
-$Users = Get-MsolUser -All
+ $Users = Get-MsolUser -All
 
  $Plan=(Get-MsolAccountSku).AccountSkuID.Trim()
 
