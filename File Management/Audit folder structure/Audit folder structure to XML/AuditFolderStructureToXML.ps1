@@ -2,7 +2,6 @@
 {
 
 param (
-
     [Parameter(Mandatory=$true,Position=0)]
     $higherLevelFolder,
     [Parameter(Mandatory=$true,Position=1)]
