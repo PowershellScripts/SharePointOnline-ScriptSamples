@@ -28,12 +28,11 @@ function New-SPOListItem{
 
   $lici =New-Object Microsoft.SharePoint.Client.ListItemCreationInformation
   
-  
   $listItem = $ll.AddItem($lici)
   $listItem["Title"]=$ItemTitle
   
   if($AdditionalField -ne ""){
-   $listItem[$AdditionalField]=$AdditionalValue
+   	$listItem[$AdditionalField]=$AdditionalValue
   }
 
   $listItem.Update()
