@@ -2,9 +2,9 @@
 function Remove-Comments
 {
 param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
