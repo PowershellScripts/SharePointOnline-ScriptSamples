@@ -31,7 +31,8 @@ Add correct SharePoint Online SDK libraries:
 #Paths to SDK 
 Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "C:\Program Files\SharePoint Client Components\16.0\Assemblies\Microsoft.Online.SharePoint.Client.Tenant.dll" 
-``` Enter the correct url, the setting for the sync button, and admin login. You will be additionally prompted for the password. Do not enter it in the file: 
+``` 
+Enter the correct url, the setting for the sync button, and admin login. You will be additionally prompted for the password. Do not enter it in the file: 
  
 
 ```PowerShell
