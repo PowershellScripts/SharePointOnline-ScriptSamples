@@ -22,8 +22,8 @@ From August 2016 and the CSOM version 16.1.5626.1200 there is an option to preve
 
  
 
-How to use?
-Download and open the .ps1 file.
+<h3>How to use?</h3>
+Download and open the .ps1 file. <br/>
 Add correct SharePoint Online SDK libraries:
  
 
