@@ -1,4 +1,4 @@
-﻿function Set-SiteColl{
+function Set-SiteColl{
 	param (
        		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
@@ -27,7 +27,6 @@
   Write-Output $siteColl  
 
 }
-
 
 
 
