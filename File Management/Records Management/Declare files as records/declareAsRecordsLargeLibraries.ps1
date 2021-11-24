@@ -2,13 +2,13 @@
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$Url,
+	[string]$Username,
+	[Parameter(Mandatory=$true,Position=2)]
+	[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
-		$password,
+	$password,
         [Parameter(Mandatory=$true,Position=4)]
-		[string]$ListTitle
+	[string]$ListTitle
 		)
 
 
