@@ -28,8 +28,6 @@
 	$ctx.ExecuteQuery()
 
 	Write-Host "Termstore" -ForegroundColor Green
-	#Write-Output $termstore
-	Write-Host "Term1"
 	$set=$termstore.GetTermSet($TermSetGuid)
 	$ctx.Load($set)
 	$ctx.Load($set.GetAllTerms())
@@ -39,7 +37,6 @@
 	$term=$set.CreateTerm($Term, $TermLanguage,$guid)
 
 	$termstore.CommitAll()
-
 	$ctx.ExecuteQuery()
 }
 
