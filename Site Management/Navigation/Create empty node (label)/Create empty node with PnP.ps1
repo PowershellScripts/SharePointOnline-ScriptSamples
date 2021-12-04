@@ -1,3 +1,4 @@
+# It's way easier than with CSOM :)
 $NavNodeTitle = "Header"
 
 Connect-PnPOnline
