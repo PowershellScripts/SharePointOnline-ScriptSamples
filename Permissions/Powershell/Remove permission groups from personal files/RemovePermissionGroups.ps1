@@ -16,7 +16,7 @@ function Remove-SPOPermissionGroup{
 	  $ctx.Load($ctx.Web)
 	  $ctx.ExecuteQuery()
 	  $Groups = $ctx.Web.SiteGroups
-	 $ctx.Load($Groups)
+	  $ctx.Load($Groups)
 	  $ctx.ExecuteQuery()
    
 	foreach($group in $Groups){
@@ -27,10 +27,6 @@ function Remove-SPOPermissionGroup{
      $ctx.Web.Update()
      $ctx.ExecuteQuery()
  } 
-
-  
-  
-  
 
 
   # Paths to SDK. Please verify location on your computer.
