@@ -2,9 +2,9 @@
 function Get-LargeLists
 {
 param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url,
@@ -82,6 +82,5 @@ foreach($site in $sites)
     Write-host "goes again" $site.Url
     $webs+=Get-LargeLists -Username $Username -AdminPassword $AdminPassword -Url $site.Url -CSVPath $csvPath -itemThreshold $itemThreshold
 }
-
 
 
