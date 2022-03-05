@@ -27,13 +27,12 @@
 	$ctx.Load($termstore)
 	$ctx.ExecuteQuery()
 
-	Write-Host "Termstore" -ForegroundColor Green
 	$set=$termstore.GetTermSet($TermSetGuid)
 	$ctx.Load($set)
 	$ctx.Load($set.GetAllTerms())
 	$ctx.ExecuteQuery()
 	$guid = [guid]::NewGuid()
-	Write-Host $guid
+	Write-Host "Creating term with the following guid: $guid"
 	$term=$set.CreateTerm($Term, $TermLanguage,$guid)
 
 	$termstore.CommitAll()
