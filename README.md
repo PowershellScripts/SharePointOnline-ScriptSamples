@@ -22,18 +22,18 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  <br/>
  
    <details>
-<summary>Content Type Management Setting </summary>
+    <summary>    &nbsp;&nbsp;&nbsp;&nbsp;Content Type Management Setting </summary>
  
  <br/>
 
-  * Allow content type management for all lists in a site
-  * Allow content type management for all lists in site collection
-  * Set content type management setting for a single list
+  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in a site
+  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in site collection
+  * &nbsp;&nbsp;&nbsp;&nbsp; Set content type management setting for a single list
   
   </details>
-  
+    
   <details>
-<summary>Create </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Create </summary>
  
  <br/>
  
@@ -49,7 +49,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Display Forms </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Display Forms </summary>
  
  <br/>
  
@@ -61,7 +61,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Get </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Get </summary>
  
  <br/>
  
@@ -91,7 +91,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Set </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Set </summary>
  
  <br/>
  
@@ -106,7 +106,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Modules </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Modules </summary>
  
  <br/>
 
@@ -115,7 +115,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     </details>
     
   <details>
-<summary>Remove </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Remove </summary>
  
  <br/>
  
@@ -125,7 +125,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     </details>
     
   <details>
-<summary>Set </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Set </summary>
  
  <br/>
 
