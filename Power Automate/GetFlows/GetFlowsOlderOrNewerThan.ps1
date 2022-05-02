@@ -42,3 +42,16 @@ $CompareDate = (Get-Date).AddMonths(-1)
 Get-PnPFlow -AsAdmin -Environment $environment | select -ExpandProperty Properties | Where-Object {$_.CreatedTime -gt $CompareDate} | Export-CSV -Path $CSVPath -Append
 
 
+
+
+
+
+# Get flows last modified more than a year ago
+
+Connect-PnPOnline
+$environment = Get-PnPPowerPlatformEnvironment
+$CompareDate = (Get-Date).AddYears(-1)
+
+Get-PnPFlow -AsAdmin -Environment $environment | select -ExpandProperty Properties | Where-Object {$_.LastModifiedTime -lt $CompareDate}
+
+
