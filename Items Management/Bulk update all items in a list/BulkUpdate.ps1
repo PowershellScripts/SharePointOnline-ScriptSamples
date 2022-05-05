@@ -15,8 +15,7 @@ function Update-SPOListItem{
   )
   
   
-  
-   $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web.Lists)
@@ -29,9 +28,9 @@ function Update-SPOListItem{
 
 
   $spqQuery = New-Object Microsoft.SharePoint.Client.CamlQuery
- $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
-   $itemki=$ll.GetItems($spqQuery)
-   $ctx.Load($itemki)
+  $spqQuery.ViewXml ="<View Scope='RecursiveAll' />";
+  $itemki=$ll.GetItems($spqQuery)
+  $ctx.Load($itemki)
   $ctx.ExecuteQuery()
 
   $count=$itemki.Count

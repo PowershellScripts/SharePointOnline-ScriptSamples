@@ -37,10 +37,10 @@ Connect-MsolService
 $Users = Get-MSolUser -All  
 
 if($Users -ne $null){
-  Write-Host "Loaded all users."
+    Write-Host "Loaded all users."
 }
 else{
-  Write-Host "Couldn't get the users."
+    Write-Host "Couldn't get the users."
 }
 
 

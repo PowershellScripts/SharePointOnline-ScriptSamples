@@ -34,23 +34,3 @@ Enter your credentials and the site where you want to modify the inheritance.
 Verify if the SharePoint Online SDK is installed in the same location on your computer
  
 
- 
-
- 
-
- 
-
- 
-
-Related scripts:
-
-Delete unique permissions in all items in one single list using Powershell 
-
-Delete unique permissions for all lists
-
-Break inheritance for all lists
-
-Modify inherited permissions for a SharePoint Online site (module)
-
-Modify list permissions with Powershell cmdlets (module)
-

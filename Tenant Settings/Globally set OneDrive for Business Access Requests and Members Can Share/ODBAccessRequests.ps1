@@ -3,7 +3,7 @@
 param (
         [Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		[string]$Url,
         [Parameter(Mandatory=$true,Position=3)]
 		$password,
@@ -30,9 +30,6 @@ param (
 
 }
 
-
-
-
 #Paths to SDK
 Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"
 Add-Type -Path "C:\Program Files\SharePoint Online Management Shell\Microsoft.Online.SharePoint.PowerShell\Microsoft.Online.SharePoint.Client.Tenant.dll"  
@@ -45,8 +42,6 @@ $username="admin@TENANT.onmicrosoft.com"
 $Url="https://TENANT-admin.sharepoint.com"
 $ODBMembersCanShare="On"  # On, Off, Unspecified
 $ODBAccessRequests="Unspecified" #On, Off, Unspecified
-
-
 
 
 

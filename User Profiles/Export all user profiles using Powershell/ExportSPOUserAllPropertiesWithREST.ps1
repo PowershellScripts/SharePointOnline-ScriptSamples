@@ -45,13 +45,13 @@ $users=Get-SPOUser -Site $SiteUrl
 
 foreach($user in $users){
     Write-Verbose $user.LoginName
-    $props=Get-SPOUserProperty -Username $cred.UserName -Url $SiteUrl -password $cred.Password -userLogin $user.LoginName 
-    $uss=New-Object PSObject
+    $properties=Get-SPOUserProperty -Username $cred.UserName -Url $SiteUrl -password $cred.Password -userLogin $user.LoginName 
+    $userObject=New-Object PSObject
     
-    foreach($prop in $props){
-        $uss | Add-Member -MemberType NoteProperty -Name $prop.Key -Value $prop.Value
+    foreach($property in $properties){
+        $userObject | Add-Member -MemberType NoteProperty -Name $prop.Key -Value $prop.Value
     }
     
-    $uss | Export-Csv -Path $ExportTo -Append -Force
+    $userObject | Export-Csv -Path $ExportTo -Append -Force
 }
 

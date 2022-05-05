@@ -22,8 +22,8 @@ From August 2016 and the CSOM version 16.1.5626.1200 there is an option to preve
 
  
 
-How to use?
-Download and open the .ps1 file.
+<h3>How to use?</h3>
+Download and open the .ps1 file. <br/>
 Add correct SharePoint Online SDK libraries:
  
 
@@ -31,7 +31,8 @@ Add correct SharePoint Online SDK libraries:
 #Paths to SDK 
 Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
 Add-Type -Path "C:\Program Files\SharePoint Client Components\16.0\Assemblies\Microsoft.Online.SharePoint.Client.Tenant.dll" 
-``` Enter the correct url, the setting for the sync button, and admin login. You will be additionally prompted for the password. Do not enter it in the file: 
+``` 
+Enter the correct url, the setting for the sync button, and admin login. You will be additionally prompted for the password. Do not enter it in the file: 
  
 
 ```PowerShell

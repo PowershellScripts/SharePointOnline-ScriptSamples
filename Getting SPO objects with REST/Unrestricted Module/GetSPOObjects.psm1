@@ -13,7 +13,7 @@ param (
 
 	  $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
 	  $RestUrl=$url+"/_api/"
-	  
+	   
 	  if($object -ne "")
 	  {
 	    $RestUrl+=$object
@@ -29,6 +29,7 @@ param (
         $requestStream = $response.GetResponseStream() 
         $read = New-Object System.IO.StreamReader $requestStream 
         $data=$read.ReadToEnd() 
+	
  # Because the string contains duplicate 'ID' keys.
         $results = $data.ToString().Replace("ID", "_ID") | ConvertFrom-Json 
         $objekty=$results.d.results 
@@ -43,7 +44,6 @@ param (
 
         }
         
-
   }
 
 

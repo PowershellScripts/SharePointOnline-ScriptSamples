@@ -2,34 +2,31 @@
 function Remove-Comments
 {
 param (
-  [Parameter(Mandatory=$true,Position=1)]
+  	[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
+	[Parameter(Mandatory=$true,Position=2)]
 		$AdminPassword,
         [Parameter(Mandatory=$true,Position=3)]
 		[string]$Url
 )
 
-  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
 
-    try
-    {
-        $ctx.ExecuteQuery()
-    } 
-    catch [Net.WebException] 
-    {            
-        Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
-    }
+try{
+	$ctx.ExecuteQuery()
+} 
+catch [Net.WebException] {            
+	Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
+}
 
-  $web = $ctx.Web  
-  $ctx.Load($web)
-  $ctx.ExecuteQuery()
+$web = $ctx.Web  
+$ctx.Load($web)
+$ctx.ExecuteQuery()
 
-  $web.CommentsOnSitePagesDisabled = $true
-  $web.Update()
-  $ctx.ExecuteQuery()
-
+$web.CommentsOnSitePagesDisabled = $true
+$web.Update()
+$ctx.ExecuteQuery()
 
 }
 

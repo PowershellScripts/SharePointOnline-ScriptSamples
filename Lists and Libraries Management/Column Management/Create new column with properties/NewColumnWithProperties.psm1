@@ -28,7 +28,7 @@ function New-SPOListColumnWithProperties
 		[string]$Version="1"
 	)
 
-$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
+  $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
   $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
   $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
   $ctx.Load($ctx.Web)
@@ -39,8 +39,8 @@ $password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
    $FieldOptions=[Microsoft.SharePoint.Client.AddFieldOptions]::AddToAllContentTypes 
    $xml="<Field Type='"+$FieldType+"' Description='"+$Description+"' Required='"+$Required+"' Group='"+$Group+"' StaticName='"+$StaticName+"' Name='"+$Name+"' DisplayName='"+$FieldDisplayName+"' Version='"+$Version+"'></Field>"    
    Write-Host $xml
-$List.Fields.AddFieldAsXml($xml,$true,$FieldOptions) 
-$List.Update() 
+  $List.Fields.AddFieldAsXml($xml,$true,$FieldOptions) 
+  $List.Update() 
  
   try{
          $ctx.ExecuteQuery()
@@ -51,8 +51,8 @@ $List.Update()
   }
 }
 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
+  Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"  
+  Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
  
 
 

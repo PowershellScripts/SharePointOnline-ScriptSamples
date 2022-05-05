@@ -7,11 +7,13 @@ Over 200 SharePoint Online scripts
 * bulk updates
 * provide automation script samples to address IT Pros' frequently asked IT tasks.
 
-The scripts use Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019 - the transfer is in progress and the documentation/description is still taking shape.
+The scripts use Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019.
 
 Most of them were tested and verified by hundreds and thousands of users of [Technet Gallery, where you can still find these scripts](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) 
 
 Their new home at GitHub is still relatively recent, so if you find any issues, please do let me know. I appreciate every comment and every feedback.
+
+Have an idea for a useful script? Can't find it here? Open an issue and let's discuss it together!
  
 
 ## Full index
@@ -22,18 +24,18 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
  <br/>
  
    <details>
-<summary>Content Type Management Setting </summary>
+    <summary>    &nbsp;&nbsp;&nbsp;&nbsp;Content Type Management Setting </summary>
  
  <br/>
 
-  * Allow content type management for all lists in a site
-  * Allow content type management for all lists in site collection
-  * Set content type management setting for a single list
+  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in a site
+  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in site collection
+  * &nbsp;&nbsp;&nbsp;&nbsp; Set content type management setting for a single list
   
   </details>
-  
+    
   <details>
-<summary>Create </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Create </summary>
  
  <br/>
  
@@ -49,7 +51,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Display Forms </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Display Forms </summary>
  
  <br/>
  
@@ -61,7 +63,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Get </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Get </summary>
  
  <br/>
  
@@ -91,7 +93,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Set </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Set </summary>
  
  <br/>
  
@@ -106,7 +108,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   
   
   <details>
-<summary>Modules </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Modules </summary>
  
  <br/>
 
@@ -115,7 +117,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     </details>
     
   <details>
-<summary>Remove </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Remove </summary>
  
  <br/>
  
@@ -125,7 +127,7 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     </details>
     
   <details>
-<summary>Set </summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;Set </summary>
  
  <br/>
 
@@ -406,9 +408,14 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
 <summary>Power Automate </summary>
  <br/>   
   
-* Disable Flows in all lists on SharePoint site
-* Enable Microsoft Flow in all lists on SharePoint modern site
-* Get FlowsPolicy using REST API
+* Enable or Disable
+  * Disable Flows in all lists on SharePoint site
+  * Enable Microsoft Flow in all lists on SharePoint modern site
+* Get
+  * Get Flows Created By XX
+  * Get Flows Older Or Newer Than XX
+  * Get Most Prolific Flow Creators
+  * Get FlowsPolicy using REST API
 
   <br/>
  </details>
@@ -439,7 +446,6 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
     * Add or Remove Site Features from all Personal Sites
     * Get all features from a site
     * Get all features from a site collection
-  * Get all quick launch nodes
   * Get all site collections and their subsites
   * Get all time zones from a site
   * Get SharePoint Online Site Properties
@@ -447,6 +453,9 @@ Their new home at GitHub is still relatively recent, so if you find any issues, 
   * Get unused SharePoint Online webs
   * Get-SPOWeb to retrieve subsites and their properties
   * Modify Web Inherited Permissions
+  * Navigation
+    * Create empty node (label)
+    * Get all quick launch nodes
   * Powershell cmdlet Set-SpoWeb to manage site properties
   * Recycle Bin
     * Detailed report on all recycle bin items across all site collections

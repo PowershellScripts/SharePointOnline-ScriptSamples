@@ -18,10 +18,10 @@
 		Write-Host $Url " failed to connect to the site" $_.Exception.Message.ToString() -ForegroundColor Red
 	}
 
-	 $ctx.Load($ctx.Site)
-	  $ctx.Load($ctx.Web.Lists)
-	  $ctx.ExecuteQuery()
-	  Write-Host $ctx.Web.Lists.Count
+	$ctx.Load($ctx.Site)
+	$ctx.Load($ctx.Web.Lists)
+	$ctx.ExecuteQuery()
+	Write-Host $ctx.Web.Lists.Count
   
 	for($j=0;$j -lt $ctx.Web.Lists.Count;$j++){
 		  $lista=$ctx.Web.Lists[$j]
