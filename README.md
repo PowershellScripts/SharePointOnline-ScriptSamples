@@ -408,9 +408,14 @@ Have an idea for a useful script? Can't find it here? Open an issue and let's di
 <summary>Power Automate </summary>
  <br/>   
   
-* Disable Flows in all lists on SharePoint site
-* Enable Microsoft Flow in all lists on SharePoint modern site
-* Get FlowsPolicy using REST API
+* Enable or Disable
+  * Disable Flows in all lists on SharePoint site
+  * Enable Microsoft Flow in all lists on SharePoint modern site
+* Get
+  * Get Flows Created By XX
+  * Get Flows Older Or Newer Than XX
+  * Get Most Prolific Flow Creators
+  * Get FlowsPolicy using REST API
 
   <br/>
  </details>
