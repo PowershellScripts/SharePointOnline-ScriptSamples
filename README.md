@@ -446,7 +446,6 @@ Have an idea for a useful script? Can't find it here? Open an issue and let's di
     * Add or Remove Site Features from all Personal Sites
     * Get all features from a site
     * Get all features from a site collection
-  * Get all quick launch nodes
   * Get all site collections and their subsites
   * Get all time zones from a site
   * Get SharePoint Online Site Properties
@@ -454,6 +453,9 @@ Have an idea for a useful script? Can't find it here? Open an issue and let's di
   * Get unused SharePoint Online webs
   * Get-SPOWeb to retrieve subsites and their properties
   * Modify Web Inherited Permissions
+  * Navigation
+    * Create empty node (label)
+    * Get all quick launch nodes
   * Powershell cmdlet Set-SpoWeb to manage site properties
   * Recycle Bin
     * Detailed report on all recycle bin items across all site collections
