@@ -52,8 +52,8 @@ Scripts related to Site Management
   * Restore all files items lists deleted by a single employee
   * Remove SPO subsite
   * Set theme of your SharePoint Online site
-    * Site designs
-  * Verify where a site design is applied
+  * Site designs
+    * Verify where a site design is applied
   * Update locale id for all personal sites
   * Update the time zones in all personal sites
   
