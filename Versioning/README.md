@@ -1,9 +1,5 @@
 Scripts related to versioning of the SharePoint files.
 
-
-<details>
-<summary>Versioning </summary>
- <br/>
  
 * Create a report on all file versions in OneDrive for Business
 * Enable minor versions for all lists
@@ -14,5 +10,4 @@ Scripts related to versioning of the SharePoint files.
 * Restore previous versions in the entire library
 * Set the major version limit for all the lists and libraries (data loss involved)
    <br/>
- </details>
  
