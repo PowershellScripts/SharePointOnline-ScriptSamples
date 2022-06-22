@@ -28,9 +28,9 @@ Have an idea for a useful script? Can't find it here? Open an issue and let's di
  
  <br/>
 
-  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in a site
-  * &nbsp;&nbsp;&nbsp;&nbsp; Allow content type management for all lists in site collection
-  * &nbsp;&nbsp;&nbsp;&nbsp; Set content type management setting for a single list
+  * &nbsp;&nbsp;&nbsp;&nbsp; [Allow content type management for all lists in a site](https://github.com/PowershellScripts/SharePointOnline-ScriptSamples/tree/develop/Content%20Types/Content%20Types%20Management%20Setting/Allow%20content%20type%20management%20for%20all%20lists%20in%20a%20site)
+  * &nbsp;&nbsp;&nbsp;&nbsp; [Allow content type management for all lists in site collection](https://github.com/PowershellScripts/SharePointOnline-ScriptSamples/tree/develop/Content%20Types/Content%20Types%20Management%20Setting/Allow%20content%20type%20management%20for%20all%20lists%20in%20site%20collection)
+  * &nbsp;&nbsp;&nbsp;&nbsp; [Set content type management setting for a single list](https://github.com/PowershellScripts/SharePointOnline-ScriptSamples/tree/develop/Content%20Types/Content%20Types%20Management%20Setting/Set%20content%20type%20management%20setting%20for%20a%20single%20list)
   
   </details>
     
