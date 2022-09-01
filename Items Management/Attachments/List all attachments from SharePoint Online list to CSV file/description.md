@@ -16,7 +16,7 @@ The csv file contains itemID, item title and the name of the file. Each file is 
 
 In order to use the script you need to modify the file:
 
-PowerShell
+```PowerShell
 # Paths to SDK. Please verify location on your computer. 
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
@@ -27,4 +27,4 @@ $Url = "https://etr56.sharepoint.com"
 $ListTitle = "attatest" 
 $CSVPath = "C:\Users\Public\attachmentsreport.csv"
  
- 
+ ```
