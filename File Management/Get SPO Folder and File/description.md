@@ -45,6 +45,7 @@ Specifies the relative url of a file/folder
  
 
 Get a file
+```powershell
  Get-SPOFileByServerRelativeUrl -Username trial@trialtrial123.onmicrosoft.com -Url https://trialtrial123.sharepoint.com -AdminPassword Pass -ServerRelativeUrl "/chc1/perm.txt"
 ```
 
