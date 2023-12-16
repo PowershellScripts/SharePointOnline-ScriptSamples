@@ -26,7 +26,7 @@ $ContentTypesEnabled =$false
 ```
 
 
-### Please share your thoughts in the Q&A section!
+### Please share your thoughts and comments!
 
 #### Wiki article with detailed code description:
 
