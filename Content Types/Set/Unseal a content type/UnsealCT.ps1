@@ -1,0 +1,24 @@
+  # Paths to SDK. Please verify location on your computer.
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+
+# Insert the credentials and the name of the admin site
+$Username="admin@tenant.onmicrosoft.com"
+$AdminPassword=Read-Host -Prompt "Password" -AsSecureString
+$AdminUrl="https://tenant.sharepoint.com/sites/powie1"
+
+
+$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
+$ctx.ExecuteQuery()   # not necessary, but I use it as a connection/credential check
+  
+$ctx.Load($ctx.Web)
+$ctx.Load($ctx.Web.ContentTypes)
+$ctx.ExecuteQuery()
+
+$cc.Sealed=$false
+$cc.Update($true)
+$ctx.ExecuteQuery()
+
+        
+### If you get any errors, have a look at https://powershellscripts.github.io/articles/English/SharePointOnline/SharePoint%20content%20types%20in%20Powershell%20-%20known%20errors/
