@@ -1,6 +1,6 @@
 # SharePointOnline-ScriptSamples
 
-Over 200 SharePoint Online scripts 
+Over 260 SharePoint Online scripts 
 * fixing issues
 * generating reports 
 * extra settings not available via UI
