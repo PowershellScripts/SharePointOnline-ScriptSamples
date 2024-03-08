@@ -1,4 +1,4 @@
-Short Powershell that checks which SharePoint Online list has what experience setting.
+Short Powershell script that checks which SharePoint Online list has what experience setting.
 
  
 
