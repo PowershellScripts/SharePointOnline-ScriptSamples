@@ -1,3 +1,5 @@
+# count files recursively in the entire library
+
 Install-Module -Name PnP.PowerShell -Force -AllowClobber
 Import-Module PnP.PowerShell
 
