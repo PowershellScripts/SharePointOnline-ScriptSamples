@@ -1,5 +1,7 @@
 
 
+# Connect to SharePoint Online
+Connect-PnPOnline -Url "https://yoursite.sharepoint.com/sites/yoursite" -Interactive
 
 # Define the list name
 $listName = "YourListName"  
