@@ -1,3 +1,6 @@
+# Counts files with unique permissions in a folder
+
+
 
 # Connect to SharePoint Online
 Connect-PnPOnline -Url "https://yoursite.sharepoint.com/sites/yoursite" -Interactive
