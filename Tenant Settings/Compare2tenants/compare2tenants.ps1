@@ -1,3 +1,6 @@
+# Written 2024 by Arleta Wanat
+# The script looks for differences 
+
 # Define a function to connect to a tenant and get properties
 function Get-TenantProperties {
     param (
