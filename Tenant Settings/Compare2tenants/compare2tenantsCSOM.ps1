@@ -1,3 +1,9 @@
+# Written 2024 by Arleta Wanat
+# The script looks for differences between SharePoint settings in 2 Microsoft 365 tenants. It displays the differences and on the screen and generates 2 files:
+# One CSV only with differences, and one CSV with all the compared settings
+# For more info go to https://powershellscripts.github.io/articles/en/spo/comparetenants
+
+
 # Load required assemblies
 Add-Type -Path "C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"
 Add-Type -Path "C:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"
