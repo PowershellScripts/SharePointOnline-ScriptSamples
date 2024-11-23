@@ -1,6 +1,6 @@
 # Written 2024 by Arleta Wanat
 # The script looks for differences between SharePoint settings in 2 Microsoft 365 tenants. It displays the differences and on the screen and generates 2 files:
-
+# One CSV only with differences, and one CSV with all the compared settings
 
 # Define a function to connect to a tenant and get properties
 function Get-TenantProperties {
