@@ -1,68 +1,84 @@
-# Created by Arleta Wanat, 2014
- 
- function getall($urelek){
-    $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
-    $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)
-    $ctx.Load($ctx.Web.Lists)
-    $ctx.Load($ctx.Web)
-    $ctx.Load($ctx.Web.Webs)
-    $ctx.ExecuteQuery()
-    Write-Host 
-    Write-Host $ctx.Url -BackgroundColor White -ForegroundColor DarkGreen
 
-    foreach( $ll in $ctx.Web.Lists){
-      $ll.EnableVersioning = $versioning
-      $ll.Update()
-      $csvvalue= new-object PSObject
-      $listurl=$null
+# Script to enable versioning for all SharePoint Online lists across site collections
+# Created by Arleta Wanat, 2014.  Updated 2024
 
-      if($ctx.Url.EndsWith("/")) {$listurl= $ctx.Url+$ll.Title}
-      else {$listurl=$ctx.Url+"/"+$ll.Title}
 
-      $csvvalue | Add-Member -MemberType NoteProperty -Name "Url" -Value ($listurl)
-      $csvvalue | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
 
-      try{
-        $ErrorActionPreference="Stop"
-        $ctx.ExecuteQuery() 
-        Write-Host $listurl -ForegroundColor DarkGreen
-        $csvvalue.Status="Success"
-        $Global:csv+= $csvvalue       
-      }
-      catch{
-        $Global:csv+= $csvvalue
-        Write-Host $listurl -ForegroundColor Red
-      }
-      finally{$ErrorActionPreference="Continue"}
+# Load CSOM libraries. Ensure these paths are correct on your machine.
+Add-Type -Path "C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"
+Add-Type -Path "C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"
+
+# Define versioning setting: $true enables versioning; $false disables it.
+$enableVersioning = $true
+
+# Function to process all lists in a site and its subsites
+function Process-SiteLists {
+    param (
+        [string]$siteUrl
+    )
+
+    # Create a client context and authenticate
+    $clientContext = New-Object Microsoft.SharePoint.Client.ClientContext($siteUrl)
+    $clientContext.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)
+
+    # Load site and list data
+    $clientContext.Load($clientContext.Web)
+    $clientContext.Load($clientContext.Web.Lists)
+    $clientContext.Load($clientContext.Web.Webs)
+    $clientContext.ExecuteQuery()
+
+    Write-Host "`nProcessing site: $siteUrl" -BackgroundColor White -ForegroundColor DarkGreen
+
+    # Process each list in the current site
+    foreach ($list in $clientContext.Web.Lists) {
+        # Set versioning and update list
+        $list.EnableVersioning = $enableVersioning
+        $list.Update()
+
+        # Prepare log entry
+        $listLog = New-Object PSObject
+        $listUrl = if ($siteUrl.EndsWith("/")) { "$siteUrl$list.Title" } else { "$siteUrl/$list.Title" }
+        $listLog | Add-Member -MemberType NoteProperty -Name "ListUrl" -Value $listUrl
+        $listLog | Add-Member -MemberType NoteProperty -Name "Status" -Value "Failed"
+
+        try {
+            $ErrorActionPreference = "Stop"
+            $clientContext.ExecuteQuery()
+            Write-Host "Updated: $listUrl" -ForegroundColor Green
+            $listLog.Status = "Success"
+        } catch {
+            Write-Host "Failed: $listUrl" -ForegroundColor Red
+        } finally {
+            $ErrorActionPreference = "Continue"
+            $Global:logEntries += $listLog
+        }
     }
 
-    if($ctx.Web.Webs.Count -gt 0){
-      for($i=0; $i -lt $ctx.Web.Webs.Count ; $i++){
-        getall($ctx.Web.Webs[$i].Url)
-      }
+    # Recursively process subsites
+    foreach ($subsite in $clientContext.Web.Webs) {
+        Process-SiteLists -siteUrl $subsite.Url
     }
 }
 
-# Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+# Prompt for tenant admin URL and credentials
+$adminUrl = Read-Host -Prompt "Enter your tenant admin URL (e.g., https://tenant-admin.sharepoint.com)"
+$username = Read-Host -Prompt "Enter your admin username (e.g., admin@domain.onmicrosoft.com)"
+$password = Read-Host -Prompt "Enter your password" -AsSecureString
+$credentials = New-Object System.Management.Automation.PSCredential($username, $password)
+Connect-SPOService -Credential $credentials -Url $adminUrl
 
-# Versioning will be enabled. If you prefer to disable it for the whole tenant, change to $false
-$versioning = $true
+# Get all site collections
+$siteCollections = Get-SPOSite
 
-# You can also enter credentials directly: $siteUrl="https://tenant-admin.sharepoint.com"
-$siteUrl = Read-Host -Prompt "Enter https://tenant-admin.sharepoint.com”
-$username = Read-Host -Prompt "Enter admin's login, e.g. admin@domain.onmicrosoft.com"
-$password = Read-Host -Prompt "Enter password" -AsSecureString
-$credy= New-Object System.Management.Automation.PSCredential($username,$password) 
-Connect-SPOService -Credential $credy -Url $siteUrl 
+# Initialize log storage
+$Global:logEntries = @()
 
-$sitecollections=get-SPOSite
-$Global:csv=@()
-
-foreach($sitecoll in $sitecollections){
-  getall($sitecoll.Url)
+# Process each site collection
+foreach ($siteCollection in $siteCollections) {
+    Process-SiteLists -siteUrl $siteCollection.Url
 }
 
-# Specify the path where the log file will be published
-$Global:csv | Export-Csv -Path C:\Users\Public\Versioning.csv
+# Export log to a CSV file
+$logFilePath = "C:\Users\Public\VersioningLog.csv"
+$Global:logEntries | Export-Csv -Path $logFilePath -NoTypeInformation
+Write-Host "`nLog exported to $logFilePath" -ForegroundColor Cyan
