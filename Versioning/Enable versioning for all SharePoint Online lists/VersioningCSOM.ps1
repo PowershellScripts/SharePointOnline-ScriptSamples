@@ -1,4 +1,6 @@
-﻿function getall($urelek){
+# Created by Arleta Wanat, 2014
+ 
+ function getall($urelek){
     $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($urelek)
     $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($username, $password)
     $ctx.Load($ctx.Web.Lists)
