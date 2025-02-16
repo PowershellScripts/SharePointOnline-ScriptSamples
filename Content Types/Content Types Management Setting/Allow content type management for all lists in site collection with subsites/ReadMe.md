@@ -34,17 +34,5 @@ $ContentTypesEnabled=$true
 
  
 
-#### Related scripts
-[Set-SPOList properties (module)](https://gallery.technet.microsoft.com/office/Set-SPOList-properties-9d16f2ba)
-
-[Disable or enable attachments to list items using Powershell](https://gallery.technet.microsoft.com/scriptcenter/Disable-or-enable-12cf3795)
-
-[Change search setting for all lists in a site using CSOM and Powershell](https://gallery.technet.microsoft.com/scriptcenter/Change-search-setting-for-8e842a48)
-
-[Allow content type management for all lists in a site using Powershell](https://gallery.technet.microsoft.com/scriptcenter/Allow-content-type-5bca5157)
-
-[Set content type management setting for SharePoint Online list using Powershell](https://gallery.technet.microsoft.com/scriptcenter/Set-content-type-39ae4bce)
-
-
 <br/><br/>
 <b>Enjoy and please share feedback!</b>
