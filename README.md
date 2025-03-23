@@ -7,7 +7,7 @@ Over 260 SharePoint Online scripts
 * bulk updates
 * provide automation script samples to address IT Pros' frequently asked IT tasks.
 
-The scripts use Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019.
+The scripts use PnP Powershell, C#, CSOM and REST. They include copies of existing scripts from Technet Gallery years 2013-2019.
 
 Most of them were tested and verified by hundreds and thousands of users of [Technet Gallery](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) 
 
