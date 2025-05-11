@@ -1,3 +1,4 @@
+
 # SharePointOnline-ScriptSamples
 
 Over 260 SharePoint Online scripts 
@@ -555,7 +556,7 @@ Have an idea for a useful script? Can't find it here? Open an issue and let's di
 <summary>Workflows </summary>
  <br/>
  
-* Get workflow report for a site collection
+* Get workflow report. for a site collection
 * Get workflow report for all site collections
 * Get workflow report for one site
 
