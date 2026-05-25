@@ -1,7 +1,7 @@
+#
+# Created by Sachchin Annam
+#
 # Powershell script sets the .Crawl property of a list to $false or $true
-#
-# Created by Arleta Wanat, 2015 
-#
 
 function Set-SPOList{
     param (

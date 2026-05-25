@@ -1,4 +1,7 @@
-﻿#My advice is don't. That flag is there for a reason and make sure you know what you are doing and are aware of the consequences before you use this script
+#
+# Created by Sachchin Annam
+#
+#My advice is don't. That flag is there for a reason and make sure you know what you are doing and are aware of the consequences before you use this script
 
 function Allow-SPOListDeletion
 {

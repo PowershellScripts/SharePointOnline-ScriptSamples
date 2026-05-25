@@ -1,6 +1,5 @@
 
-#
-# Created by Arleta Wanat, 2015 
+# Created by Sachchin Annam
 #
 
 function Set-SPOListsFolderCreation{
