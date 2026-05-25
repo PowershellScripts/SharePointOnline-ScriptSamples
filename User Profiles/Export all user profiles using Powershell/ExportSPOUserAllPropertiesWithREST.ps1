@@ -1,57 +1,63 @@
-﻿function Get-SPOUserProperty{
-	param (
-		[Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		$password,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string] $url,
-		[Parameter(Mandatory=$true,Position=4)]
-		[string] $userLogin
-	)
+#
+# Created by Sachchin Annam
+#
 
-	$Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-	$RestUrl=$url+"/_api/SP.UserProfiles.PeopleManager/GetPropertiesFor(accountName=@v)?@v='i:0%23.f|membership|"+$userLogin+"'"
+function Get-SPOUserProperty {
+    param (
+        [Parameter(Mandatory = $true, Position = 1)]
+        [string]$Username,
+        [Parameter(Mandatory = $true, Position = 2)]
+        $password,
+        [Parameter(Mandatory = $true, Position = 3)]
+        [string]$url,
+        [Parameter(Mandatory = $true, Position = 4)]
+        [string]$userLogin
+    )
 
-	$request = [System.Net.WebRequest]::Create($RESTUrl) 
-	$request.Credentials = $Credentials 
-	$request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f") 
-	$request.Accept = "application/json;odata=verbose" 
-	[Microsoft.PowerShell.Commands.WebRequestMethod]$Method = [Microsoft.PowerShell.Commands.WebRequestMethod]::Get
-	$request.Method=$Method 
-	$response = $request.GetResponse() 
-	$requestStream = $response.GetResponseStream() 
-	$read = New-Object System.IO.StreamReader $requestStream 
-	$data=$read.ReadToEnd() 
-	$results = $data | ConvertFrom-Json
+    $Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
+    $RestUrl = $url + "/_api/SP.UserProfiles.PeopleManager/GetPropertiesFor(accountName=@v)?@v='i:0%23.f|membership|" + $userLogin + "'"
 
-	return ($results.d.userprofileproperties.results)
+    $request = [System.Net.WebRequest]::Create($RESTUrl)
+    $request.Credentials = $Credentials
+    $request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f")
+    $request.Accept = "application/json;odata=verbose"
+    [Microsoft.PowerShell.Commands.WebRequestMethod]$Method = [Microsoft.PowerShell.Commands.WebRequestMethod]::Get
+    $request.Method = $Method
+    $response = $request.GetResponse()
+    $requestStream = $response.GetResponseStream()
+    $read = New-Object System.IO.StreamReader $requestStream
+    $data = $read.ReadToEnd()
+    $results = $data | ConvertFrom-Json
+
+    return ($results.d.userprofileproperties.results)
 }
 
-#Paths to SDK
-Add-Type -Path "H:\Libraries\Microsoft.SharePoint.Client.dll"
-Add-Type -Path "H:\Libraries\Microsoft.SharePoint.Client.Runtime.dll"
- 
-#Enter the data
+# NOTE: This script requires the SharePoint Online Client Components SDK.
+# The paths below might need to be adjusted to your environment.
+# You can download the SDK from: https://www.microsoft.com/en-us/download/details.aspx?id=42038
+# --- Paths to SDK ---
+Add-Type -Path "H:\\Libraries\\Microsoft.SharePoint.Client.dll"
+Add-Type -Path "H:\\Libraries\\Microsoft.SharePoint.Client.Runtime.dll"
 
-$SiteUrl="https://t321.sharepoint.com"
-$AdminCenter="https://t321-admin.sharepoint.com"
-$ExportTo="C:\Users\Arletka\Documents\SpUsers3.csv"
+# --- Script Parameters ---
+$SiteUrl = "https://t321.sharepoint.com"
+$AdminCenter = "https://t321-admin.sharepoint.com"
+$ExportTo = "C:\\Temp\\SpUsers.csv"
 
+# --- Script Body ---
 Import-Module Microsoft.Online.SharePoint.PowerShell -DisableNameChecking
-$cred=Get-Credential
+$cred = Get-Credential
 Connect-SPOService $AdminCenter -Credential $cred
-$users=Get-SPOUser -Site $SiteUrl
+$users = Get-SPOUser -Site $SiteUrl
 
-foreach($user in $users){
+foreach ($user in $users) {
     Write-Verbose $user.LoginName
-    $properties=Get-SPOUserProperty -Username $cred.UserName -Url $SiteUrl -password $cred.Password -userLogin $user.LoginName 
-    $userObject=New-Object PSObject
-    
-    foreach($property in $properties){
-        $userObject | Add-Member -MemberType NoteProperty -Name $prop.Key -Value $prop.Value
+    $properties = Get-SPOUserProperty -Username $cred.UserName -Url $SiteUrl -password $cred.Password -userLogin $user.LoginName
+    $userObject = New-Object PSObject
+
+    foreach ($property in $properties) {
+        $userObject | Add-Member -MemberType NoteProperty -Name $property.Key -Value $property.Value
     }
-    
+
     $userObject | Export-Csv -Path $ExportTo -Append -Force
 }
-
