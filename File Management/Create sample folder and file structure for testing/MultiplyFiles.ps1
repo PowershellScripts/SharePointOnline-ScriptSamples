@@ -1,4 +1,8 @@
-﻿function Multiply-Files
+#
+# Created by Sachchin Annam
+#
+
+function Multiply-Files
 {
 
 
