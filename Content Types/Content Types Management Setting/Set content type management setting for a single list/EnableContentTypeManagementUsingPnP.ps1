@@ -1,3 +1,7 @@
+#
+# Created by Sachchin Annam
+#
+
 # Prompt for site URL, list name, and content type setting
 $Url = Read-Host "Enter the SharePoint Online site URL"
 $ListName = Read-Host "Enter the list name"

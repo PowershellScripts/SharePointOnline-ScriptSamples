@@ -1,5 +1,5 @@
 #
-# Updated by Sachchin Annam
+# Created by Sachchin Annam
 #
 
 # Paths to SDK. Please verify location on your computer.

@@ -1,4 +1,8 @@
-﻿function Add-SPOContentType{
+#
+# Created by Sachchin Annam
+#
+
+function Add-SPOContentType{
 	param(
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
