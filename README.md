@@ -144,12 +144,4 @@ The scripts are organized into the following categories for easy navigation:
 
 *   [Miscellaneous Scripts](./OTHER)
 
----
 
-## Origin
-
-Most of these scripts were originally published on the [Technet Gallery](https://gallery.technet.microsoft.com/office/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=Arleta%20Wanat) between 2013 and 2019 and have been tested and verified by the community.
-
-## Contributions
-
-Your feedback and contributions are welcome! If you have an idea for a new script or find an issue with an existing one, please open an issue to discuss it.
