@@ -1,33 +1,27 @@
-﻿# Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+# Paths to SDK. Please verify location on your computer.
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll"
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"
 
 # Insert the credentials and the name of the admin site
-$Username="admin@tenant.onmicrosoft.com"
-$AdminPassword=Read-Host -Prompt "Password" -AsSecureString
-$AdminUrl="https://tenant.sharepoint.com/sites/powie1"
-      
+$Username = "admin@tenant.onmicrosoft.com"
+$AdminPassword = Read-Host -Prompt "Password" -AsSecureString
+$AdminUrl = "https://tenant.sharepoint.com/sites/powie1"
 
-
-$ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+$ctx = New-Object Microsoft.SharePoint.Client.ClientContext($AdminUrl)
 $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $AdminPassword)
-$ctx.ExecuteQuery() 
-  
+$ctx.ExecuteQuery()
+
 $ctx.Load($ctx.Web)
 $ctx.Load($ctx.Web.ContentTypes)
 $ctx.ExecuteQuery()
 
-
-foreach($cc in $ctx.Web.ContentTypes)
-     {
-        if($cc.Sealed -eq $true)
-        {
-          Write-Host $cc.Name
-          $cc.Sealed=$false
-          $cc.Update($true)
-          $ctx.ExecuteQuery()
-        }
-        
-     }
-     
-
+foreach ($cc in $ctx.Web.ContentTypes)
+{
+    if ($cc.Sealed -eq $true)
+    {
+        Write-Host $cc.Name
+        $cc.Sealed = $false
+        $cc.Update($true)
+        $ctx.ExecuteQuery()
+    }
+}

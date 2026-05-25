@@ -3,14 +3,16 @@
 #
 
 # Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"
 
-function Set-SPOListsContentTypesEnabledRecursive {
+function Set-SPOListsContentTypesEnabledRecursive
+{
     param (
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [Microsoft.SharePoint.Client.ClientContext]$Context,
-        [Parameter(Mandatory=$true)]
+
+        [Parameter(Mandatory = $true)]
         [bool]$ContentTypesEnabled
     )
 
@@ -20,23 +22,28 @@ function Set-SPOListsContentTypesEnabledRecursive {
     $Context.Load($Lists)
     $Context.ExecuteQuery()
 
-    foreach ($List in $Lists) {
+    foreach ($List in $Lists)
+    {
         $List.ContentTypesEnabled = $ContentTypesEnabled
         $List.Update()
 
-        try {
+        try
+        {
             $Context.ExecuteQuery()
             Write-Host $List.Title "   Done" -ForegroundColor Green
         }
-        catch [Net.WebException] {
+        catch [Net.WebException]
+        {
             Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
         }
     }
 
-    if ($Context.Web.Webs.Count -gt 0) {
+    if ($Context.Web.Webs.Count -gt 0)
+    {
         Write-Host "--" -ForegroundColor DarkGreen
 
-        foreach ($subWeb in $Context.Web.Webs) {
+        foreach ($subWeb in $Context.Web.Webs)
+        {
             $subWebUrl = $subWeb.Url
             $subWebContext = New-Object Microsoft.SharePoint.Client.ClientContext($subWebUrl)
             $subWebContext.Credentials = $Context.Credentials
