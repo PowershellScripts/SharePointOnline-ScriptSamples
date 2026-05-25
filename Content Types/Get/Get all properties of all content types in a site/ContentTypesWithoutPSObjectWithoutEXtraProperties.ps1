@@ -1,4 +1,8 @@
-﻿
+#
+# Created by Sachchin Annam
+#
+
+
 
 function Get-SPOContentType{
 	param (
