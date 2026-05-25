@@ -1,3 +1,7 @@
+#
+# Created by Sachchin Annam
+#
+
 Scripts related to SharePoint user profiles. 
 
   * Export all user profiles using Powershell
@@ -5,4 +9,3 @@ Scripts related to SharePoint user profiles.
   * Get MUI Languages for multiple users using REST
   * Get user work email using Powershell and REST
   * Retrieve all user profiles and their properties using C# and CSOM
-  
