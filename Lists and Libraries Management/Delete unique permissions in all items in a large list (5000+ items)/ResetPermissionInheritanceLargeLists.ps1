@@ -1,4 +1,8 @@
-﻿function Restore-SPOListAllItemsInheritance
+#
+# Created by Sachchin Annam
+#
+
+function Restore-SPOListAllItemsInheritance
 {
   
    param (

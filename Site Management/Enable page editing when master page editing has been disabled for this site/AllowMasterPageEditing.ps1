@@ -1,4 +1,8 @@
-﻿function Set-SPOSiteAllowMasterPageEditing{
+#
+# Created by Sachchin Annam
+#
+
+function Set-SPOSiteAllowMasterPageEditing{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,

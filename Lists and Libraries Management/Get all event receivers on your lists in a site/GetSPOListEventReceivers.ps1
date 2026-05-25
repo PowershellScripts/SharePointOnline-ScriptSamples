@@ -1,4 +1,8 @@
-﻿function Get-SPOListEventreceivers
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOListEventreceivers
 {
 	param (
 		[Parameter(Mandatory=$true,Position=1)]

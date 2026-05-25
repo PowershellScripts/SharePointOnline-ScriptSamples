@@ -1,4 +1,8 @@
-﻿function Get-SPOAllWeb{
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOAllWeb{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,

@@ -1,4 +1,8 @@
-﻿function Get-SPOListItemCount
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOListItemCount
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]

@@ -1,4 +1,8 @@
-﻿function Get-SiteColl{
+#
+# Created by Sachchin Annam
+#
+
+function Get-SiteColl{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,

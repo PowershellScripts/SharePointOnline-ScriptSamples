@@ -1,4 +1,8 @@
-﻿## The script assumes that unmodified == unused. That's not exactly true. A list of countries or client contacts that serve 
+#
+# Created by Sachchin Annam
+#
+
+## The script assumes that unmodified == unused. That's not exactly true. A list of countries or client contacts that serve 
 ## as lookup for other lists may not be changed often but is still widely used. 
 
 

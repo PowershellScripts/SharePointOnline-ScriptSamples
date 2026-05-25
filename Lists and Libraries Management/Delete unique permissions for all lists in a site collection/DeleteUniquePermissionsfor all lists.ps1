@@ -1,3 +1,7 @@
+#
+# Created by Sachchin Annam
+#
+
 function Set-SPOListResetRoleInheritance{
     param (
         [Parameter(Mandatory=$true,Position=1)]

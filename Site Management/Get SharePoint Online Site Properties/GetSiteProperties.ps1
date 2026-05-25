@@ -1,4 +1,8 @@
-﻿function Get-SPOSiteProperties{
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOSiteProperties{
 	param (
 		[Parameter(Mandatory=$true,Position=1)]
 		[string]$Username,
