@@ -1,4 +1,8 @@
-﻿function Get-SPOFolderFilesCount
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOFolderFilesCount
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]

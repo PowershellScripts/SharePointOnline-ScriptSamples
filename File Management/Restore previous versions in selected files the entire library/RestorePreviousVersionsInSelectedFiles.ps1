@@ -1,4 +1,8 @@
-﻿function Get-SPOFolderFiles
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOFolderFiles
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]

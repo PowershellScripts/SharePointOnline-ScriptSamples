@@ -1,4 +1,8 @@
-﻿function Get-SPOObject
+#
+# Created by Sachchin Annam
+#
+
+function Get-SPOObject
 {
 param (
         [Parameter(Mandatory=$true,Position=1)]
