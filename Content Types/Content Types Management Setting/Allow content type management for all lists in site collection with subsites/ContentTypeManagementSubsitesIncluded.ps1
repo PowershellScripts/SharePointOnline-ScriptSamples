@@ -1,74 +1,59 @@
-﻿
 #
 # Created by Arleta Wanat, 2015 
 #
 
-function Set-SPOListsContentTypesEnabled{
-	param (
-		[Parameter(Mandatory=$true,Position=1)]
-		[string]$Username,
-		[Parameter(Mandatory=$true,Position=2)]
-		[string]$AdminPassword,
-		[Parameter(Mandatory=$true,Position=3)]
-		[string]$Url,
-		[Parameter(Mandatory=$true,Position=4)]
-		[bool]$ContentTypesEnabled
-	)
+# Paths to SDK. Please verify location on your computer.
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll" 
+Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
 
-	$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
-	  $ctx=New-Object Microsoft.SharePoint.Client.ClientContext($Url)
-	  $ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
-	  $ctx.ExecuteQuery() 
+function Set-SPOListsContentTypesEnabledRecursive {
+    param (
+        [Parameter(Mandatory=$true)]
+        [Microsoft.SharePoint.Client.ClientContext]$Context,
+        [Parameter(Mandatory=$true)]
+        [bool]$ContentTypesEnabled
+    )
 
-	$Lists=$ctx.Web.Lists
-	 $ctx.Load($ctx.Web)
-	 $ctx.Load($ctx.Web.Webs)
-	 $ctx.Load($Lists)
-	 $ctx.ExecuteQuery()
+    $Lists = $Context.Web.Lists
+    $Context.Load($Context.Web)
+    $Context.Load($Context.Web.Webs)
+    $Context.Load($Lists)
+    $Context.ExecuteQuery()
 
-	Foreach($ll in $Lists){
-	   $ll.ContentTypesEnabled = $ContentTypesEnabled
-	   $ll.Update()
+    foreach ($List in $Lists) {
+        $List.ContentTypesEnabled = $ContentTypesEnabled
+        $List.Update()
 
-		try{
-			$ctx.ExecuteQuery()
-			Write-Host $ll.Title "   Done" -ForegroundColor Green
-		}
-		catch [Net.WebException]{
-			Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
-		}
-	}
+        try {
+            $Context.ExecuteQuery()
+            Write-Host $List.Title "   Done" -ForegroundColor Green
+        }
+        catch [Net.WebException] {
+            Write-Host "Failed" $_.Exception.ToString() -ForegroundColor Red
+        }
+    }
 
-	if($ctx.Web.Webs.Count -gt 0){
-	   Write-Host "--"-ForegroundColor DarkGreen
-	     
-		for($i=0;$i -lt $ctx.Web.Webs.Count ;$i++){
-			Set-SPOListsContentTypesEnabled -Username $Username -Url $ctx.Web.Webs[$i].Url -AdminPassword $AdminPassword -ContentTypesEnabled $ContentTypesEnabled
-		}
-	}
+    if ($Context.Web.Webs.Count -gt 0) {
+        Write-Host "--" -ForegroundColor DarkGreen
 
+        foreach ($subWeb in $Context.Web.Webs) {
+            $subWebUrl = $subWeb.Url
+            $subWebContext = New-Object Microsoft.SharePoint.Client.ClientContext($subWebUrl)
+            $subWebContext.Credentials = $Context.Credentials
+            Set-SPOListsContentTypesEnabledRecursive -Context $subWebContext -ContentTypesEnabled $ContentTypesEnabled
+        }
+    }
 }
 
-
-
-
-
-
-
-
-
-
-# Paths to SDK. Please verify location on your computer.
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll" 
-Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll" 
-
 # Insert the credentials and the name of the site and the desired setting: $true for the content types management to be allowed or $false to disable it
-$Username="trial@trialtrial123.onmicrosoft.com"
-$AdminPassword="Pass"
-$Url="https://trialtrial123.sharepoint.com/sites/teamsitewithlists"
-$ContentTypesEnabled=$true
+$Url = Read-Host "Enter the SharePoint Online site URL"
+$Username = Read-Host "Enter your username"
+$AdminPassword = Read-Host -AsSecureString "Enter your password"
+$ContentTypesEnabled = $true
 
+$password = ConvertTo-SecureString -string $AdminPassword -AsPlainText -Force
 
+$ctx = New-Object Microsoft.SharePoint.Client.ClientContext($Url)
+$ctx.Credentials = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Username, $password)
 
-
-Set-SPOListsContentTypesEnabled -Username $Username -AdminPassword $AdminPassword -Url $Url -ContentTypesEnabled $ContentTypesEnabled
+Set-SPOListsContentTypesEnabledRecursive -Context $ctx -ContentTypesEnabled $ContentTypesEnabled
